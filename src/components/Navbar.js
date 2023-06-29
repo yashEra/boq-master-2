@@ -17,7 +17,6 @@ import './style/navbar.css'
             }else{
                 setColor(false)
             }
-           
         }
         window.addEventListener('scroll', changeColor)
 
