@@ -1,0 +1,113 @@
+.nav__color{
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    right: 0;
+
+}
+
+.nav__color__bg{
+    background-color: #002147;
+    opacity: 0.9;
+}
+
+.navbar{
+    /* background-image: url(heder.jpg); */
+
+    display: flex;
+
+    justify-content: space-around;
+    text-decoration: none;
+    align-items: center;
+    padding: 25px 0 25px 0;
+    
+}
+
+.listul{
+    display: flex;
+    list-style: none;
+
+}
+
+.listul li{
+    padding: 0 10px 0 10px;
+    /* font-weight: 700;
+    font-size: 120%; */
+
+}
+
+.listul li a{
+    text-decoration: none;
+    color: #c0c0c0;
+    font-weight: 700;
+    
+}
+
+.listul li a:hover{
+    color: aliceblue;
+    /* background-color: aqua; */
+    
+}
+
+.logo{
+    /* background-image: url('/src/images/logo-nav.png');
+    width: 50pxpx;
+    height: auto; */
+    font-weight: 700;
+    font-size: 140%; 
+    color: #c0c0c0;
+}
+
+.hamburger{
+    color: #c0c0c0;
+    display: none;
+}
+
+.mobile__menu{
+    display: none;
+}
+
+.active{
+    .listul{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .hamburger{
+        display: block;
+        font-size: 150%;
+    }
+
+    .listul{
+        display: none;
+        position: fixed;
+        right: 0%;
+        top: 90px;
+        flex-direction: column;
+        background-color: #c0c0c0;
+        opacity: 0.9;
+        width: 100%;
+        height: auto;
+        z-index: 999;
+        text-align: center;
+        transition: .3s;
+        border-radius: 10px;
+    }
+
+    .mobile__menu{
+        display: block;
+    }
+
+    .listul li{
+        padding: 25px;
+    }
+
+    .listul li a{
+        /* padding: 10%; */
+        text-decoration: none;
+        color: #002147;
+        
+    }
+    
+}

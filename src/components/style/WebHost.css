@@ -1,0 +1,35 @@
+.container {
+    display: flex; 
+    flex-wrap: wrap; 
+    align-items: center; 
+    padding: 5%;
+  }
+  
+  .image {
+    flex: 1; 
+    max-width: 100%; 
+    margin: 0 20px 0 0; 
+  }
+  
+  .content {
+    flex: 2; /* Take up 2/3 of container width */
+  }
+
+  .content h1{
+    color: #002147;
+    font-size: 300%;
+    font-weight: 900;
+  }
+
+  .content p{
+    padding-top: 5%;
+    color: #c0c0c0;
+  }
+
+  @media screen and (max-width:1000px) {
+
+    .container{
+      display: block;
+    }
+    
+  }

@@ -1,0 +1,39 @@
+.knowladge__container{
+    display: flex;
+    padding: 5%;
+    align-items: center;
+}
+
+.Knowladge__component{
+    width: 50%;
+    color: #c0c0c0;
+}
+
+.Knowladge__component img{
+    width: 100%;
+    height: auto;
+
+}
+
+.Knowladge__component h1{
+    color: #002147;
+    font-size: 300%;
+    font-weight: 900;
+    padding-bottom: 10%;
+}
+
+.Knowladge__component p{
+    text-align: justify;
+
+}
+
+@media screen  and (max-width:1000px){
+    .knowladge__container{
+        flex-direction: column-reverse;
+    }
+    .Knowladge__component{
+        width: 100%;
+
+    }
+    
+}

@@ -1,0 +1,16 @@
+.contact__infor__container{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 400px;
+    height: 100px;
+    border-radius: 10px;
+    font-size: 150%;
+    color: #002147;
+    box-shadow: 6px 6px 10px  #c0c0c040;
+
+}
+
+.icon{
+    padding: 6%;
+}

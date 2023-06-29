@@ -1,0 +1,54 @@
+.graphic__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+    color: #c0c0c0;
+
+}
+
+.graphic__component{
+    width: 50%;
+    padding: 2%;
+}
+
+.graphic__component img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px;
+}
+
+.graphic__component h2{
+    padding-bottom: 5%;
+    font-size: 200%;
+
+}
+
+.graphic__component h1{
+    font-weight: 900;
+    color: #012147;
+    font-size: 300%;
+    
+}
+
+.graphic__component h4{
+    padding: 0 0 20px 0;
+    /* color: #012147; */
+}
+.graphic__component p{
+    text-align: justify;
+}
+
+@media screen and (max-width:1000px) {
+    .graphic__container{
+        display: block;
+        padding-right: 10%;
+    }
+
+    .graphic__component{
+        width: 100%;
+        
+    }
+    
+}
