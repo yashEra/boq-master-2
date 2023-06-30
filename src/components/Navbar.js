@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import {FaBars, FaTimes} from 'react-icons/fa'
 import './style/navbar.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import facebook from '../images/facebook.svg'
 
 
     const Navbar = () =>{
@@ -43,6 +45,8 @@ import './style/navbar.css'
 
                     </nav>
                     <div className='nav-button'>
+                        <img src={facebook} alt={'facebook'}/>
+
                         <button className='nav__button__style'>Login/Register</button>
                     </div>
                     <div className="hamburger" onClick={mobileClick}>
