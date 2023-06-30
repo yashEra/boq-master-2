@@ -17,12 +17,13 @@
   /* background-color: aqua; */
   background: rgb(0,33,71);
   background: linear-gradient(180deg, rgba(0,33,71,1) 0%, rgba(7,0,107,1) 100%);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(./images//main.png);
+  /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)),url(./images//main.png); */
   /* background-image: url('./components/heder.jpg'); */
   height: 100vh;
   width: auto;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
 }
 
 .heder_cont{
@@ -46,11 +47,14 @@
 .hederText{
   
   width: 50%;
+  font-weight: 400;
+  padding-top: 4%;
 
 }
 
 .maintext{
   font-size:  60px;
+  font-weight: 900;
 }
 .heder-image{
   padding-right: 5%;
