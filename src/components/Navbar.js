@@ -22,7 +22,7 @@ import './style/navbar.css'
             <div className={color ? 'nav__color nav__color__bg': 'nav__color'}>
                 <div className="navbar">
                     <div className="logo">
-                        TEXYTO
+                        BoQMaster
 
                     </div>
 

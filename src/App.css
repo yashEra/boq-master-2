@@ -1,38 +1,233 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Josefin+Sans:ital,wght@0,600;0,700;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,600;0,700;1,600;1,700&display=swap');
+
+*{
+  font-family: 'Inter','Josefin Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ****************************************************************************** 
+                            Header
+*********************************************************************************/
+
+.heder{
+  /* background-color: aqua; */
+  background: rgb(0,33,71);
+  background: linear-gradient(180deg, rgba(0,33,71,1) 0%, rgba(7,0,107,1) 100%);
+  /* background-image: url('./components/heder.jpg'); */
+  height: 100vh;
+  width: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.heder_cont{
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  /* text-align: center; */
+  /* align-items: center;
+  justify-content: left; */
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.heder_cont div{
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding-left: 5%;
 }
 
-.App-link {
-  color: #61dafb;
+.hederText{
+  
+  width: 50%;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.maintext{
+  font-size:  60px;
+}
+.heder-image{
+  padding-right: 5%;
+}
+.heder-image img{
+  /* background-image: url(./images/heder-image-01.png); */
+
+  /* height: 60%;
+  width: auto; */
+  background-repeat: no-repeat;
+
+}
+
+.heder__button{
+  margin-top: 25px;
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 25px;
+  color: #002147;
+  border: none;
+  background-color: aliceblue;
+}
+
+.heder__button:hover{
+  
+  background-color: #c0c0c0;
+  /* transform: scaleX(105%);
+  transform: scaleY(105%); */
+  transition: 0.4s;
+}
+
+@media screen and (max-width: 1200px){
+  .maintext{
+    font-size:  30px;
   }
-  to {
-    transform: rotate(360deg);
+
+  
+}
+
+@media screen and (max-width: 1000px){
+  .heder_cont{
+    /* color: aliceblue; */
+    /* display: block; */
+    flex-direction: column;
+    flex-direction: column-reverse;
+
   }
+
+  .hederText{
+    width: 100%;
+    padding-top: 50px;
+  
+  }
+
+  .hederText p{
+    width: 90%;
+
+  }
+
+  .hederText h1{
+    /* font-size: 40px; */
+  }
+  .heder_cont div{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+  }
+  
+  .heder-image{
+    padding-top: 40%;
+  }
+  
+}
+
+/* ****************************************************************************** 
+                            WELCOME
+*********************************************************************************/
+
+
+.about__welcome{
+  padding: 5%;
+  text-align: left;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 10%;
+}
+
+.about__text{
+  width: 40%;
+  padding-right: 5%;
+}
+
+.about__welcome h1{
+  font-size: 300%;
+  font-weight: 900;
+  color: #002147;
+}
+
+.about__welcome h4{
+  font-size: 200%;
+  padding-bottom: 25px;
+  /* font-weight: 700; */
+  color: #c0c0c0;
+}
+
+.about__welcome p{
+  text-align: justify;
+  color: #c0c0c0;
+
+}
+
+.about__image img{
+  height: 60vh;
+  width: auto;
+}
+
+@media screen and (max-width: 1000px) {
+
+  .about__welcome{
+    text-align: center;
+    /* flex-direction: column; */
+    flex-direction: column-reverse;
+  }
+
+  .about__text{
+    width: 100%;
+    padding-left: 5%;
+  }
+  .about__image img{
+    height: auto;
+    width: 100%;
+  }
+  
+  
+}
+
+/* ****************************************************************************** 
+                           SERVICES
+*********************************************************************************/
+
+.services{
+  text-align: center;
+  justify-content: center;
+}
+
+.services h1{
+  color: #002147;
+  font-weight: 900;
+  padding: 5px;
+  font-size: 300%;
+  padding: 0 25% 0 25%;
+}
+
+.services h4{
+  font-size: 120%;
+  color: #c0c0c0;
+}
+
+.services h6{
+  color: #c0c0c0;
+  font-size: 120%;
+  font-weight: 500;
+  padding: 0 10px 50px 10px;
+
+}
+
+@media screen and (max-width: 1000px) {
+
+  .services h1{
+  color: #002147;
+  font-weight: 900;
+  padding: 5px;
+  font-size: 300%;
+  padding: 0;
+  }
+
 }
