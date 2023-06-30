@@ -1,14 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
-import NavBar from './components/Navbar'
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
-    <dive>
-      <NavBar/>
-
-
-    </dive>
+    <div className="App">
+      <Router>
+        <div className='heder'><Navbar /></div>
+      </Router>
+    </div>
   );
 }
 

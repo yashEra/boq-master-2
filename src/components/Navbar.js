@@ -8,8 +8,6 @@ import './style/navbar.css'
 
         const [click, setClick] = useState(false)
         const mobileClick = () => setClick(!click)
-
-
         const [color, setColor] = useState(false)
         const changeColor = () =>{
             if (window.scrollY >= 90){
@@ -71,4 +69,4 @@ import './style/navbar.css'
         )
     }
 
-  export default Navbar
+  export default Navbar;
