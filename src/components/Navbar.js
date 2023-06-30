@@ -42,6 +42,9 @@ import './style/navbar.css'
                         </ul>
 
                     </nav>
+                    <div className='nav-button'>
+                        <button className='nav__button__style'>Login/Register</button>
+                    </div>
                     <div className="hamburger" onClick={mobileClick}>
                         {click ? (<FaTimes size={30} style={{color: '#c0c0c0'}}/>):
                         <FaBars />}

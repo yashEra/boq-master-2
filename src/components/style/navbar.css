@@ -39,7 +39,7 @@
 .listul li a{
     text-decoration: none;
     color: #c0c0c0;
-    font-weight: 700;
+    font-weight: 500;
     
 }
 
@@ -109,5 +109,18 @@
         color: #002147;
         
     }
-    
 }
+.nav-button{
+    color: #c0c0c0;
+
+}
+
+.nav__button__style{
+    color: #c0c0c0;
+    font-weight: 500;
+    background-color: transparent;
+    border: 2px solid;
+    padding: 10px;
+    border-color: #c0c0c0;
+}
+    
