@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import {FaBars, FaTimes} from 'react-icons/fa'
+import {FaBars, FaTimes, FaFacebook} from 'react-icons/fa'
 import './style/navbar.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import facebook from '../images/facebook.svg'
+import linkedin from '../images/linkedin.svg'
 
 
     const Navbar = () =>{
@@ -25,10 +26,7 @@ import facebook from '../images/facebook.svg'
                 <div className="navbar">
                     <div className="logo">
                         BoQMaster
-
                     </div>
-
-
                     <nav className={click ? "list active" : "list"}>
 
                         <ul className="listul">
@@ -46,6 +44,7 @@ import facebook from '../images/facebook.svg'
                     </nav>
                     <div className='nav-button'>
                         <img src={facebook} alt={'facebook'}/>
+                        <img src={linkedin} alt={'linkedin'}/>
 
                         <button className='nav__button__style'>Login/Register</button>
                     </div>

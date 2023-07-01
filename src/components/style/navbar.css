@@ -7,7 +7,7 @@
 }
 
 .nav__color__bg{
-    background-color: #002147;
+    background-color: #470000;
     opacity: 0.9;
 }
 
@@ -118,8 +118,8 @@
 .nav-button img{
     color: #c0c0c0;
     display: flex;
-    width: 30px;
-    padding: 0 20px;
+    width: 24px;
+    padding: 0 20px 0 0;
 
 }
 

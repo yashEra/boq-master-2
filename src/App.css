@@ -17,7 +17,7 @@
   /* background-color: aqua; */
   background: rgb(0,33,71);
   /* background: linear-gradient(180deg, rgba(0,33,71,1) 0%, rgba(7,0,107,1) 100%); */
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)),url(./images//mainBanner.png);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)),url(./images//main.png);
   /* background-image: url('./components/heder.jpg'); */
   height: 100vh;
   width: auto;
@@ -74,15 +74,15 @@
   height: 50px;
   font-size: 20px;
   font-weight: 700;
-  border-radius: 25px;
-  color: #002147;
-  border: none;
-  background-color: aliceblue;
+  border-radius: 0px;
+  color: aliceblue;
+  border: 2px solid aliceblue;
+  background-color: transparent;
 }
 
 .heder__button:hover{
   
-  background-color: #c0c0c0;
+  color: #c0c0c0;
   /* transform: scaleX(105%);
   transform: scaleY(105%); */
   transition: 0.4s;
@@ -127,7 +127,7 @@
   }
   
   .heder-image{
-    padding-top: 40%;
+    padding-top: 20%;
   }
   
 }
