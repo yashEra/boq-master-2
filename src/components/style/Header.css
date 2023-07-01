@@ -7,9 +7,16 @@
     overflow-x: hidden;
 }
 
+.header__title__container{
+    height: 100vh;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0)),linear-gradient(90deg, rgba(0, 21, 47, 1), rgba(0, 0, 0, 0.4)),url(../../images/boqHeader.png);
+    overflow: hidden;
+}
+
 .header__title{
     height: 100vh;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0)),linear-gradient(90deg, rgba(0, 21, 47, 1), rgba(0, 0, 0, 0.4)),url(../../images/boqHeader.png);
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,10 +42,10 @@
 }
 
 .button__arrange{
-    width: 30%;
+    width: 22%;
     display: flex;
-    justify-content: space-around;
-    margin-left: -24px;
+    justify-content: space-between;
+    margin-left: 0;
 }
 /* .button__arrange ButtonOutline{
     margin-right: 20px;

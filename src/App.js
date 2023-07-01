@@ -1,5 +1,6 @@
 import './App.css';
 import NavBar from './components/Navbar';
+import FooterText from './components/FooterText';
 // import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import headerImage from './images/headerImage.svg'
 import {FaArrowRight} from 'react-icons/fa';
@@ -23,7 +24,9 @@ function App() {
               <img src={headerImage} alt={'heder'}/>
               
             </div>
+            
             </div>
+            <FooterText leftText="Copyrigh © 2023 | All Right Reseved." rightText="DEVELOPED BY GROUP 09" />
           </div>
       {/* <img src={headerImage} alt={'heder'}/> */}
     </div>

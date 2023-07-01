@@ -19,7 +19,7 @@ const About = () =>{
         <HeaderTitle heder='ACHIEVING YOUR DREAM' subheder='Our Team, Your Advantage'/>
         
 
-        {/* <div className='top__section'>
+        {/* {/* <div className='top__section'>
           <div className='top__section__component'>
             <Card imageSource = {require('../images/about2.jpg')} heder='The power of productivity through creative ideas.' info ='We come up with creative solutions for all your things. With the help of our team of experts, you always get professional service from us. This will increase productivity.'/>
           </div>
@@ -28,7 +28,7 @@ const About = () =>{
             <CardReverse imageSource = {require('../images/about3.jpg')} heder='Helping you open windows of the world of Technology.' info ='As opposed to the technology utilized for personal or entertainment purposes, IT is typically used in the context of corporate activities. Telecommunications and computer technology are both included in the business usage of IT.'/>
           </div>
         </div>
-        <Title title='Creative solutions for your business needs.' subtitle='As a team of professionals, we are doing our best to providing you with a high-quality service. '/>
+        <Title title='Creative solutions for your business needs.' subtitle='As a team of professionals, we are doing our best to providing you with a high-quality service. '/> */}
 
         <Services/> */}
 
