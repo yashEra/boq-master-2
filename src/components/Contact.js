@@ -4,6 +4,8 @@ import HeaderTitle from './HeaderTitle';
 import ContactInfo from './ContactInfo';
 import { FaMobile,FaEnvelopeSquare,FaSearchLocation } from 'react-icons/fa';
 import './style/navbar.css'
+import './style/Contact.css'
+import ContactForm from './ContactForm';
 // import './App.css';
 
 
@@ -12,11 +14,14 @@ const Contact = () =>{
     <div>
         <div className='nav-2'><Navbar/></div>
         <HeaderTitle heder='CONTACT US' subheder=''/>
-        <ContactInfo icon={<FaMobile  width={12} height={12}  />} contactDetails = '+94 76 647 0618'/>
-        <ContactInfo icon={<FaEnvelopeSquare  width={12} height={12}  />} contactDetails = 'contact@texyto.com'/>
-        <ContactInfo icon={<FaSearchLocation  width={12} height={12}  />} contactDetails = 'Galle, Sri Lanka'/>
-
-        
+          <div className='main__container'>
+          <div className='contact__info'>
+            <ContactInfo icon={<FaMobile  width={12} height={12}  />} contactDetails = '+94 12 345 6789'/>
+            <ContactInfo icon={<FaEnvelopeSquare  width={12} height={12}  />} contactDetails = 'contact@boqmaster.com'/>
+            <ContactInfo icon={<FaSearchLocation  width={12} height={12}  />} contactDetails = 'Galle, Sri Lanka'/>
+          </div>
+          <ContactForm/>
+        </div>
     </div>
   );
 }

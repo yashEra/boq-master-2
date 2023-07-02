@@ -16,7 +16,7 @@ function App() {
               <h2>PUTTING YOU & YOURS TOGETHER</h2>
               <h1 className='maintext'>BEFORE YOU <br/>BUILD</h1>
               <p>BoQ providing a detailed fact of quantities, specifications, and costs of materials needed for a project.</p>
-              <button type='button' className='heder__button'>Let's Talk   <FaArrowRight /></button> 
+              <button type='button' className='heder__button'>Let's Begin   </button> 
 
             </div>
             <div className='heder-image'>

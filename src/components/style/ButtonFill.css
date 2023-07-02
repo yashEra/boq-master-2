@@ -14,7 +14,32 @@
     border: 2px solid #c0c0c0;
     /* border: none; */
     padding: 10px 20px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     background: #c0c0c0;
     width: 140px;
+}
+
+/* .nav__button__style_outline a{
+    text-decoration: none;
+    color: aliceblue;
+} */
+
+.nav__button__style_fill:hover{
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    
+}
+
+a:hover{
+    cursor: pointer;
+    /* background-color: #c0c0c0; */
+    color: aliceblue;
+    
+}
+
+.scale:hover{
+    scale: 0.9;
+    transition: 1s;
+
 }

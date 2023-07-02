@@ -20,7 +20,28 @@
     background-color: transparent;
     border: 2px solid;
     padding: 10px 20px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     border-color: #c0c0c0;
     width: 140px;
+}
+
+.nav__button__style_outline:hover{
+    text-decoration: none;
+    color: aliceblue;
+    cursor: pointer;
+    border-color: aliceblue;
+    
+}
+
+a:hover{
+    cursor: pointer;
+    /* background-color: #c0c0c0; */
+    color: aliceblue;
+    
+}
+
+.scale:hover{
+    scale: 0.9;
+    transition: 1s;
+
 }

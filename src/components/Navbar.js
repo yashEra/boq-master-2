@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import {FaBars, FaTimes, FaFacebook} from 'react-icons/fa'
 import './style/navbar.css'
+import ButtonOutline from './ButtonOutline';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import facebook from '../images/facebook.svg'
 import linkedin from '../images/linkedin.svg'
@@ -46,7 +47,7 @@ import linkedin from '../images/linkedin.svg'
                         <img src={facebook} alt={'facebook'}/>
                         <img src={linkedin} alt={'linkedin'}/>
 
-                        <button className='nav__button__style'>Login/Register</button>
+                        <ButtonOutline text='Login/Signup' link="#" />
                     </div>
                     <div className="hamburger" onClick={mobileClick}>
                         {click ? (<FaTimes size={30} style={{color: '#c0c0c0'}}/>):

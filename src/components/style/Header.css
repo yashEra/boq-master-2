@@ -39,6 +39,7 @@
 }
 .header__title__component h4{
     font-weight: 700;
+    margin-bottom: 20px;
 }
 
 .button__arrange{
@@ -56,8 +57,7 @@
         width: 100%;
     }
     .button__arrange{
-        width: 100%;
-        margin-left: -20px;
+        width: 80%;
 
     }
     
