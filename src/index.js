@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import About from './components/About';
 import Contact from './components/Contact';
+import Features from './components/Features';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,10 +15,11 @@ root.render(
     <Router>
             <Routes>
               <Route path='/'element={<App/>}/>
+              <Route path='/features'element={<Features/>}/>
               <Route path='/about'element={<About/>}/>
               <Route path='/contact'element={<Contact/>}/>
             </Routes>
-          </Router>,
+          </Router>
             
 
 );

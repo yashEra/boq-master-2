@@ -13,14 +13,14 @@ const Contact = () =>{
     return(
     <div>
         <div className='nav-2'><Navbar/></div>
-        <HeaderTitle heder='CONTACT US' subheder=''/>
+        <HeaderTitle heder='CONTACT US' subheder="Get in touch with us - We are here to help!"/>
           <div className='main__container'>
           <div className='contact__info'>
             <ContactInfo icon={<FaMobile  width={12} height={12}  />} contactDetails = '+94 12 345 6789'/>
             <ContactInfo icon={<FaEnvelopeSquare  width={12} height={12}  />} contactDetails = 'contact@boqmaster.com'/>
             <ContactInfo icon={<FaSearchLocation  width={12} height={12}  />} contactDetails = 'Galle, Sri Lanka'/>
           </div>
-          <ContactForm/>
+          <div className='contact__form__container'><ContactForm/></div>
         </div>
     </div>
   );

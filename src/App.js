@@ -4,6 +4,7 @@ import FooterText from './components/FooterText';
 // import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import headerImage from './images/headerImage.svg'
 import {FaArrowRight} from 'react-icons/fa';
+import Features from './components/Features';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
               <h2>PUTTING YOU & YOURS TOGETHER</h2>
               <h1 className='maintext'>BEFORE YOU <br/>BUILD</h1>
               <p>BoQ providing a detailed fact of quantities, specifications, and costs of materials needed for a project.</p>
-              <button type='button' className='heder__button'>Let's Begin   </button> 
+              <a href='./features' className='main__button__link'><button type='button' className='heder__button'>Let's Begin   </button></a> 
 
             </div>
             <div className='heder-image'>

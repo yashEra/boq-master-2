@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
-import {FaBars, FaTimes, FaFacebook} from 'react-icons/fa'
+// import { Link } from "react-router-dom";
+import {FaBars, FaTimes} from 'react-icons/fa'
 import './style/navbar.css'
 import ButtonOutline from './ButtonOutline';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import facebook from '../images/facebook.svg'
 import linkedin from '../images/linkedin.svg'
+import { NavLink } from 'react-router-dom';
 
 
     const Navbar = () =>{
@@ -20,6 +21,12 @@ import linkedin from '../images/linkedin.svg'
                 setColor(false)
             }
         }
+
+        const navLinkStyles = ({ isActive })=>{
+            return{
+                fontWeight: isActive ? '900':'normal',
+            }
+        }
         window.addEventListener('scroll', changeColor)
 
         return(
@@ -28,17 +35,17 @@ import linkedin from '../images/linkedin.svg'
                     <div className="logo">
                         BoQMaster
                     </div>
-                    <nav className={click ? "list active" : "list"}>
+                    <nav className={click ? "list active__nav" : "list"}>
 
                         <ul className="listul">
                             <li>
-                                <Link to='/'>Home</Link>
+                                <NavLink activeClassName = 'active' style={navLinkStyles} to='/'>Home</NavLink>
                             </li>
                             <li>
-                                <Link to='/about'>About Us</Link>
+                                <NavLink activeClassName = 'active' style={navLinkStyles} to='/about'>About Us</NavLink>
                             </li>
                             <li>
-                                <Link to='/contact'>Contact Us</Link>
+                                <NavLink activeClassName = 'active' style={navLinkStyles} to='/contact'>Contact Us</NavLink>
                             </li>
                         </ul>
 

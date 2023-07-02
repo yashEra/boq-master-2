@@ -16,3 +16,42 @@
     display: block;
     justify-content: center;
 }
+
+.submit__button{
+    color: #002147;
+    font-weight: 500;
+    background-color: transparent;
+    border: 2px solid #c0c0c0;
+    /* border: none; */
+    padding: 10px 20px;
+    /* margin-top: 20px; */
+    background: #c0c0c0;
+    width: 140px;
+}
+
+.submit__button:hover {
+    scale: 0.9;
+    transition: 1s;
+}
+
+.text__area__style{
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: solid 2px#c0c0c0;
+    margin-bottom: 20px;
+}
+
+.text__area__style:hover {
+    scale: 0.9;
+    transition: 1s;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+    background: transparent;
+}
+
+/* textarea{
+    height: 10%;
+} */

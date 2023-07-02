@@ -67,10 +67,15 @@
     display: none;
 }
 
-.active{
+.active__nav{
     .listul{
         display: block;
     }
+}
+
+.active{
+    color: #470000;
+    scale: 0.9;
 }
 
 @media screen and (max-width: 1000px) {
