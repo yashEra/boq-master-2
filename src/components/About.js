@@ -66,6 +66,7 @@ specifications, and costs of materials needed for a project.' imageSource={about
         {/* <Title title='Creative solutions for your business needs.' subtitle='As a team of professionals, we are doing our best to providing you with a high-quality service. '/> */}
 
         {/* <Services/> */}
+        <Footer/>
 
 
 

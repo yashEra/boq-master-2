@@ -1,66 +1,46 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import './style/Footer.css'
-import { FaMobile,FaEnvelopeSquare,FaSearchLocation } from 'react-icons/fa';
-import logoNav from "../images/logoNav.png"
-import Map from './Map';
-
+import './style/Footer.css';
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
-    return ( 
-        <div className='footer'>
-            <div className='footer__components'>
-                <div className='footer__column'>
-                    <h2>About Us</h2>
-                    <img src={logoNav} alt={'Footer Logo'}/>
-                    <p>Texyto provides you with services in multiple disciplinaries in information technology such as Web hosting, learning tutorials, Graphic designing and a great portfolio of our work.</p>
-                </div>
-                <div className='footer__column'>
-                    <h2>Contact Us</h2>
-                    <ul>
-                        <li>
-                            <p><FaMobile />:    +94 76 647 0618</p>
-                        </li>
-                        <li>
-                        <p><FaEnvelopeSquare />:    contact@texyto.com</p>
-
-                        </li>
-                        <li>
-                        <p><FaSearchLocation />:    Galle, Sri Lanka</p>
-
-                        </li>
-                        
-                    </ul>
-                </div>
-                <div className='footer__column'>
-                    <h2>Quick Links</h2>
-                    <div className='footer__menu'>
-
-                        <ul className="footer__listul">
-                            <li>
-                                <Link to='/'>Home</Link>
-                            </li>
-                            <li>
-                                <Link to='/about'>About Us</Link>
-                            </li>
-                            <li>
-                                <Link to='/contact'>Contact Us</Link>
-                            </li>
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-            <div className='fotter__bar'>
-                <p>Copyright © 2023 texyto.com. All Rights Reserved.</p>
-
-            </div>
-            <div>
-                <Map/>
-            </div>
+  return (
+    <footer className="footer">
+      <div className="footer-content">
+        <div className="footer-section">
+          <h3>About Us</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac lacus vitae lectus aliquam tincidunt. Curabitur vel metus nec elit tempus suscipit.</p>
         </div>
-     );
-}
- 
-export default Footer;
+        <div className="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: info@example.com</p>
+          <p>Phone: 123-456-7890</p>
+        </div>
+        <div className="footer-section">
+          <h3>Quick Links</h3>
+          <div className="social-media-icons">
+          <ul className="quick__links__footer">
+             <li>
+                 <NavLink  to='/features'>Features</NavLink>
+            </li>
+            <li>
+                 <NavLink  to='/help'>Help</NavLink>
+            </li>
+             <li>
+                 <NavLink to='/about'>About Us</NavLink>
+             </li>
+            <li>
+                <NavLink to='/contact'>Contact Us</NavLink>
+            </li>
+          </ul>
 
+          </div>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <p>&copy; Copyrigh © 2023 | All Right Reseved. DEVELOPED BY GROUP 09</p>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

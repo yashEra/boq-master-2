@@ -18,14 +18,14 @@
 }
 
 .submit__button{
-    color: #002147;
+    color: #c0c0c0;
     font-weight: 500;
     background-color: transparent;
     border: 2px solid #c0c0c0;
     /* border: none; */
     padding: 10px 20px;
     /* margin-top: 20px; */
-    background: #c0c0c0;
+    /* background: #c0c0c0; */
     width: 140px;
 }
 

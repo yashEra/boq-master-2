@@ -5,6 +5,7 @@ import FooterText from './components/FooterText';
 import headerImage from './images/headerImage.svg'
 import {FaArrowRight} from 'react-icons/fa';
 import Features from './components/Features';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <FooterText leftText="Copyrigh © 2023 | All Right Reseved." rightText="DEVELOPED BY GROUP 09" />
           </div>
       {/* <img src={headerImage} alt={'heder'}/> */}
+      <Footer/>
     </div>
   );
 }

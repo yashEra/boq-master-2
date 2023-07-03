@@ -7,6 +7,7 @@ import './style/navbar.css'
 import './style/Contact.css'
 import ContactForm from './ContactForm';
 // import './App.css';
+import Footer from './Footer';
 
 
 const Contact = () =>{
@@ -22,6 +23,7 @@ const Contact = () =>{
           </div>
           <div className='contact__form__container'><ContactForm/></div>
         </div>
+        <Footer/>
     </div>
   );
 }

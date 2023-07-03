@@ -7,6 +7,7 @@ import ButtonOutline from './ButtonOutline';
 import facebook from '../images/facebook.svg'
 import linkedin from '../images/linkedin.svg'
 import { NavLink } from 'react-router-dom';
+import Footer from './Footer';
 
 
     const Navbar = () =>{
@@ -22,9 +23,14 @@ import { NavLink } from 'react-router-dom';
             }
         }
 
-        const navLinkStyles = ({ isActive })=>{
+        const navLinkStyles = ({ isActive , isHover})=>{
             return{
                 fontWeight: isActive ? '900':'normal',
+                scale: isActive ? '1.2':'1',
+                transform: isActive ? 'scale(1.2)':'scale(1)',
+                fontSize: isActive ? '110%':'100%',
+                transform: isActive ? 'translate(0px,-4px)':'translate(0px,0px)'
+
             }
         }
         window.addEventListener('scroll', changeColor)
@@ -39,13 +45,13 @@ import { NavLink } from 'react-router-dom';
 
                         <ul className="listul">
                             <li>
-                                <NavLink activeClassName = 'active' style={navLinkStyles} to='/'>Home</NavLink>
+                                <NavLink  style={navLinkStyles} to='/'>Home</NavLink>
                             </li>
                             <li>
-                                <NavLink activeClassName = 'active' style={navLinkStyles} to='/about'>About Us</NavLink>
+                                <NavLink  style={navLinkStyles} to='/about'>About Us</NavLink>
                             </li>
                             <li>
-                                <NavLink activeClassName = 'active' style={navLinkStyles} to='/contact'>Contact Us</NavLink>
+                                <NavLink  style={navLinkStyles} to='/contact'>Contact Us</NavLink>
                             </li>
                         </ul>
 
