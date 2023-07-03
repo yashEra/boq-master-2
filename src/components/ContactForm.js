@@ -27,7 +27,7 @@ export const ContactUs = () => {
       <label>Email</label><br/>
       <input className='text__area__style' type="email" name="user_email" /><br/>
       <label>Message</label><br/>
-      <textarea className='text__area__style' name="message" /><br/>
+      <textarea className='text__area__style ' name="message" /><br/>
       <input className='submit__button' type="submit" value="Send" />
     </form>
   );

@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-col">
           <h3>About Us</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac lacus vitae lectus aliquam tincidunt. Curabitur vel metus nec elit tempus suscipit.</p>
+          <p>We are a dynamic and dedicated team that specializes in delivering accurate and comprehensive Bills of Quantities. With our expertise and attention to detail, we ensure precise cost estimation and resource allocation for construction projects. </p>
         </div>
         <div className="footer-col">
           <h3>Contact Us</h3>

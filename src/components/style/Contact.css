@@ -21,6 +21,15 @@
     border-radius: 20px;
     display: block;
     justify-content: center;
+    overflow: hidden;
+    
+}
+
+.contact__info p{
+    padding-top: 8%;
+    text-align: justify;
+    font-weight: 700;
+    font-style: oblique;
 }
 
 .contact__form__container{
@@ -31,6 +40,14 @@
     border-radius: 20px;
     display: block;
     justify-content: center;
+}
+
+hr {
+    margin-top: 11%;
+    /* margin-left: 10%; */
+    width: 80%;
+    border: 2px solid;
+    border-radius: 6px;
 }
 @media screen and (max-width:1000px){
     
@@ -50,5 +67,13 @@
         padding: 5%;
         margin-left: 5%;
         justify-content: space-around;
+    }
+
+    .contact__info p{
+        width: 100%;
+        padding: 5%;
+        margin: 0%;
+        display: block;
+        justify-content: center;
     }
 }
