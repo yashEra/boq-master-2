@@ -17,6 +17,11 @@
     justify-content: center;
 }
 
+.contact__form__container:hover{
+    scale: 1.1;
+    transition: 01s;
+}
+
 .submit__button{
     color: #c0c0c0;
     font-weight: 500;
@@ -55,3 +60,10 @@ textarea:focus, input:focus{
 /* textarea{
     height: 10%;
 } */
+
+textarea:-webkit-autofill, input:-webkit-autofill{
+    -webkit-box-shadow:0 0 0 50px #28282B inset;
+    -webkit-text-fill-color: #c0c0c0;
+
+}
+

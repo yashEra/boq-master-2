@@ -32,3 +32,23 @@
     display: block;
     justify-content: center;
 }
+@media screen and (max-width:1000px){
+    
+    .main__container{
+        height: auto;
+        display: block;
+    }
+    .contact__info{
+        width: 100%;
+        padding: 5%;
+        margin: 0%;
+        display: block;
+        justify-content: center;
+    }
+    .contact__form__container{
+        width: 100%;
+        padding: 5%;
+        margin-left: 5%;
+        justify-content: space-around;
+    }
+}
