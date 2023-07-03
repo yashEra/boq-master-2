@@ -7,7 +7,6 @@ import ButtonOutline from "./ButtonOutline";
 import facebook from "../images/facebook.svg";
 import linkedin from "../images/linkedin.svg";
 import { NavLink } from "react-router-dom";
-import Footer from "./Footer";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
@@ -53,14 +52,23 @@ const Navbar = () => {
                 Contact Us
               </NavLink>
             </li>
+            <li>
+              <div className='nav__button'>
+                <img src={facebook} alt={"facebook"} />
+                <img src={linkedin} alt={"linkedin"} />
+
+                <ButtonOutline text="Login/Signup" link="#" />
+              </div>
+            </li>
           </ul>
         </nav>
-        <div className="nav-button">
+
+        {/* <div className={click ? "nav-button active__nav" : "nav-button"}>
           <img src={facebook} alt={"facebook"} />
           <img src={linkedin} alt={"linkedin"} />
 
           <ButtonOutline text="Login/Signup" link="#" />
-        </div>
+        </div> */}
         <div className="hamburger" onClick={mobileClick}>
           {click ? (
             <FaTimes size={30} style={{ color: "#c0c0c0" }} />
@@ -68,7 +76,6 @@ const Navbar = () => {
             <FaBars />
           )}
         </div>
-
         {/* <nav className={click ? 'mobile__menu active': 'mobile__menu'}>
 
                         <ul className="mobile__listul">

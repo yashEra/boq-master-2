@@ -15,15 +15,16 @@
 
   display: flex;
 
-  justify-content: space-around;
+  justify-content: space-between;
   text-decoration: none;
   align-items: center;
-  padding: 15px 0 15px 0;
+  padding: 15px 5% 15px 5%;
 }
 
 .listul {
   display: flex;
   list-style: none;
+  align-items: center;
 }
 
 .listul li {
@@ -65,6 +66,9 @@
   .listul {
     display: block;
   }
+  .nav-button{
+    display: block;
+  }
 }
 
 .active {
@@ -93,6 +97,9 @@
     transition: 0.3s;
     border-radius: 10px;
   }
+  .nav__button{
+    color: #002147;
+  }
 
   .mobile__menu {
     display: block;
@@ -108,11 +115,11 @@
     color: #002147;
   }
 }
-.nav-button {
+.nav__button {
   color: #c0c0c0;
   display: flex;
 }
-.nav-button img {
+.nav__button img {
   color: #c0c0c0;
   display: flex;
   width: 24px;
