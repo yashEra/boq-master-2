@@ -17,8 +17,8 @@ const Footer = () => {
         </div>
         <div className="footer-col">
           <h3>Contact Us</h3>
-          <p>Email: info@example.com</p>
-          <p>Phone: 123-456-7890</p>
+          <p>Email: info@boqmaster.com / contact@boqmaster.com</p>
+          <p>Phone: 123-456-7890 / 123-456-7890</p>
         </div>
         <div className="footer-col">
           <h3>Quick Links</h3>
