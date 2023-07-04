@@ -41,6 +41,8 @@
 
 .listul li a:hover {
   color: aliceblue;
+  font-size: 110%;
+  transition: 0.9s;
   /* background-color: aqua; */
 }
 
@@ -66,7 +68,7 @@
   .listul {
     display: block;
   }
-  .nav-button {
+  .nav__button {
     display: block;
   }
 }
@@ -75,6 +77,28 @@
   color: #470000;
   scale: 0.9;
 }
+
+.nav__button {
+  color: #c0c0c0;
+  display: flex;
+  align-items: center;
+}
+.nav__button img {
+  color: #c0c0c0;
+  display: flex;
+  width: 24px;
+  padding: 0 20px 0 0;
+}
+
+.navbar__social__icons{
+  display: flex;
+}
+
+.navBar__intro{
+  display: none;
+}
+
+/* ************************************************* */
 
 @media screen and (max-width: 1000px) {
   .hamburger {
@@ -86,19 +110,46 @@
     display: none;
     position: fixed;
     right: 0%;
-    top: 90px;
+    top: 66px;
     flex-direction: column;
-    background-color: #c0c0c0;
+    background-color: #002147;
     opacity: 0.9;
     width: 100%;
-    height: auto;
+    height: 100%;
     z-index: 999;
-    text-align: center;
+    text-align: left;
     transition: 0.3s;
     border-radius: 10px;
+    transform: 1s;
+    font-size: larger;
   }
+
+  .listul li {
+    font-size: 140%;
+  }
+
+  .nav__button a img {
+    padding: 0 20px 0 0;
+  }
+
+
   .nav__button {
     color: #002147;
+    /* display: block; */
+    /* justify-content: center; */
+  }
+
+  .nav__button a {
+    color: #c0c0c0;
+    display: flex;
+    justify-content: left;
+    padding: 5% 0 5% 0;
+  }
+  .nav__button img {
+    color: #c0c0c0;
+    display: flex;
+    justify-content: center;
+    padding: 0;
   }
 
   .mobile__menu {
@@ -106,31 +157,25 @@
   }
 
   .listul li {
-    padding: 25px;
+    padding: 15px 25px 8px 25px;
   }
 
   .listul li a {
     /* padding: 10%; */
     text-decoration: none;
-    color: #002147;
+    color: #c0c0c0;
   }
-}
-.nav__button {
-  color: #c0c0c0;
-  display: flex;
-}
-.nav__button img {
-  color: #c0c0c0;
-  display: flex;
-  width: 24px;
-  padding: 0 20px 0 0;
+
+  .navBar__intro{
+    display: block;
+    /* background-color: #c0c0c0; */
+  }
+
+  .navBar__intro p{
+    font-size: 16px;
+  }
+
 }
 
-.nav__button__style {
-  color: #c0c0c0;
-  font-weight: 500;
-  background-color: transparent;
-  border: 2px solid;
-  padding: 10px;
-  border-color: #c0c0c0;
-}
+/* **************************************************** */
+

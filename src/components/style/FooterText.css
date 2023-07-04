@@ -26,8 +26,8 @@
 
 .footer__container p {
   color: aliceblue;
-  padding-right: 5%;
-  padding-left: 4%;
+  padding-right: 6%;
+  padding-left: 5%;
   /* text-shadow: 0px 2px 4px #000000 ; */
 }
 @media screen and (max-width: 1000px) {

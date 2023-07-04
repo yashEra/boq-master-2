@@ -53,12 +53,26 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li>
-              <div className='nav__button'>
-                <img src={facebook} alt={"facebook"} />
-                <img src={linkedin} alt={"linkedin"} />
+              <div className="nav__button">
+                <div className="navbar__social__icons">
+                  <a>
+                    <img src={facebook} alt={"facebook"} />
+                  </a>
+                  <a>
+                    <img src={linkedin} alt={"linkedin"} />
+                  </a>
+                </div>
 
                 <ButtonOutline text="Login/Signup" link="#" />
               </div>
+            </li>
+            <li className="navBar__intro">
+              <p>
+                We are a dynamic and dedicated team that specializes in
+                delivering accurate and comprehensive Bills of Quantities. With
+                our expertise and attention to detail, we ensure precise cost
+                estimation and resource allocation for construction projects.
+              </p>
             </li>
           </ul>
         </nav>
