@@ -63,7 +63,7 @@ const Navbar = () => {
                   </a>
                 </div>
 
-                <ButtonOutline text="Login/Signup" link="#" />
+                <ButtonOutline text="Login/Signup" link="/login" />
               </div>
             </li>
             <li className="navBar__intro">

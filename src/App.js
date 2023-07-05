@@ -1,10 +1,7 @@
 import "./App.css";
 import NavBar from "./components/Navbar";
 import FooterText from "./components/FooterText";
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import headerImage from "./images/headerImage.svg";
-import { FaArrowRight } from "react-icons/fa";
-import Features from "./components/Features";
 import Footer from "./components/Footer";
 
 function App() {

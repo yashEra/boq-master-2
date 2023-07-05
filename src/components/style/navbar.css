@@ -90,11 +90,11 @@
   padding: 0 20px 0 0;
 }
 
-.navbar__social__icons{
+.navbar__social__icons {
   display: flex;
 }
 
-.navBar__intro{
+.navBar__intro {
   display: none;
 }
 
@@ -113,7 +113,7 @@
     top: 66px;
     flex-direction: column;
     background-color: #002147;
-    opacity: 0.9;
+    /* opacity: 1; */
     width: 100%;
     height: 100%;
     z-index: 999;
@@ -123,15 +123,17 @@
     transform: 1s;
     font-size: larger;
   }
+  .nav__color__bg {
+    opacity: 1;
+  }
 
   .listul li {
-    font-size: 140%;
+    font-size: 120%;
   }
 
   .nav__button a img {
     padding: 0 20px 0 0;
   }
-
 
   .nav__button {
     color: #002147;
@@ -166,16 +168,14 @@
     color: #c0c0c0;
   }
 
-  .navBar__intro{
+  .navBar__intro {
     display: block;
     /* background-color: #c0c0c0; */
   }
 
-  .navBar__intro p{
+  .navBar__intro p {
     font-size: 16px;
   }
-
 }
 
 /* **************************************************** */
-

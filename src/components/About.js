@@ -1,14 +1,8 @@
 import React from "react";
 import Navbar from "./Navbar";
 import HeaderTitle from "./HeaderTitle";
-import Member from "./Member";
-import Title from "./Title";
-import Card from "./Card";
-import CardReverse from "./CardReverse";
 import Footer from "./Footer";
 import "./style/About.css";
-import Services from "./Services";
-import ButtonOutline from "./ButtonOutline";
 import SectionInfo from "./SectionInfo";
 import aboutImage from "../images/aboutImage.svg";
 
