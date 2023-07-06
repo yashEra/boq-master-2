@@ -47,6 +47,12 @@ const Signup = () => {
             </td>
           </tr>
           <tr>
+            <td>First Name</td>
+            <td>
+              <input type="text" name="firstName" onChange={handleChange}/>
+            </td>
+          </tr>
+          <tr>
             <td>Last Name</td>
             <td>
               <input type="text" name="lastName" onChange={handleChange}/>
