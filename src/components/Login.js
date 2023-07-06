@@ -18,7 +18,7 @@ const Login = () => {
 
   return (
     <div>
-      <form action={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <table>
           <tr>
             <td>User Name</td>
@@ -39,7 +39,6 @@ const Login = () => {
                 type="submit"
                 name="submit"
                 value="Submit"
-                onClick={handleSubmit}
               />
             </td>
           </tr>

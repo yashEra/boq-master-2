@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import axios from "axios";
 
 const Signup = () => {
   const [inputs, setInputs] = useState({});
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -10,15 +11,34 @@ const Signup = () => {
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    axios.post('http://localhost:3000/api/user/save', inputs);
-    console.log(inputs);
-  };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   const url = "http://localhost:3000/src/php/index.php"
+  //   axios.post(url, inputs);
+  //   console.log(inputs);
+  // };
+
+  const handleSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      const form = document.getElementById("form");
+      const formData = new FormData(form);
+
+      axios
+        .post(
+          "http://localhost:80/boq_master/src/php/index.php",
+          formData
+        )
+        .then((res) => console.log(res))
+        .then(setSubmitted(true))
+        .catch((err) => console.log(err));
+    },
+    [setSubmitted]
+  );
 
   return (
     <div>
-      <form action={handleSubmit}>
+      <form id = "form" onSubmit={handleSubmit}>
         <table>
           <tr>
             <td>User Name</td>
@@ -59,7 +79,7 @@ const Signup = () => {
           <tr>
             <td></td>
             <td>
-              <input type="submit" name="submit" value="Submit" onClick={handleSubmit}/>
+              <input type="submit" name="submit" value="Submit"/>
             </td>
           </tr>
         </table>
