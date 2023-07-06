@@ -1,5 +1,8 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useHistory } from "react";
 import axios from "axios";
+import './style/Signup.css';
+import Navbar from "./Navbar";
+
 
 const Signup = () => {
   const [inputs, setInputs] = useState({});
@@ -23,22 +26,20 @@ const Signup = () => {
       e.preventDefault();
       const form = document.getElementById("form");
       const formData = new FormData(form);
+      // const history = useHistory();
 
       axios
-        .post(
-          "http://localhost:80/boq_master/src/php/index.php",
-          formData
-        )
+        .post("http://localhost:80/boq_master/src/php/index.php", formData)
         .then((res) => console.log(res))
         .then(setSubmitted(true))
-        .catch((err) => console.log(err));
     },
     [setSubmitted]
   );
 
   return (
     <div>
-      <form id = "form" onSubmit={handleSubmit}>
+      <div><Navbar/></div>
+      <form className="signup__table__container" id="form" onSubmit={handleSubmit}>
         <table>
           <tr>
             <td>User Name</td>
@@ -49,43 +50,43 @@ const Signup = () => {
           <tr>
             <td>First Name</td>
             <td>
-              <input type="text" name="firstName" onChange={handleChange}/>
+              <input type="text" name="firstName" onChange={handleChange} />
             </td>
           </tr>
           <tr>
             <td>Last Name</td>
             <td>
-              <input type="text" name="lastName" onChange={handleChange}/>
+              <input type="text" name="lastName" onChange={handleChange} />
             </td>
           </tr>
           <tr>
             <td>Email</td>
             <td>
-              <input type="email" name="email" onChange={handleChange}/>
+              <input type="email" name="email" onChange={handleChange} />
             </td>
           </tr>
           <tr>
             <td>Phone Number</td>
             <td>
-              <input type="text" name="phoneNumber" onChange={handleChange}/>
+              <input type="text" name="phoneNumber" onChange={handleChange} />
             </td>
           </tr>
           <tr>
             <td>Account Type</td>
             <td>
-              <input type="text" name="accountType" onChange={handleChange}/>
+              <input type="text" name="accountType" onChange={handleChange} />
             </td>
           </tr>
           <tr>
             <td>Password</td>
             <td>
-              <input type="passWord" name="password" onChange={handleChange}/>
+              <input type="passWord" name="password" onChange={handleChange} />
             </td>
           </tr>
           <tr>
             <td></td>
             <td>
-              <input type="submit" name="submit" value="Submit"/>
+              <input type="submit" name="submit" value="Submit" />
             </td>
           </tr>
         </table>

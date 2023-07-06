@@ -1,36 +1,45 @@
 <?php
 error_reporting(E_ALL);
-ini_set('display_erros', 1);
+ini_set('display_errors', 1);
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
+header("Access-Control-Allow-Methods: *");
 
 include "DbConnect.php";
 $objDb = new DbConnect();
-$con = $objDb->connect();
+$conn = $objDb->connect();
 
-var_dump($con);
+var_dump($conn);
 
-$user = file_get_contents('php://input');
+$user = $_POST;
 $method = $_SERVER['REQUEST_METHOD'];
 
-switch($method){
+$userName = $user['userName'];
+$firstName = $user['firstName'];
+$lastName = $user['lastName'];
+$email = $user['email'];
+$phoneNumber = $user['phoneNumber'];
+$accountType = $user['accountType'];
+$password = $user['password'];
+
+switch ($method) {
     case 'POST':
-        $user = json_decode(file_get_contents('php://input'));
-        $sql = "INSERT INTO user(id,userName, firstName, lastName, email, phoneNumber, accountType, password) VALUES(:userName, :firstName, :lastName, :email, :phoneNumber, :accountType, :password)";
-        $stmt = $con->prepare($sql);
-        $stmt->bindParam(':userName',$user->userName);
-        $stmt->bindParam(':firstName',$user->firstName);
-        $stmt->bindParam(':lastName',$user->lastName);
-        $stmt->bindParam(':email',$user->email);
-        $stmt->bindParam(':phoneNumber',$user->phoneNumber);
-        $stmt->bindParam(':accountType',$user->accountType);
-        $stmt->bindParam(':password',$user->password);
+        $sql = "INSERT INTO user(userName, firstName, lastName, email, phoneNumber, accountType, password) VALUES(:userName, :firstName, :lastName, :email, :phoneNumber, :accountType, :password)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':userName', $userName);
+        $stmt->bindParam(':firstName', $firstName);
+        $stmt->bindParam(':lastName', $lastName);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':phoneNumber', $phoneNumber);
+        $stmt->bindParam(':accountType', $accountType);
+        $stmt->bindParam(':password', $password);
 
-        if($stmt->execute()){
-            $response = ['status' => 1, 'message' => "Successfully Recorded."];
-        }else{
-            $response = ['status' => 0, 'message' => "Faild to create recorde."];
+        if ($stmt->execute()) {
+            $response = ['status' => 1, 'message' => 'Registration successfully.'];
+            // header('Location: http://localhost:80/boq_master/src/App.js')
+        } else {
+            $response = ['status' => 0, 'message' => 'Failed to Register.'];
         }
-
+        echo json_encode($response);
         break;
 }

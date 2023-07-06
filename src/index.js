@@ -7,7 +7,8 @@ import reportWebVitals from "./reportWebVitals";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Features from "./components/Features";
-import Login from './components/Login'
+import Login from './components/Login';
+import Signup from "./components/Signup";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -19,6 +20,7 @@ root.render(
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
     </Routes>
   </Router>
 );
