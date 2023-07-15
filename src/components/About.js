@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import "./style/About.css";
 import SectionInfo from "./SectionInfo";
 import aboutImage from "../images/aboutImage.svg";
+import TeamMembers from "./TeamMembers";
 
 // import './App.css';
 
@@ -66,6 +67,7 @@ specifications, and costs of materials needed for a project."
       {/* <Title title='Creative solutions for your business needs.' subtitle='As a team of professionals, we are doing our best to providing you with a high-quality service. '/> */}
 
       {/* <Services/> */}
+      <TeamMembers/>
       <Footer />
     </div>
   );
