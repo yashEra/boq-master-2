@@ -10,20 +10,20 @@ const Footer = () => {
           <li class="w-1/2 md:w-1/3 lg:w-1/3">
             <div class="text-center">
               <h2 class="text-gray-500 dark:text-gray-200 text-md uppercase mb-4">
-                Components
+                Quick Links
               </h2>
               <ul>
                 <li class="mb-4 transition-colors duration-200 hover:text-gray-800 dark:hover:text-white">
-                  <a href="#">Elements</a>
+                  <a href="/about">About Us</a>
                 </li>
                 <li class="mb-4 transition-colors duration-200 hover:text-gray-800 dark:hover:text-white">
-                  <a href="#">Forms</a>
+                  <a href="/contact">Contact</a>
                 </li>
                 <li class="mb-4 transition-colors duration-200 hover:text-gray-800 dark:hover:text-white">
-                  <a href="#">Commerces</a>
+                  <a href="#">Services</a>
                 </li>
                 <li class="mb-4 transition-colors duration-200 hover:text-gray-800 dark:hover:text-white">
-                  <a href="#">Navigation</a>
+                  <a href="#">Get BoQ</a>
                 </li>
               </ul>
             </div>
@@ -31,20 +31,20 @@ const Footer = () => {
           <li class="w-1/2 md:w-1/3 lg:w-1/3">
             <div class="text-center">
               <h2 class="text-gray-500 dark:text-gray-200 text-md uppercase mb-4">
-                Contacts
+                Tools
               </h2>
               <ul>
                 <li class="mb-4 transition-colors duration-200 hover:text-gray-800 dark:hover:text-white">
-                  <a href="#">Github</a>
+                  <a href="#">BoQ</a>
                 </li>
                 <li class="mb-4 transition-colors duration-200 hover:text-gray-800 dark:hover:text-white">
-                  <a href="#">Facebook</a>
+                  <a href="#">BoQ</a>
                 </li>
                 <li class="mb-4 transition-colors duration-200 hover:text-gray-800 dark:hover:text-white">
-                  <a href="#">Twitter</a>
+                  <a href="#">BoQ</a>
                 </li>
                 <li class="mb-4 transition-colors duration-200 hover:text-gray-800 dark:hover:text-white">
-                  <a href="#">LinkedIn</a>
+                  <a href="#">BoQ</a>
                 </li>
               </ul>
             </div>
@@ -52,20 +52,20 @@ const Footer = () => {
           <li class="w-1/2 md:w-1/3 lg:w-1/3">
             <div class="text-center">
               <h2 class="text-gray-500 dark:text-gray-200 text-md uppercase mb-4">
-                Customization
+                Help
               </h2>
               <ul>
                 <li class="mb-4 transition-colors duration-200 hover:text-gray-800 dark:hover:text-white">
-                  <a href="#">Settings</a>
+                  <a href="#">Quick Guid</a>
                 </li>
                 <li class="mb-4 transition-colors duration-200 hover:text-gray-800 dark:hover:text-white">
-                  <a href="#">Themes</a>
+                  <a href="#">Video Demo</a>
                 </li>
                 <li class="mb-4 transition-colors duration-200 hover:text-gray-800 dark:hover:text-white">
-                  <a href="#">Plugins</a>
+                  <a href="#">Help Center</a>
                 </li>
                 <li class="mb-4 transition-colors duration-200 hover:text-gray-800 dark:hover:text-white">
-                  <a href="#">LinkedIn</a>
+                  <a href="/login">Meet our Professionals</a>
                 </li>
               </ul>
             </div>
