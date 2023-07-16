@@ -10,6 +10,7 @@ import Features from "./components/Features";
 import Login from './components/Login';
 import Signup from "./components/Signup";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Services from "./components/Services";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -21,6 +22,7 @@ root.render(
       <Route path="/contact" element={<Contact />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/sevices" element={<Services />} />
     </Routes>
   </Router>
 );

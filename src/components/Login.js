@@ -33,7 +33,7 @@ const Login = () => {
   return (
     <div>
       <div><Navbar/></div>
-      <form id="form" onSubmit={handleSubmit}>
+      <form id="form" onSubmit={handleSubmit}  style={{paddingTop:"100px"}}>
         <table>
           <tbody className="login__table">
             <tr>
