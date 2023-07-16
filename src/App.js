@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App">
+    <div >
       <div className="heder">
         <NavBar />
         <div className="heder_cont">

@@ -34,8 +34,8 @@ const Login = () => {
     <div>
       <div><Navbar/></div>
       <form id="form" onSubmit={handleSubmit}>
-        <table className="login__table">
-          <tbody>
+        <table>
+          <tbody className="login__table">
             <tr>
               <td>User Name</td>
               <td>

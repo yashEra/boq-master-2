@@ -4,7 +4,7 @@
   font-family: "Inter", "Josefin Sans", sans-serif;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 .features__main__container {
   height: 100vh;
