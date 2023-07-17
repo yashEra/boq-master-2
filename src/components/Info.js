@@ -1,5 +1,5 @@
 import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
-import WelcomeHome from "../images/headerImage.svg"
+import WelcomeHome from "../images/building-01.svg"
 
 const features = [
   {
