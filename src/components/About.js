@@ -6,7 +6,7 @@ import "./style/About.css";
 import SectionInfo from "./SectionInfo";
 import aboutImage from "../images/aboutImage.svg";
 import TeamMembers from "./TeamMembers";
-import HeaderImage from "../images/headerImage.svg"
+import HeaderImage from "../images/building-02.svg"
 
 // import './App.css';
 
