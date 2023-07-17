@@ -62,9 +62,9 @@ input:focus {
     height: 10%;
 } */
 
-textarea:-webkit-autofill,
+/* textarea:-webkit-autofill,
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 50px #28282b inset;
   -webkit-text-fill-color: #c0c0c0;
   -webkit-border-before: none;
-}
+} */
