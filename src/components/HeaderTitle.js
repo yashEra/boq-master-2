@@ -4,16 +4,16 @@ import Header01 from "../images/header01.jpg"
 
 const HeaderTitle = (props) => {
   const links = [
-    { name: 'Open roles', href: '#' },
-    { name: 'Internship program', href: '#' },
-    { name: 'Our values', href: '#' },
+    { name: 'BoQ Tool', href: '#' },
+    { name: 'Meet our Professionals', href: '#' },
+    { name: 'Our Features', href: '#' },
     { name: 'Meet our leadership', href: '#' },
   ]
   const stats = [
-    { name: 'Offices worldwide', value: '12' },
-    { name: 'Full-time colleagues', value: '300+' },
-    { name: 'Hours per week', value: '40' },
-    { name: 'Paid time off', value: 'Unlimited' },
+    { name: 'Useful Tools', value: '6+' },
+    { name: 'Professionals', value: '10+' },
+    { name: 'Support', value: '24/7' },
+    { name: 'Quota remaining', value: 'Unlimited' },
   ]
   return (
       <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">

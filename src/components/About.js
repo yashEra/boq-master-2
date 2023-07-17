@@ -6,6 +6,7 @@ import "./style/About.css";
 import SectionInfo from "./SectionInfo";
 import aboutImage from "../images/aboutImage.svg";
 import TeamMembers from "./TeamMembers";
+import HeaderImage from "../images/headerImage.svg"
 
 // import './App.css';
 
@@ -29,7 +30,7 @@ to calculate the quantities of materials required, determine their respective co
 for these materials. In case of that, we have chosen to develop a Bill of Quantities (Here in after refer to as BoQ) 
 system which is a vital document in the construction industry, providing a detailed fact of quantities, 
 specifications, and costs of materials needed for a project."
-          imageSource={aboutImage}
+          imageSource={HeaderImage}
         />
 
         {/* <div className='top__section'>

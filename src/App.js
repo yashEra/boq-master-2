@@ -1,25 +1,21 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Services from "./components/Services"
-import FooterText from "./components/FooterText";
-import headerImage from "./images/headerImage.svg";
 import Footer from "./components/Footer";
-import Main from "./images/main.png"
-import { useState } from "react";
-import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Main from "./images/mainBg.svg";
+import Info from "./components/Info";
+
 
 function App() {
   return (
     <div>
-      {" "}
       <Navbar />
-      <div className="relative isolate">
-      <img
+      <div className="relative isolate heder">
+      {/* <img
         src={Main}
         alt=""
         className="absolute inset-0 -z-10 h-auto w-full object-cover object-right md:object-center"
-      />
+      /> */}
         <div className="relative isolate px-6 pt-14 lg:px-8">
           <div
             className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -35,7 +31,7 @@ function App() {
           </div>
           <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
             <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-              <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-slate-300 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+              <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-slate-300 ring-1 ring-slate-300 hover:ring-gray-900">
                 Announcing our next round of funding.{" "}
                 <a href="#" className="font-semibold text-indigo-600">
                   <span className="absolute inset-0" aria-hidden="true" />
@@ -81,6 +77,7 @@ function App() {
           </div>
         </div>
       </div>
+      <Info/>
       <Services/>
       <Footer />
     </div>
