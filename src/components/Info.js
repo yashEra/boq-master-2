@@ -1,22 +1,22 @@
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
+import { ArrowRightIcon } from '@heroicons/react/20/solid'
 import WelcomeHome from "../images/building-01.svg"
 
 const features = [
   {
-    name: 'Push to deploy.',
+    name: 'Online BoQ platform:',
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: CloudArrowUpIcon,
+      'Provide a comprehensive understanding of the raw materials required and associated costs to a person who is not familiar with the construction',
+    icon: ArrowRightIcon,
   },
   {
-    name: 'SSL certificates.',
-    description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
-    icon: LockClosedIcon,
+    name: 'Easy to use:',
+    description: ' Empower the client who is lacking knowledge in building construction to accurately compare and estimate prices and determine the quantity of raw materials based on the BoQ provided by the contractors',
+    icon: ArrowRightIcon,
   },
   {
-    name: 'Database backups.',
-    description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-    icon: ServerIcon,
+    name: 'Consolting Platform:',
+    description: 'Allows the clients to connect with and engage with qualified professionals, such as Quantity Surveyors, Civil Engineers, and Architects',
+    icon: ArrowRightIcon,
   },
 ]
 
@@ -27,11 +27,13 @@ export default function Info() {
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pr-8 lg:pt-4">
             <div className="lg:max-w-lg">
-              <h2 className="text-base font-semibold leading-7 text-indigo-600">Deploy faster</h2>
-              <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">A better workflow</p>
+              <h2 className="text-base font-semibold leading-7 text-indigo-600">Who we are?</h2>
+              <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">BoQ master</p>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque,
-                iste dolor cupiditate blanditiis ratione.
+              We are a dynamic and dedicated team that specializes in delivering
+            accurate and comprehensive Bills of Quantities. With our expertise
+            and attention to detail, we ensure precise cost estimation and
+            resource allocation for construction projects.
               </p>
               <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
                 {features.map((feature) => (

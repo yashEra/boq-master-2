@@ -2,9 +2,10 @@ import React, { useState, useCallback } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
 import Signup from "./Signup";
-import './style/Login.css'
+import "./style/Login.css";
 // import { Link } from "react-scroll";
 import { Link } from "react-router-dom";
+import Footer from "./Footer"
 
 const Login = () => {
   const [inputs, setInputs] = useState({});
@@ -25,41 +26,62 @@ const Login = () => {
       axios
         .post("http://localhost:80/boq_master/src/php/login.php", formData)
         .then((res) => console.log(res))
-        .then(setSubmitted(true))
+        .then(setSubmitted(true));
     },
     [setSubmitted]
   );
-  
+
   return (
     <div>
-      <div><Navbar/></div>
-      <form id="form" onSubmit={handleSubmit}  style={{paddingTop:"100px"}}>
-        <table>
-          <tbody className="login__table">
-            <tr>
-              <td>User Name</td>
-              <td>
-                <input type="text" name="userName" onChange={handleChange} />
-              </td>
-            </tr>
-            <tr>
-              <td>Password</td>
-              <td>
-                <input
-                  type="password" name="password"  onChange={handleChange} />
-              </td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>
-                <input type="submit" name="submit" value="Submit" />
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </form>
-      <div><Link to='/signup'>Signup</Link></div>
-      {/* <Signup /> */}
+      <div>
+        <Navbar />
+      </div>
+      <div class="box">
+        <div class="container">
+          <div class="top">
+            <span class="span__1">Have an account?</span>
+            <header class="header_1">Login</header>
+          </div>
+          <form id="form" onSubmit={handleSubmit} style={{paddingBottom: "94px"}}>
+            <div class="input-field">
+              <input className="input"
+                type="text"
+                name="userName"
+                placeholder="Username"
+                onChange={handleChange}
+              />
+            </div>
+            <div class="input-field">
+              <input
+                className="input"
+                type="password"
+                name="password"
+                placeholder="Password"
+                onChange={handleChange}
+              />
+            </div>
+            <div class="input-field">
+              <input
+                className="submit"
+                type="submit"
+                name="submit"
+                value="Submit"
+              />
+            </div>
+            <div class="two-col">
+              <div class="one">
+                <label for="check"> Haven't an Account</label>
+              </div>
+              <div class="two">
+                <label>
+                  <a href="/signup">Sign up Now!</a>
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <Footer/>
     </div>
   );
 };

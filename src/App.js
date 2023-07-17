@@ -32,8 +32,8 @@ function App() {
           <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
             <div className="hidden sm:mb-8 sm:flex sm:justify-center">
               <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-slate-300 ring-1 ring-slate-300 hover:ring-gray-900">
-                Announcing our next round of funding.{" "}
-                <a href="#" className="font-semibold text-indigo-600">
+                Get more about us.{" "}
+                <a href="/about" className="font-semibold text-indigo-600">
                   <span className="absolute inset-0" aria-hidden="true" />
                   Read more <span aria-hidden="true">&rarr;</span>
                 </a>
@@ -49,13 +49,13 @@ function App() {
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
-                  href="#"
+                  href="./signup"
                   className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Let's Begin
                 </a>
                 <a
-                  href="#"
+                  href="/features"
                   className="text-sm font-semibold leading-6 text-slate-300"
                 >
                   More Info <span aria-hidden="true">→</span>
@@ -81,39 +81,6 @@ function App() {
       <Services/>
       <Footer />
     </div>
-
-    // <div >
-    //   <div className="heder">
-    //     <NavBar />
-    //     <div className="heder_cont">
-    //       <div className="hederText">
-    //         <h2>PUTTING YOU & YOURS TOGETHER</h2>
-    //         <h1 className="maintext">
-    //           BEFORE YOU <br />
-    //           BUILD
-    //         </h1>
-    //         <p>
-    //           BoQ providing a detailed fact of quantities, specifications, and
-    //           costs of materials needed for a project.
-    //         </p>
-    //         <a href="./features" className="main__button__link">
-    //           <button type="button" className="heder__button">
-    //             Let's Begin{" "}
-    //           </button>
-    //         </a>
-    //       </div>
-    //       <div className="heder-image">
-    //         <img src={headerImage} alt={"heder"} />
-    //       </div>
-    //     </div>
-    //     <FooterText
-    //       leftText="Copyrigh © 2023 | All Right Reseved."
-    //       rightText="DEVELOPED BY GROUP 09"
-    //     />
-    //   </div>
-    //   {/* <img src={headerImage} alt={'heder'}/> */}
-    //   <Footer />
-    // </div>
   );
 }
 

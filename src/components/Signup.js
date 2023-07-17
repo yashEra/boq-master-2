@@ -1,8 +1,8 @@
 import React, { useState, useCallback, useHistory } from "react";
 import axios from "axios";
-import './style/Signup.css';
+import "./style/Signup.css";
 import Navbar from "./Navbar";
-
+import Footer from "./Footer"
 
 const Signup = () => {
   const [inputs, setInputs] = useState({});
@@ -31,66 +31,115 @@ const Signup = () => {
       axios
         .post("http://localhost:80/boq_master/src/php/index.php", formData)
         .then((res) => console.log(res))
-        .then(setSubmitted(true))
+        .then(setSubmitted(true));
     },
     [setSubmitted]
   );
 
   return (
     <div>
-      <div><Navbar/></div>
-      <form className="signup__table__container" id="form" onSubmit={handleSubmit}>
-        <table>
-          <tr>
-            <td>User Name</td>
-            <td>
-              <input type="text" name="userName" onChange={handleChange} />
-            </td>
-          </tr>
-          <tr>
-            <td>First Name</td>
-            <td>
-              <input type="text" name="firstName" onChange={handleChange} />
-            </td>
-          </tr>
-          <tr>
-            <td>Last Name</td>
-            <td>
-              <input type="text" name="lastName" onChange={handleChange} />
-            </td>
-          </tr>
-          <tr>
-            <td>Email</td>
-            <td>
-              <input type="email" name="email" onChange={handleChange} />
-            </td>
-          </tr>
-          <tr>
-            <td>Phone Number</td>
-            <td>
-              <input type="text" name="phoneNumber" onChange={handleChange} />
-            </td>
-          </tr>
-          <tr>
-            <td>Account Type</td>
-            <td>
-              <input type="text" name="accountType" onChange={handleChange} />
-            </td>
-          </tr>
-          <tr>
-            <td>Password</td>
-            <td>
-              <input type="passWord" name="password" onChange={handleChange} />
-            </td>
-          </tr>
-          <tr>
-            <td></td>
-            <td>
-              <input type="submit" name="submit" value="Submit" />
-            </td>
-          </tr>
-        </table>
-      </form>
+      <div>
+        <Navbar />
+      </div>
+      <div class="box">
+        <div class="container">
+          <div class="top">
+            {/* <span class="span__1">Have an account?</span> */}
+            <header class="header_1">Login</header>
+          </div>
+          <form id="form" onSubmit={handleSubmit} style={{paddingBottom:"90px"}}>
+            <div class="input-field">
+              <input
+                className="input"
+                type="text"
+                name="userName"
+                placeholder="Username"
+                onChange={handleChange}
+              />
+            </div>
+
+            <div class="input-field">
+              <input
+                className="input"
+                type="text"
+                name="firstName"
+                placeholder="Frist name"
+                onChange={handleChange}
+              />
+            </div>
+
+            <div class="input-field">
+              <input
+                className="input"
+                type="text"
+                name="lastName"
+                placeholder="Last name"
+                onChange={handleChange}
+              />
+            </div>
+
+            <div class="input-field">
+              <input
+                className="input"
+                type="email"
+                name="email"
+                placeholder="Email"
+                onChange={handleChange}
+              />
+            </div>
+
+            <div class="input-field">
+              <input
+                className="input"
+                type="text"
+                name="phoneNumber"
+                placeholder="Phone number"
+                onChange={handleChange}
+              />
+            </div>
+
+            <div class="input-field">
+              <input
+                className="input"
+                type="text"
+                name="accountType"
+                placeholder="Account Type"
+                onChange={handleChange}
+              />
+            </div>
+
+            <div class="input-field">
+              <input
+                className="input"
+                type="passWord"
+                name="password"
+                placeholder="Password"
+                onChange={handleChange}
+              />
+            </div>
+
+            <div class="input-field">
+              <input
+                className="submit"
+                type="submit"
+                name="submit"
+                value="Submit"
+              />
+            </div>
+            <div class="two-col">
+              <div class="one">
+                <label for="check"> Have an Account</label>
+              </div>
+              <div class="two">
+                <label>
+                  <a href="/login">Login Now!</a>
+                </label>
+                </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <Footer/>
     </div>
   );
 };
