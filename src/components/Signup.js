@@ -45,7 +45,7 @@ const Signup = () => {
         <div class="container">
           <div class="top">
             {/* <span class="span__1">Have an account?</span> */}
-            <header class="header_1">Login</header>
+            <header class="header_1">Sing up</header>
           </div>
           <form id="form" onSubmit={handleSubmit} style={{paddingBottom:"90px"}}>
             <div class="input-field">

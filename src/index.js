@@ -11,6 +11,7 @@ import Login from './components/Login';
 import Signup from "./components/Signup";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Services from "./components/Services";
+import HelpCenter from "./components/HelpCenter";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -23,6 +24,7 @@ root.render(
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/sevices" element={<Services />} />
+      <Route path="/helpcenter" element={<HelpCenter />} />
     </Routes>
   </Router>
 );

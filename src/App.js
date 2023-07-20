@@ -41,7 +41,7 @@ function App() {
             </div>
             <div className="text-center">
               <h1 className="text-4xl font-bold tracking-tight text-slate-300 sm:text-6xl">
-                Data to enrich your online business
+              Unleashing the Power of Automated BoQ Generation!
               </h1>
               <p className="mt-6 text-lg leading-8 text-slate-300">
                 BoQ providing a detailed fact of quantities, specifications, and

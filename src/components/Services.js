@@ -1,41 +1,41 @@
-import { ArrowPathIcon, FingerPrintIcon,DocumentTextIcon, UserCircleIcon, BanknotesIcon, WindowIcon, CalculatorIcon, HandRaisedIcon,wall } from '@heroicons/react/24/outline'
+import { ArrowPathIcon, FingerPrintIcon,DocumentTextIcon, UserCircleIcon, BanknotesIcon, WindowIcon, CalculatorIcon, HandRaisedIcon,DocumentIcon } from '@heroicons/react/24/outline'
 
 const features = [
   {
     name: 'BoQ Tool',
     description:
-      'Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.',
+      'Streamlining construction projects with accurate and comprehensive Bill of Quantities. Simplifying cost estimation and project planning for better efficiency.',
     icon: DocumentTextIcon,
   },
   {
     name: 'Meet Professionals',
     description:
-      'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
+      'Connecting minds, unlocking opportunities. Embrace a world of knowledge with professionals from diverse domains.',
     icon: UserCircleIcon,
   },
   {
     name: 'Current Material Pricess',
     description:
-      'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
+      'Discover our updated BoQ website, where you can access real-time material prices, helping you stay informed and make cost-efficient decisions for your projects.',
     icon: BanknotesIcon,
   },
   {
     name: 'Our Designs',
     description:
-      'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
+      'Explore our exquisite designs, where creativity meets functionality. Elevate your space with our carefully curated selection, tailored to inspire and delight.',
     icon: WindowIcon,
   },
   {
     name: 'Single unit cost calculation',
     description:
-      'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
+      'Efficiency at its finest! Our BoQ website simplifies cost calculations with single-unit precision, saving you time and money on construction projects.',
     icon: CalculatorIcon,
   },
   {
     name: 'Help Center',
     description:
-      'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
-    icon: HandRaisedIcon,
+      'Find answers to your questions and get the support you need at our comprehensive Help Center. We are here to assist you every step of the way.',
+    icon: DocumentIcon,
   },
 ]
 
@@ -49,8 +49,7 @@ export default function Services() {
             Everything you need to plan your dream
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum
-            pulvinar et feugiat blandit at. In mi viverra elit nunc.
+          BoQ providing a detailed fact of quantities, specifications, and costs of materials needed for a project.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">

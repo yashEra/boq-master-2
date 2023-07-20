@@ -3,34 +3,34 @@ const people = [
       name: 'Yasith Eranda',
       role: 'Project Lead',
       imageUrl:
-        'https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/360084020_2569908989834568_3891376956868534226_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeGX8hw90ZFDOgk9PKnTGohrYeF60zzFpLth4XrTPMWku5B67OEbsX6EwTj9ndNLwOh8s32VnmRD6uxuMuU5c--r&_nc_ohc=3quKlvp_2qgAX9gEtgK&_nc_ht=scontent.fcmb1-2.fna&oh=00_AfDOfblIRUjyJ1jromPmsoyQTcOr-nN8lhzzpPdAw0iOsA&oe=64B629CD',
+        'https://t3.ftcdn.net/jpg/05/17/79/88/360_F_517798849_WuXhHTpg2djTbfNf0FQAjzFEoluHpnct.jpg',
     },
     {
         name: 'Raveen Rajapaksha',
-        role: 'Co-Founder / CEO',
+        role: 'Developer',
         imageUrl:
-          'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+          'https://t3.ftcdn.net/jpg/05/17/79/88/360_F_517798849_WuXhHTpg2djTbfNf0FQAjzFEoluHpnct.jpg',
       },
       {
         name: 'Dimagi Jayawardhna',
-        role: 'Co-Founder / CEO',
+        role: 'Developer',
         imageUrl:
-          'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+          'https://t3.ftcdn.net/jpg/05/17/79/88/360_F_517798849_WuXhHTpg2djTbfNf0FQAjzFEoluHpnct.jpg',
       },    {
         name: 'Madusha Gunawardana',
-        role: 'Co-Founder / CEO',
+        role: 'Developer',
         imageUrl:
-          'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+          'https://t3.ftcdn.net/jpg/05/17/79/88/360_F_517798849_WuXhHTpg2djTbfNf0FQAjzFEoluHpnct.jpg',
       },    {
         name: 'Nethree Weerakoon',
-        role: 'Co-Founder / CEO',
+        role: 'Developer',
         imageUrl:
-          'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+          'https://t3.ftcdn.net/jpg/05/17/79/88/360_F_517798849_WuXhHTpg2djTbfNf0FQAjzFEoluHpnct.jpg',
       },    {
         name: 'Sewmini Rathnayake',
-        role: 'Co-Founder / CEO',
+        role: 'Developer',
         imageUrl:
-          'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+          'https://t3.ftcdn.net/jpg/05/17/79/88/360_F_517798849_WuXhHTpg2djTbfNf0FQAjzFEoluHpnct.jpg',
       },
     // More people...
   ]

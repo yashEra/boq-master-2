@@ -10,6 +10,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import Logo from '../images/logo.jpg'
 
 const products = [
   { name: 'Meet Professionals', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
@@ -36,7 +37,7 @@ export default function NavBar() {
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <img className="h-8 w-auto" src="https://www.creativefabrica.com/wp-content/uploads/2021/07/25/Real-Estate-Building-Construction-Logo-Graphics-15106961-1-580x387.jpg" alt="" />
+            <img className="h-8 w-auto" src={Logo} alt="" />
           </a>
         </div>
         <div className="flex lg:hidden">
