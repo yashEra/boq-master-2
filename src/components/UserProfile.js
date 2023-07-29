@@ -1,16 +1,32 @@
 import { FaBell, FaLock, FaCogs, FaQuestionCircle, FaPen, FaBars } from 'react-icons/fa';
+import React, { useEffect } from 'react';
 import './style/UserProfile.css';
 import NavBar from './Navbar';
 import Footer from './Footer';
 
 
 function UserProfile() {
+
+    useEffect(() => {
+        // Function to handle the click event on the menu button
+        const handleMenuClick = () => {
+            const menu = document.querySelector('.navbar');
+            const button = document.querySelector('.fa-bars');
+            menu.classList.toggle('active');
+            button.classList.toggle('active1');
+        };
+
+        // Attach the event listener to the menu button
+        document.querySelector('#menu-btn').onclick = handleMenuClick;
+    }, []);
+
+
 	return (
 
 		<div >
             <NavBar/>
 			 
-			<div id="menu-btn" className="fas fa-bars"><FaBars/></div>
+			<div id="menu-btn" className="fas fa-bars" style={{paddingTop:"100px"}}><FaBars/></div>
 			<nav className="navbar nav1" >
 				<section className="navItems">
 
