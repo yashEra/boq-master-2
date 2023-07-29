@@ -1,13 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
 import { FaBell, FaLock, FaCogs, FaQuestionCircle, FaPen, FaBars } from 'react-icons/fa';
-import './style/Profile.css';
+import './style/UserProfile.css';
+import NavBar from './Navbar';
+import Footer from './Footer';
 
 
-function App() {
+function UserProfile() {
 	return (
 
 		<div >
+            <NavBar/>
 			 
 			<div id="menu-btn" className="fas fa-bars"><FaBars/></div>
 			<nav className="navbar nav1" >
@@ -88,10 +89,11 @@ function App() {
 			</div>
 
 			<script src="components/navbar.js"></script>
+            <Footer/>
 		</div>
 
 		
 	);
 }
 
-export default App;
+export default UserProfile;

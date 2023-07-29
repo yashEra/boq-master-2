@@ -12,7 +12,7 @@ import Signup from "./components/Signup";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Services from "./components/Services";
 import HelpCenter from "./components/HelpCenter";
-// import userAccount from "./components/userAccount";
+import UserProfile from "./components/UserProfile";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -26,7 +26,7 @@ root.render(
       <Route path="/signup" element={<Signup />} />
       <Route path="/sevices" element={<Services />} />
       <Route path="/helpcenter" element={<HelpCenter />} />
-      {/* <Route path="/useraccount" element={<userAccount />} /> */}
+      <Route path="/myprofile" element={<UserProfile />} />
     </Routes>
   </Router>
 );
