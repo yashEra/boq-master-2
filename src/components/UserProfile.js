@@ -1,8 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import './components/Profile.css';
 import { FaBell, FaLock, FaCogs, FaQuestionCircle, FaPen, FaBars } from 'react-icons/fa';
-
+import './style/Profile.css';
 
 
 function App() {
