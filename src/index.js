@@ -12,7 +12,7 @@ import Signup from "./components/Signup";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Services from "./components/Services";
 import HelpCenter from "./components/HelpCenter";
-import UserProfile from "./components/UserProfile";
+import UserProfile from "./components/user_profile/UserProfile";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
