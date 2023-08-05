@@ -2,6 +2,8 @@ import React from "react";
 import PickMeals from "./Assets/pick-meals-image.png";
 import ChooseMeals from "./Assets/choose-image.png";
 import DeliveryMeals from "./Assets/delivery-image.png";
+import NavBar from "../Navbar";
+import Footer from "../Footer";
 
 const Work = () => {
   const workInfoData = [
@@ -17,6 +19,8 @@ const Work = () => {
     },
   ];
   return (
+    <div>
+      <NavBar/>
     <div className="work-section-wrapper">
       <div className="work-section-top">
         <p className="primary-subheading"></p>
@@ -41,6 +45,8 @@ const Work = () => {
           </div>
         ))}
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 };
