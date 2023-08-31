@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Josefin+Sans:ital,wght@0,600;0,700;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,600;0,700;1,600;1,700&display=swap");
+* {
+  font-family: "Inter", "Josefin Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  /* overflow-x: hidden; */
+}
+
+.main__container {
+  height: 100vh;
+  background-color: #28282b;
+  background: url(../../images/mainBg.svg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  z-index: 0;
+  display: flex;
+}
+
+.contact__info {
+  width: 50%;
+  padding: 60px;
+  margin: 5%;
+  /* border: solid 2px #c0c0c0; */
+  border-radius: 20px;
+  display: block;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.contact__info p {
+  padding-top: 8%;
+  text-align: justify;
+  font-weight: 700;
+  font-style: oblique;
+}
+
+.contact__form__container {
+  width: 50%;
+  padding: 60px;
+  margin: 5%;
+  /* border: solid 2px #c0c0c0; */
+  /* border-radius: 20px; */
+  display: block;
+  justify-content: center;
+}
+
+hr {
+  margin-top: 11%;
+  /* margin-left: 10%; */
+  width: 80%;
+  border: 2px solid;
+  border-radius: 6px;
+}
+@media screen and (max-width: 1000px) {
+  .main__container {
+    height: auto;
+    display: block;
+    overflow-x: hidden;
+  }
+  .contact__info {
+    width: 100%;
+    padding: 5%;
+    margin-left: 5%;
+    display: block;
+    justify-content: center;
+    overflow-x: hidden;
+  }
+  .contact__form__container {
+    width: 100%;
+    padding: 0;
+    margin-left: 3%;
+    padding-bottom: 10%;
+    justify-content: center;
+  }
+
+  .contact__info p {
+    width: 100%;
+    padding: 5%;
+    margin: 0%;
+    display: block;
+    justify-content: center;
+  }
+}

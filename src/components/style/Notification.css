@@ -1,0 +1,121 @@
+*{
+    font-family: "Plus Jakarta Sans",sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.body{
+    height: 100vh;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+   /* background-color:#eff4fa;
+   /* z-index: -1;*/
+    position: absolute;
+    top: 0;
+    left: 30%;
+    overflow: auto;
+    padding: 0;
+    margin: 0;
+}
+.container{
+    margin:2rem;
+    width: 700px;
+    background-color: #f2f8fa;
+    padding: 1.5rem 1rem;
+    border-radius: .5rem;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.notif_box{
+    display: flex;
+    align-items: center;
+}
+#notifications{
+    background-color: #0a317b;
+    margin-left: .5rem;
+    width:35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    color: #ffffff;
+    font-weight: 800;
+    border-radius: .5rem;
+}
+#mark_all{
+    cursor: pointer;
+}
+p{
+    color: #5e6778;
+
+}
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.notif_card{
+    display:flex;
+    align-items:center;
+    border-radius: .5rem;
+    padding: 1rem;
+}
+img{
+    width: 45px;
+    height: 45px;
+    border-radius: 100px;
+}
+.description{
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+strong{
+    color:hsl(224, 21%, 14%);
+    cursor: pointer;
+}
+strong:hover{
+    color:#0a317b
+}
+.unread{
+    background-color: #e5effa !important;
+}
+.unread p:first-of-type::after{
+    content: "";
+    background-color: #f65351;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 50%;
+}
+.message_card{
+    display: flex;
+    align-items: center;
+}
+.message{
+    padding: 1rem;
+    border:1px solid #dde7ee;
+    border-radius: .3rem;
+    cursor: pointer;
+    margin: 0 0 0 5rem;
+}
+.message:hover{
+    background-color: #e5effa;
+}
+.chess_img{
+    margin-left: auto;
+}
+
+@media screen and (max-width:550px) {
+    .container{
+        margin: 0;
+    }
+}
+

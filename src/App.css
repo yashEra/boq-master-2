@@ -1,23 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Josefin+Sans:ital,wght@0,600;0,700;1,600;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,600;0,700;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Josefin+Sans:ital,wght@0,600;0,700;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,600;0,700;1,600;1,700&display=swap");
 
-*{
-  font-family: 'Inter','Josefin Sans', sans-serif;
+* {
+  font-family: "Inter", "Josefin Sans", sans-serif;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-
+  /* overflow-x: hidden; */
 }
 
 /* ****************************************************************************** 
                             Header
 *********************************************************************************/
 
-.heder{
+.heder {
   /* background-color: aqua; */
-  background: rgb(0,33,71);
-  /* background: linear-gradient(180deg, rgba(0,33,71,1) 0%, rgba(7,0,107,1) 100%); */
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)),url(./images//main.png);
+  background: rgb(0, 33, 71);
+  /* background: linear-gradient(180deg, rgba(0,33,71,1) 0%, rgba(7,0,107,1) 100%); linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)),*/
+  background: 
+    url(./images//mainBg.svg);
   /* background-image: url('./components/heder.jpg'); */
   height: 100vh;
   width: auto;
@@ -26,17 +26,16 @@
   overflow: hidden;
 }
 
-.heder_cont{
+.heder_cont {
   color: aliceblue;
   display: flex;
   justify-content: center;
   /* text-align: center; */
   /* align-items: center;
   justify-content: left; */
-
 }
 
-.heder_cont div{
+.heder_cont div {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -44,100 +43,93 @@
   padding-left: 5%;
 }
 
-.hederText{
-  
+.hederText {
   width: 50%;
   font-weight: 400;
   padding-top: 4%;
-
 }
 
-.maintext{
-  font-size:  60px;
+.maintext {
+  font-size: 60px;
   font-weight: 900;
 }
-.heder-image{
+.heder-image {
   padding-right: 5%;
 }
-.heder-image img{
+.heder-image img {
   /* background-image: url(./images/heder-image-01.png); */
 
   /* height: 60%;
   width: auto; */
   background-repeat: no-repeat;
-
 }
 
-.heder__button{
+.heder__button {
   margin-top: 25px;
   width: 200px;
-  height: 50px;
-  font-size: 20px;
-  font-weight: 700;
+  height: 40px;
+  font-size: 15px;
+  font-weight: 500;
   border-radius: 0px;
   color: aliceblue;
   border: 2px solid aliceblue;
   background-color: transparent;
 }
 
-.heder__button:hover{
-  
+.heder__button:hover {
   color: #c0c0c0;
+  border-color: #c0c0c0;
   /* transform: scaleX(105%);
   transform: scaleY(105%); */
-  transition: 0.4s;
+  scale: 0.9;
+  transition: 1s;
+  animation-iteration-count: infinite;
+  border: 2px solid aliceblue;
 }
 
-@media screen and (max-width: 1200px){
-  .maintext{
-    font-size:  30px;
+@media screen and (max-width: 1200px) {
+  .maintext {
+    font-size: 30px;
   }
-
-  
 }
 
-@media screen and (max-width: 1000px){
-  .heder_cont{
+@media screen and (max-width: 1000px) {
+  .heder_cont {
     /* color: aliceblue; */
     /* display: block; */
     flex-direction: column;
     flex-direction: column-reverse;
-
   }
 
-  .hederText{
+  .hederText {
     width: 100%;
     padding-top: 50px;
-  
   }
 
-  .hederText p{
+  .hederText p {
     width: 90%;
-
   }
 
-  .hederText h1{
+  .hederText h1 {
     /* font-size: 40px; */
   }
-  .heder_cont div{
+  .heder_cont div {
     height: auto;
     display: flex;
     flex-direction: column;
     justify-content: top;
   }
-  
-  .heder-image{
+
+  .heder-image {
     padding-top: 20%;
   }
-  
 }
 
 /* ****************************************************************************** 
                             WELCOME
 *********************************************************************************/
 
-
-.about__welcome{
+.about__welcome {
   padding: 5%;
   text-align: left;
   display: flex;
@@ -146,65 +138,61 @@
   padding-bottom: 10%;
 }
 
-.about__text{
+.about__text {
   width: 40%;
   padding-right: 5%;
 }
 
-.about__welcome h1{
+.about__welcome h1 {
   font-size: 300%;
   font-weight: 900;
   color: #002147;
 }
 
-.about__welcome h4{
+.about__welcome h4 {
   font-size: 200%;
   padding-bottom: 25px;
   /* font-weight: 700; */
   color: #c0c0c0;
 }
 
-.about__welcome p{
+.about__welcome p {
   text-align: justify;
   color: #c0c0c0;
-
 }
 
-.about__image img{
+.about__image img {
   height: 60vh;
   width: auto;
 }
 
 @media screen and (max-width: 1000px) {
-
-  .about__welcome{
+  .about__welcome {
     text-align: center;
     /* flex-direction: column; */
     flex-direction: column-reverse;
   }
 
-  .about__text{
+  .about__text {
     width: 100%;
     padding-left: 5%;
   }
-  .about__image img{
+  .about__image img {
     height: auto;
     width: 100%;
   }
-  
-  
 }
 
 /* ****************************************************************************** 
                            SERVICES
 *********************************************************************************/
 
-.services{
+.services {
   text-align: center;
   justify-content: center;
 }
 
-.services h1{
+.services h1 {
   color: #002147;
   font-weight: 900;
   padding: 5px;
@@ -212,27 +200,24 @@
   padding: 0 25% 0 25%;
 }
 
-.services h4{
+.services h4 {
   font-size: 120%;
   color: #c0c0c0;
 }
 
-.services h6{
+.services h6 {
   color: #c0c0c0;
   font-size: 120%;
   font-weight: 500;
   padding: 0 10px 50px 10px;
-
 }
 
 @media screen and (max-width: 1000px) {
-
-  .services h1{
-  color: #002147;
-  font-weight: 900;
-  padding: 5px;
-  font-size: 300%;
-  padding: 0;
+  .services h1 {
+    color: #002147;
+    font-weight: 900;
+    padding: 5px;
+    font-size: 300%;
+    padding: 0;
   }
-
 }

@@ -1,134 +1,182 @@
-.nav__color{
-    position: fixed;
-    left: 0%;
-    top: 0%;
-    right: 0;
-
+.nav__color {
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  right: 0;
 }
 
-.nav__color__bg{
-    background-color: #470000;
-    opacity: 0.9;
+.nav__color__bg {
+  background-color: #470000;
+  opacity: 0.9;
 }
 
-.navbar{
-    /* background-image: url(heder.jpg); */
+.navbar {
+  /* background-image: url(heder.jpg); */
 
-    display: flex;
+  display: flex;
 
-    justify-content: space-around;
-    text-decoration: none;
-    align-items: center;
-    padding: 25px 0 25px 0;
-    
+  justify-content: space-between;
+  text-decoration: none;
+  align-items: center;
+  padding: 15px 5% 15px 5%;
 }
 
-.listul{
-    display: flex;
-    list-style: none;
-
+.listul {
+  display: flex;
+  list-style: none;
+  align-items: center;
 }
 
-.listul li{
-    padding: 0 10px 0 10px;
-    /* font-weight: 700;
+.listul li {
+  padding: 0 10px 0 10px;
+  /* font-weight: 700;
     font-size: 120%; */
-
 }
 
-.listul li a{
-    text-decoration: none;
-    color: #c0c0c0;
-    font-weight: 500;
-    
+.listul li a {
+  text-decoration: none;
+  color: #c0c0c0;
+  font-weight: 500;
 }
 
-.listul li a:hover{
-    color: aliceblue;
-    /* background-color: aqua; */
-    
+.listul li a:hover {
+  color: aliceblue;
+  font-size: 110%;
+  transition: 0.9s;
+  /* background-color: aqua; */
 }
 
-.logo{
-    /* background-image: url('/src/images/logo-nav.png');
+.logo {
+  /* background-image: url('/src/images/logo-nav.png');
     width: 50pxpx;
     height: auto; */
-    font-weight: 700;
-    font-size: 140%; 
-    color: #c0c0c0;
+  font-weight: 700;
+  font-size: 140%;
+  color: #c0c0c0;
 }
 
-.hamburger{
-    color: #c0c0c0;
-    display: none;
+.hamburger {
+  color: #c0c0c0;
+  display: none;
 }
 
-.mobile__menu{
-    display: none;
+.mobile__menu {
+  display: none;
 }
 
-.active{
-    .listul{
-        display: block;
-    }
+.active__nav {
+  .listul {
+    display: block;
+  }
+  .nav__button {
+    display: block;
+  }
 }
+
+.active {
+  color: #470000;
+  scale: 0.9;
+}
+
+.nav__button {
+  color: #c0c0c0;
+  display: flex;
+  align-items: center;
+}
+.nav__button img {
+  color: #c0c0c0;
+  display: flex;
+  width: 40px;
+  padding: 0 20px 0 0;
+}
+
+.navbar__social__icons {
+  display: flex;
+}
+
+.navBar__intro {
+  display: none;
+}
+
+/* ************************************************* */
 
 @media screen and (max-width: 1000px) {
-    .hamburger{
-        display: block;
-        font-size: 150%;
-    }
+  .hamburger {
+    display: block;
+    font-size: 150%;
+  }
 
-    .listul{
-        display: none;
-        position: fixed;
-        right: 0%;
-        top: 90px;
-        flex-direction: column;
-        background-color: #c0c0c0;
-        opacity: 0.9;
-        width: 100%;
-        height: auto;
-        z-index: 999;
-        text-align: center;
-        transition: .3s;
-        border-radius: 10px;
-    }
+  .listul {
+    display: none;
+    position: fixed;
+    right: 0%;
+    top: 66px;
+    flex-direction: column;
+    background-color: #002147;
+    /* opacity: 1; */
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    text-align: left;
+    transition: 0.3s;
+    border-radius: 10px;
+    transform: 1s;
+    font-size: larger;
+  }
+  .nav__color__bg {
+    opacity: 1;
+  }
 
-    .mobile__menu{
-        display: block;
-    }
+  .listul li {
+    font-size: 120%;
+  }
 
-    .listul li{
-        padding: 25px;
-    }
-
-    .listul li a{
-        /* padding: 10%; */
-        text-decoration: none;
-        color: #002147;
-        
-    }
-}
-.nav-button{
-    color: #c0c0c0;
-    display: flex;
-
-}
-.nav-button img{
-    color: #c0c0c0;
-    display: flex;
-    width: 24px;
+  .nav__button a img {
     padding: 0 20px 0 0;
+  }
 
-}
+  .nav__button {
+    color: #002147;
+    /* display: block; */
+    /* justify-content: center; */
+  }
 
-.nav__button__style{
+  .nav__button a {
     color: #c0c0c0;
-    font-weight: 500;
-    background-color: transparent;
-    border: 2px solid;
-    padding: 10px;
-    border-color: #c0c0c0;
+    display: flex;
+    justify-content: left;
+    padding: 5% 0 5% 0;
+  }
+  .nav__button img {
+    color: #c0c0c0;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .mobile__menu {
+    display: block;
+  }
+
+  .listul li {
+    padding: 15px 25px 8px 25px;
+  }
+
+  .listul li a {
+    /* padding: 10%; */
+    text-decoration: none;
+    color: #c0c0c0;
+  }
+
+  .navBar__intro {
+    display: block;
+    /* background-color: #c0c0c0; */
+  }
+
+  .navBar__intro p {
+    font-size: 16px;
+  }
 }
-    
+
+/* **************************************************** */
+
