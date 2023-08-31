@@ -14,27 +14,28 @@ const Signup = () => {
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   const url = "http://localhost:3000/src/php/index.php"
-  //   axios.post(url, inputs);
-  //   console.log(inputs);
-  // };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    
+    const url = "http://localhost:8080/Models/Process/signup-process.php"
+    axios.post(url, inputs);
+    console.log(inputs);
+  };
 
-  const handleSubmit = useCallback(
-    (e) => {
-      e.preventDefault();
-      const form = document.getElementById("form");
-      const formData = new FormData(form);
-      // const history = useHistory();
+  // const handleSubmit = useCallback(
+  //   (e) => {
+  //     e.preventDefault();
+  //     const form = document.getElementById("form");
+  //     const formData = new FormData(form);
+  //     // const history = useHistory();
 
-      axios
-        .post("http://localhost:80/boq_master/src/php/index.php", formData)
-        .then((res) => console.log(res))
-        .then(setSubmitted(true));
-    },
-    [setSubmitted]
-  );
+  //     axios
+  //       .post("http://localhost:80/boq_master/src/php/index.php", formData)
+  //       .then((res) => console.log(res))
+  //       .then(setSubmitted(true));
+  //   },
+  //   [setSubmitted]
+  // );
 
   return (
     <div>
