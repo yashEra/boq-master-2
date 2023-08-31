@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import '../style/Notification.css';
+import '../style/UserProfile.css';
+import { FaBell, FaLock, FaCogs, FaQuestionCircle, FaPen, FaBars } from 'react-icons/fa';
 import image1 from './images/image1.jpg';
 import image2 from './images/image2.jpg';
 import image3 from './images/image3.jpg';
@@ -10,7 +12,7 @@ import image5 from './images/image5.png';
 import image6 from './images/image6.jpeg';
 import image7 from './images/image7.jpg';
 
-function App() {
+function Notification() {
     const [unreadCount, setUnreadCount] = useState(0);
 
   useEffect(() => {
@@ -56,11 +58,29 @@ function App() {
   }, []);
   return (
     <div >
+      	<div id="menu-btn" className="fas fa-bars"><FaBars/></div>
+			<nav className="navbar nav1" >
+				<section className="navItems">
+
+					<p className="setting">Settings</p>
+					<ul className="items">
+					    <li><i><FaPen /></i> Edit Profile</li>
+						<li><i><FaBell/></i> Notification</li>
+						<li><i><FaLock/></i> Security</li>
+						<li><i><FaCogs/></i>Appearance</li>
+						<li><i><FaQuestionCircle/></i> Help</li>
+
+					</ul>
+				</section>
+			</nav>
+      {/* ----Notification ---- */}
+      
       <div className="body">
+        
       <div className ="container">
                 <header>
-                    <div className="notif_box">
-                        <h2 className ="title">Notification</h2>
+                    <div class="notif_box">
+                        <h2 class ="title">Notification</h2>
                         <span id="notifications">{unreadCount}</span>
                     </div>
                     <p id ="mark_all">Mark all as read</p>
@@ -142,9 +162,11 @@ function App() {
                     
                 </main>
             </div>
+            
             </div>
+            
     </div>
   );
 }
 
-export default App;
+export default Notification;
