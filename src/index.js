@@ -17,6 +17,7 @@ import BoqHome from "./boq_generator/BoQHome";
 import Work from "./boq_generator/Work";
 import WallView from "./boq_generator/walls/WallView";
 import Help_center from "./help_center/Helpcenter";
+import ProfessionalsCategory from "./services_platform/professionals/ProfessionalsCategory";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -35,6 +36,7 @@ root.render(
       <Route path="/start-boq" element={<Work />} />
       <Route path="/boq-walls" element={<WallView />} />
       <Route path="/help-center" element={<Help_center />} />
+      <Route path="/pro-home" element={<ProfessionalsCategory />} />
     </Routes>
   </Router>
 );
