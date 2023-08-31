@@ -1,7 +1,7 @@
 import React from "react";
 import PickMeals from "./Assets/pick-meals-image.png";
-import NavBar from "../Navbar";
-import Footer from "../Footer";
+import NavBar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const Work = () => {
   const workInfoData = [

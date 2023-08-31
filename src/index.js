@@ -13,8 +13,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Services from "./components/Services";
 import HelpCenter from "./components/HelpCenter";
 import UserProfile from "./components/user_profile/UserProfile";
-import BoqHome from "./components/Walls/BoQHome";
-import Work from "./components/Walls/Work";
+import BoqHome from "./boq_generator/BoQHome";
+import Work from "./boq_generator/Work";
+import WallView from "./boq_generator/walls/WallView";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -28,9 +29,11 @@ root.render(
       <Route path="/signup" element={<Signup />} />
       <Route path="/sevices" element={<Services />} />
       <Route path="/helpcenter" element={<HelpCenter />} />
-      <Route path="/myprofile" element={<UserProfile />} />WallsHome.js
+      <Route path="/myprofile" element={<UserProfile />} />
       <Route path="/boq-home" element={<BoqHome />} />
       <Route path="/start-boq" element={<Work />} />
+      <Route path="/boq-walls" element={<WallView />} />
+
     </Routes>
   </Router>
 );
