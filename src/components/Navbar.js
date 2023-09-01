@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react'
-import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
+import { Dialog, Disclosure, Popover, Transition,  } from '@headlessui/react'
 import {
   ArrowPathIcon,
   Bars3Icon,
@@ -9,19 +9,19 @@ import {
   SquaresPlusIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import { ChevronDownIcon, PhoneIcon, PlayCircleIcon, BanknotesIcon, WindowIcon,DocumentTextIcon, UserCircleIcon} from '@heroicons/react/20/solid'
 import Logo from '../images/logo.jpg'
 
 const products = [
-  { name: 'Meet Professionals', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-  { name: 'Generate BoQ', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-  { name: 'Our Designs', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-  { name: 'Current Material Prices', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
+  { name: 'Meet Professionals', description: 'Get a better understanding of your traffic', href: '/pro-home', icon: UserCircleIcon },
+  { name: 'Generate BoQ', description: 'Speak directly to your customers', href: '/boq-home', icon: DocumentTextIcon },
+  { name: 'Our Designs', description: 'Your customers’ data will be safe and secure', href: '#', icon: WindowIcon },
+  { name: 'Current Material Prices', description: 'Connect with third-party tools', href: '#', icon: BanknotesIcon },
   { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
 ]
 const callsToAction = [
-  { name: 'Video demo', href: '#', icon: PlayCircleIcon },
-  { name: 'Contact Professionals', href: '#', icon: PhoneIcon },
+  { name: 'Video demo', href: 'help-center', icon: PlayCircleIcon },
+  { name: 'Contact us', href: '/contact', icon: PhoneIcon },
 ]
 
 function classNames(...classes) {
