@@ -3,7 +3,12 @@ import logo from './logo.svg';
 import './App.css';
 import '../style/Notification.css';
 import '../style/UserProfile.css';
-import { FaBell, FaLock, FaCogs, FaQuestionCircle, FaPen, FaBars } from 'react-icons/fa';
+import { FaBell, 
+  FaLock, 
+  FaCogs,
+  FaQuestionCircle, 
+  FaPen, 
+  FaBars } from 'react-icons/fa';
 import image1 from './images/image1.jpg';
 import image2 from './images/image2.jpg';
 import image3 from './images/image3.jpg';
