@@ -4,10 +4,10 @@ import EngDp from "./assets/EngDp.png";
 
 function EngAbout() {
   return (
-    <div className="About">
-      <img className="engineer_dp" src={EngDp} />
+    <div className="About_e">
+      <img className="engineer_dp_e" src={EngDp} />
 
-      <div className="description">
+      <div className="description_e">
         With over 15 years of experience in civil engineering, I hold a Bachelor
         of Science in Civil Engineering from Elmwood University. My career began
         at Horizon Engineering, where I worked on transformative infrastructure
@@ -17,14 +17,14 @@ function EngAbout() {
         field.
       </div>
 
-      <div className="about-me">
-        <span className="bit">A BIT ABOUT ME</span>
+      <div className="about-me_e">
+        <span className="bit_e">A BIT ABOUT ME</span>
         <br />
         Who Am I ?
       </div>
 
-      <div className="two-column-container">
-        <div className="column">
+      <div className="two-column-container_e">
+        <div className="column_e">
           <section>
             <h2>Full name</h2>
             <p>[Your Name]</p>
@@ -40,7 +40,7 @@ function EngAbout() {
             <p>[Your Address]</p>
           </section>
         </div>
-        <div className="column">
+        <div className="column_e">
           <section>
             <h2>Contact Number</h2>
             <p>[Your Contact Information]</p>
@@ -55,7 +55,7 @@ function EngAbout() {
             <h2>City</h2>
             <p>[Your City]</p>
           </section>
-          <button className="chat_button">Click to Chat</button>
+          <button className="chat_button_e">Click to Chat</button>
         </div>
       </div>
     </div>

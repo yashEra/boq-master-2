@@ -6,8 +6,9 @@
   margin: 0;
   padding: 0;
   /* overflow-x: hidden; */
-}.back_image {
-  background-image: url('../profile/assets/QSProfile.jpg');
+}
+.back_image_q {
+  background-image: url("../profile/assets/QSProfile.jpg");
   background-size: cover;
   width: auto;
   height: 100vh;
@@ -17,35 +18,35 @@
   opacity: 0.65;
 }
 
-.dp_info {
+.dp_info_q {
   position: absolute;
   right: 50px;
   left: 750px;
   top: 100px;
 }
-.hi-text {
+.hi-text_q {
   font-size: 20px;
   color: black;
   font-weight: bold;
 }
-.im-text {
+.im-text_q {
   font-size: 16px;
   color: black;
   font-weight: bold;
   font-size: 30px;
 }
-.profession-text {
+.profession-text_q {
   color: blue;
   font-weight: bold;
   font-size: 40px;
 }
 
-.info-text {
+.info-text_q {
   font-size: 16px;
   color: black;
 }
 
-.about_button {
+.about_button_q {
   background-color: #4caf50; /* Green background color */
   border: none; /* Remove border */
   color: white; /* Text color */
@@ -58,13 +59,12 @@
   cursor: pointer; /* Show pointer cursor on hover */
   margin-top: 20px;
   margin-right: 20px;
-  
 }
-.about_button:hover {
+.about_button_q:hover {
   background-color: #255c28; /* Darker green background color */
 }
 
-.project_button {
+.project_button_q {
   background-color: #4caf50; /* Green background color */
   border: none; /* Remove border */
   color: white; /* Text color */
@@ -77,6 +77,6 @@
   cursor: pointer; /* Show pointer cursor on hover */
 }
 
-.project_button:hover {
+.project_button_q:hover {
   background-color: #255c28; /* Darker green background color */
 }

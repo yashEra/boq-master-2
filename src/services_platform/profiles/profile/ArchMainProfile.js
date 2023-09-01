@@ -4,16 +4,16 @@ import "../style_profile/ArchMainProfile.css";
 function ArchMainProfile() {
   return (
     <div className="a">
-      <div className="back_image" />
-      <div className="profile">
-        <div className="dp_info">
+      <div className="back_image_a" />
+      <div className="profile_a">
+        <div className="dp_info_a">
           <p>
-            <span className="hi-text">HI THERE!</span>
+            <span className="hi-text_a">HI THERE!</span>
             <br />
-            <span className="im-text">I'M </span>
-            <span className="profession-text">AN ARCHITECT</span>
+            <span className="im-text_a">I'M </span>
+            <span className="profession-text_a">AN ARCHITECT</span>
             <br />
-            <span className="info-text">
+            <span className="info-text_a">
               Are you in search of a seasoned architect to bring your
               architectural vision to life? Look no further! I am an
               accomplished architect with a passion for creating exceptional
@@ -26,9 +26,11 @@ function ArchMainProfile() {
               Contact me today, and together, we can create spaces that inspire.
             </span>
             <br />
+            <a href="./about-architect">
+              <button className="about_button_a">More about me</button>
+            </a>
 
-            <button className="about_button">More about me</button>
-            <button className="project_button">Projects</button>
+            <button className="project_button_a">Projects</button>
           </p>
         </div>
       </div>
