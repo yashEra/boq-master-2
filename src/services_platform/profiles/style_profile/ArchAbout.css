@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Josefin+Sans:ital,wght@0,600;0,700;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,600;0,700;1,600;1,700&display=swap");
+
+* {
+  font-family: "Inter", "Josefin Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  /* overflow-x: hidden; */
+}.About {
+  background-color: rgba(0, 0, 0, 21.47);
+  background-size: auto;
+  width: auto;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+
+  /* background-image: url("../profile/assets/EngineerAboutMe.jpg");
+  background-size: cover;
+  width: auto;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  opacity: 1; */
+}
+
+.about-me {
+  
+ 
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  color: orange;
+  font-size: 50px;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+  top: 0 px;
+  width:60%;
+
+  
+  
+}
+
+.bit {
+  color: white;
+  font-size: 15px;
+  text-align: center;
+}
+
+
+.engineer_dp {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  border: 4px solid orange; /* Add a border around the image */
+  border-radius: 10px; /* Apply a rounded border */
+  width: 250px; /* Adjust the width as needed */
+  height: 250px; /* Adjust the height to match the width */
+  border-radius: 50%; /* Set border-radius to 50% to create a circle */
+  object-fit: cover; /* Maintain aspect ratio and cover the circular area */
+  
+}
+
+.engineer_dp:hover {
+  border-color: #ff0000;
+}
+
+.description{
+
+  color: white;
+  width: 30%;
+  font-size: 13px;
+  text-align: center;
+  position: absolute;
+  top:400px;
+  left: 30px;
+  border-bottom:3px solid white ;
+  padding-bottom: 20px;
+
+}
+.two-column-container {
+  display: flex;
+  justify-content: space-between; /* Adjust this for spacing between columns */
+  width: 60%;
+  position: absolute;
+  right: 10px;
+  color: white;
+  font-size: small;
+}
+
+.column {
+  flex: 1;
+  padding: 10px;
+  /* border: 1px solid #ccc; */
+}
+
+section {
+  margin-bottom: 20px;
+  border-bottom: 1px solid orange;
+  padding-bottom: 20px;
+}
+
+h2 {
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+/* Define the blinking animation */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  } /* Fully visible */
+  50% {
+    opacity: 0;
+  } /* Fully transparent */
+  100% {
+    opacity: 1;
+  } /* Fully visible again */
+}
+
+.chat_button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: orange; /* Background color of the button */
+  color: #fff; /* Text color */
+  border: none; /* Remove the default button border */
+  border-radius: 10px; /* Add rounded corners */
+  cursor: pointer; /* Change cursor to a pointer on hover */
+  text-decoration: none; /* Remove underline for links */
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 40px;
+  /* animation: blink 1s infinite; Use the "blink" animation for 1 second, infinitely */
+}
+
+.chat_button:hover {
+  background-color: darkgreen;
+}
