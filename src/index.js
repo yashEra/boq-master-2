@@ -54,7 +54,7 @@ root.render(
       <Route path="/eng-pro" element={<EngPro />} />
       <Route path="/architect-list" element={<ArchitectList />} />
       <Route path="/engineer-list" element={<EngineerList/>} />
-      <Route path="/qs-list" element={<QSList/>} />
+      <Route path="/qs-list" element={<QSList/>} /> 
     </Routes>
   </Router>
 );
