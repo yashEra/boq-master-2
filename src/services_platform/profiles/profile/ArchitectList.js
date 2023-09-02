@@ -69,7 +69,7 @@ export default function ArchitectList() {
                 />
                 <div className="min-w-0 flex-auto">
                   <p className="text-sm font-semibold leading-6 text-white">
-                    <div className="button" onClick={/about-engineer}>{person.name}</div>
+                    {person.name}
                   </p>
                   <p className="mt-1 truncate text-xs leading-5 text-white">
                     {person.email}
