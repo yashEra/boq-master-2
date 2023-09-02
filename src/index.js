@@ -18,6 +18,12 @@ import Work from "./boq_generator/Work";
 import WallView from "./boq_generator/walls/WallView";
 import Help_center from "./help_center/Helpcenter";
 import ProfessionalsCategory from "./services_platform/professionals/ProfessionalsCategory";
+import AboutArchitect from "./services_platform/profiles/profile/ArchAbout";
+import AboutQS from"./services_platform/profiles/profile/QSAbout";
+import AboutEngineer from "./services_platform/profiles/profile/EngAbout";
+import ArchitectPro from "./services_platform/profiles/profile/ArchMainProfile";
+import QSPro from "./services_platform/profiles/profile/QSMainProfile";
+import EngPro from "./services_platform/profiles/profile/EngMainProfile";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -37,6 +43,12 @@ root.render(
       <Route path="/boq-walls" element={<WallView />} />
       <Route path="/help-center" element={<Help_center />} />
       <Route path="/pro-home" element={<ProfessionalsCategory />} />
+      <Route path="/about-architect" element={<AboutArchitect />} />
+      <Route path="/aboutQS" element={<AboutQS />} />
+      <Route path="/about-engineer" element={<AboutEngineer />} />
+      <Route path="/architect-pro" element={<ArchitectPro />} />
+      <Route path="/QS-pro" element={<QSPro />} />
+      <Route path="/eng-pro" element={<EngPro />} />
     </Routes>
   </Router>
 );
