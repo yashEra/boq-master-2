@@ -24,6 +24,9 @@ import AboutEngineer from "./services_platform/profiles/profile/EngAbout";
 import ArchitectPro from "./services_platform/profiles/profile/ArchMainProfile";
 import QSPro from "./services_platform/profiles/profile/QSMainProfile";
 import EngPro from "./services_platform/profiles/profile/EngMainProfile";
+import ArchitectList from "./services_platform/profiles/profile/ArchitectList";
+import EngineerList from "./services_platform/profiles/profile/EngineerList";
+import QSList from "./services_platform/profiles/profile/QSList";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -49,6 +52,9 @@ root.render(
       <Route path="/architect-pro" element={<ArchitectPro />} />
       <Route path="/QS-pro" element={<QSPro />} />
       <Route path="/eng-pro" element={<EngPro />} />
+      <Route path="/architect-list" element={<ArchitectList />} />
+      <Route path="/engineer-list" element={<EngineerList/>} />
+      <Route path="/qs-list" element={<QSList/>} />
     </Routes>
   </Router>
 );
