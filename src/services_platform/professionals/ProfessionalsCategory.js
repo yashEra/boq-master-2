@@ -1,9 +1,8 @@
-import React from 'react';
-import '../style/style.css'; 
-import img1 from "../assests/img1.jpg"
+import React from "react";
+import "../style/style.css";
+import img1 from "../assests/img1.jpg";
 import img2 from "../assests/img2.jpg";
 import img3 from "../assests/img3.jpg";
-
 
 const ProfessionalsCategory = () => {
   return (
@@ -32,7 +31,7 @@ const ProfessionalsCategory = () => {
                 </p>
                 <button
                   className="btn btn1"
-                  onClick={() => (window.location.href = "architecture.html")}
+                  onClick={() => (window.location.href = "#")}
                 >
                   Architecture
                 </button>
@@ -49,7 +48,7 @@ const ProfessionalsCategory = () => {
                 </p>
                 <button
                   className="btn btn2"
-                  onClick={() => (window.location.href = "QS.html")}
+                  onClick={() => (window.location.href = "#")}
                 >
                   Quantity Surveyors
                 </button>
@@ -67,7 +66,7 @@ const ProfessionalsCategory = () => {
                 </p>
                 <button
                   className="btn btn3"
-                  onClick={() => (window.location.href = "CE.html")}
+                  onClick={() => (window.location.href = "#")}
                 >
                   Civil Engineers
                 </button>
