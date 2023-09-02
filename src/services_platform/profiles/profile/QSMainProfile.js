@@ -1,19 +1,19 @@
-import React from 'react'
+import React from "react";
 import "../style_profile/QSMainProfile.css";
 
 function QSMainProfile() {
   return (
     <div className="q">
-      <div className="back_image" />
-      <div className="profile">
-        <div className="dp_info">
+      <div className="back_image_q" />
+      <div className="profile_q">
+        <div className="dp_info_q">
           <p>
-            <span className="hi-text">HI THERE!</span>
+            <span className="hi-text_q">HI THERE!</span>
             <br />
-            <span className="im-text">I'M </span>
-            <span className="profession-text">A QUANTITY SURVEYOR</span>
+            <span className="im-text_q">I'M </span>
+            <span className="profession-text_q">A QUANTITY SURVEYOR</span>
             <br />
-            <span className="info-text">
+            <span className="info-text_q">
               Looking for an experienced Quantity Surveyor to ensure your
               construction project stays on budget and on track? Your search
               ends here! As a dedicated Quantity Surveyor, I offer a range of
@@ -26,9 +26,11 @@ function QSMainProfile() {
               here to provide the expertise you need.
             </span>
             <br />
+            <a href="./aboutQS">
+              <button className="about_button_q">More about me</button>
+            </a>
 
-            <button className="about_button">More about me</button>
-            <button className="project_button">Projects</button>
+            <button className="project_button_q">Projects</button>
           </p>
         </div>
       </div>
@@ -36,4 +38,4 @@ function QSMainProfile() {
   );
 }
 
-export default QSMainProfile
+export default QSMainProfile;

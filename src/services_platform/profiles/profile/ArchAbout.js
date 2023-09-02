@@ -4,10 +4,10 @@ import ArchDp from "../profile/assets/ArchDp.jpg"
 
 function ArchAbout() {
   return (
-    <div className="About">
-      <img className="engineer_dp" src={ArchDp} />
+    <div className="About_a">
+      <img className="engineer_dp_a" src={ArchDp} />
 
-      <div className="description">
+      <div className="description_a">
         At the prime of my career with over a decade of architectural
         excellence, I stand as a testament to the synergy of youthful passion
         and seasoned knowledge. Graduating with a Bachelor's in Architecture
@@ -19,14 +19,14 @@ function ArchAbout() {
         spaces that redefine modern living.
       </div>
 
-      <div className="about-me">
-        <span className="bit">A BIT ABOUT ME</span>
+      <div className="about-me_a">
+        <span className="bit_a">A BIT ABOUT ME</span>
         <br />
         Who Am I ?
       </div>
 
-      <div className="two-column-container">
-        <div className="column">
+      <div className="two-column-container_a">
+        <div className="column_a">
           <section>
             <h2>Full name</h2>
             <p>[Your Name]</p>
@@ -42,7 +42,7 @@ function ArchAbout() {
             <p>[Your Address]</p>
           </section>
         </div>
-        <div className="column">
+        <div className="column_a">
           <section>
             <h2>Contact Number</h2>
             <p>[Your Contact Information]</p>
@@ -57,7 +57,7 @@ function ArchAbout() {
             <h2>City</h2>
             <p>[Your City]</p>
           </section>
-          <button className="chat_button">Click to Chat</button>
+          <button className="chat_button_a">Click to Chat</button>
         </div>
       </div>
     </div>
