@@ -3,25 +3,26 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import axios from "axios";
 
-const StairsView = () => {
-  const backgroundImageUrl = "https://images.pexels.com/photos/276514/pexels-photo-276514.jpeg";
+const ColumnView = () => {
+  const backgroundImageUrl =
+    "https://images.pexels.com/photos/276514/pexels-photo-276514.jpeg";
 
   const [formData, setFormData] = useState({
     height: "",
-    length: "",
     width: "",
+    length: "",
     unit: "ft",
-    noOfSteps: "",
-    thread: ""
   });
 
   const [showDataSection, setShowDataSection] = useState(false);
 
   const [data, setData] = useState({
-    noOfBricks: null,
     sandQ: null,
     cemntQ: null,
-    totalCost: null
+    metalQ: null,
+    reinforcementQ: null,
+    bindingWiresQ: null,
+    totalCost: null,
   });
 
   const handleSubmit = async (e) => {
@@ -29,7 +30,7 @@ const StairsView = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/Models/Process/PartsOfConstructions/stairs_process.php",
+        "http://localhost:8080/Models/Process/PartsOfConstructions/Columns_Process.php",
         formData,
         {
           headers: {
@@ -39,14 +40,15 @@ const StairsView = () => {
       );
 
       console.log("Response from PHP:", response.data);
-      console.log("Response from PHP:", response.data.numberOfBricks);
-      
+
       if (response.data.message === "Data received successfully") {
         setData({
-          noOfBricks: response.data.numberOfBricks,
           sandQ: response.data.Sand,
           cemntQ: response.data.CementKg,
-          totalCost: response.data.cost
+          metalQ: response.data.metal,
+          reinforcementQ: response.data.reinforcement,
+          bindingWiresQ: response.data.bindingWires,
+          totalCost: response.data.cost,
         });
         setShowDataSection(true);
       }
@@ -67,112 +69,76 @@ const StairsView = () => {
     <div>
       <Navbar />
 
-      <div className=" min-h-screen flex items-center justify-center" style={{ backgroundImage: `url('${backgroundImageUrl}')` }}>
-      {showDataSection ? (
-  <div className="bg-white rounded p-16 shadow-md">
-    <h1 className="block text-sm font-medium text-xl text-gray-700 text-center pb-10">Cost and Quantity Estimation of Wall</h1>
-    <table className="table-auto">
-      <thead>
-        <tr>
-          <th className="px-4 py-2">Material</th>
-          <th className="px-4 py-2">Unit</th>
-          <th className="px-4 py-2">Quantity</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td className="border px-4 py-2">Matel</td>
-          <td className="border px-4 py-2">NOS</td>
-          <td className="border px-4 py-2">{data.noOfBricks}</td>
-        </tr>
-        <tr>
-          <td className="border px-4 py-2">Sand</td>
-          <td className="border px-4 py-2">Cubes</td>
-          <td className="border px-4 py-2">{data.sandQ}</td>
-        </tr>
-        <tr>
-          <td className="border px-4 py-2">Cement</td>
-          <td className="border px-4 py-2">Kg</td>
-          <td className="border px-4 py-2">{data.cemntQ}</td>
-        </tr>
-
-        <tr>
-          <td className="border px-4 py-2">Rainforcement Bars</td>
-          <td className="border px-4 py-2">m</td>
-          <td className="border px-4 py-2">{data.cemntQ}</td>
-        </tr>
-        <tr>
-          <td className="border px-4 py-2">Binding Wires</td>
-          <td className="border px-4 py-2">Kg</td>
-          <td className="border px-4 py-2">{data.cemntQ}</td>
-        </tr>
-
-        <tr>
-        <td className=""></td>
-        </tr>
-        <tr>
-        <td className="border px-4 py-2"></td>
-          <td className="border px-4 py-2"><b>Total Cost</b></td>
-          <td className="border px-4 py-2"><b>{data.totalCost}LKR</b></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-) : (
+      <div
+        className=" min-h-screen flex items-center justify-center"
+        style={{ backgroundImage: `url('${backgroundImageUrl}')` }}
+      >
+        {showDataSection ? (
+          <div className="bg-white rounded p-16 shadow-md">
+            <h1 className="block text-sm font-medium text-xl text-gray-700 text-center pb-10">
+              Cost and Quantity Estimation of Columns
+            </h1>
+            <table className="table-auto">
+              <thead>
+                <tr>
+                  <th className="px-4 py-2">Material</th>
+                  <th className="px-4 py-2">Unit</th>
+                  <th className="px-4 py-2">Quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border px-4 py-2">Sand Quantity</td>
+                  <td className="border px-4 py-2">Cubes</td>
+                  <td className="border px-4 py-2">{data.sandQ}</td>
+                </tr>
+                <tr>
+                  <td className="border px-4 py-2">Cement Quantity</td>
+                  <td className="border px-4 py-2">Kg</td>
+                  <td className="border px-4 py-2">{data.cemntQ}</td>
+                </tr>
+                <tr>
+                  <td className="border px-4 py-2">Metal Quantity</td>
+                  <td className="border px-4 py-2">Cubes</td>
+                  <td className="border px-4 py-2">{data.metalQ}</td>
+                </tr>
+                <tr>
+                  <td className="border px-4 py-2">Reinforcement Bars Quantity</td>
+                  <td className="border px-4 py-2">Meters</td>
+                  <td className="border px-4 py-2">{data.reinforcementQ}</td>
+                </tr>
+                <tr>
+                  <td className="border px-4 py-2">Binding Wires Quantity</td>
+                  <td className="border px-4 py-2">Meters</td>
+                  <td className="border px-4 py-2">{data.bindingWiresQ}</td>
+                </tr>
+                <tr>
+                  <td className=""></td>
+                </tr>
+                <tr>
+                  <td className="border px-4 py-2"></td>
+                  <td className="border px-4 py-2">
+                    <b>Total Cost</b>
+                  </td>
+                  <td className="border px-4 py-2">
+                    <b>{data.totalCost}LKR</b>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        ) : (
           <div className="bg-white rounded p-16 shadow-md" style={{ marginTop: '120px',marginBottom:'80px' }}>
-            <h1 className="block text-sm font-medium text-xl text-gray-700 text-center pb-10">Add Stairs dimension</h1>
+            <h1 className="block text-sm font-medium text-xl text-gray-700 text-center pb-10">
+              Add Columns Dimension
+            </h1>
             <form onSubmit={handleSubmit}>
-            <div className="mb-4">
-                <label
-                  htmlFor="noOfSteps"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Nomber of Steps
-                </label>
-                <input
-                  type="text"
-                  name="noOfSteps"
-                  value={formData.noOfSteps}
-                  onChange={handleInputChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                />
-                </div>
-                <div className="mb-4">
-                <label
-                  htmlFor="noOfSteps"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Thread
-                </label>
-                <input
-                  type="text"
-                  name="tread"
-                  value={formData.thread}
-                  onChange={handleInputChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                />
-                </div>
-                <div className="mb-4">
-                <label
-                  htmlFor="noOfSteps"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Riser
-                </label>
-                <input
-                  type="text"
-                  name="riser"
-                  value={formData.riser}
-                  onChange={handleInputChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                />
-                </div>
               <div className="mb-4">
                 <label
-                  htmlFor="height"
+                  htmlFor="width"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Width of Stairs
+                  Width
                 </label>
                 <input
                   type="text"
@@ -187,7 +153,7 @@ const StairsView = () => {
                   htmlFor="length"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Length of Staircase
+                  Length
                 </label>
                 <input
                   type="text"
@@ -197,17 +163,66 @@ const StairsView = () => {
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                 />
               </div>
+
               <div className="mb-4">
                 <label
-                  htmlFor="length"
+                  htmlFor="thickness"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Thicknes of Staircase
+                  Thickness
                 </label>
                 <input
                   type="text"
-                  name="V"
-                  value={formData.C}
+                  name="thickness"
+                  value={formData.thickness}
+                  onChange={handleInputChange}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                />
+              </div>
+
+              <div className="mb-4">
+                <label
+                  htmlFor="metal"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Metal
+                </label>
+                <input
+                  type="text"
+                  name="metal"
+                  value={formData.metal}
+                  onChange={handleInputChange}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                />
+              </div>
+
+              <div className="mb-4">
+                <label
+                  htmlFor="reinforcement"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Reinforcement Bars
+                </label>
+                <input
+                  type="text"
+                  name="reinforcement"
+                  value={formData.reinforcement}
+                  onChange={handleInputChange}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                />
+              </div>
+
+              <div className="mb-4">
+                <label
+                  htmlFor="bindingWires"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Binding Wires
+                </label>
+                <input
+                  type="text"
+                  name="bindingWires"
+                  value={formData.bindingWires}
                   onChange={handleInputChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                 />
@@ -246,4 +261,4 @@ const StairsView = () => {
   );
 };
 
-export default StairsView;
+export default ColumnView;

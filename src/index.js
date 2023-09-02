@@ -25,6 +25,9 @@ import ArchitectPro from "./services_platform/profiles/profile/ArchMainProfile";
 import QSPro from "./services_platform/profiles/profile/QSMainProfile";
 import EngPro from "./services_platform/profiles/profile/EngMainProfile";
 import StairsView from "./boq_generator/stairs/StairsView";
+import SlabView from "./boq_generator/slabs/SlabView";
+import ColumnView from "./boq_generator/columns/ColumnView";
+import TiebeamView from "./boq_generator/tiebeam/TiebeamView";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -51,7 +54,9 @@ root.render(
       <Route path="/QS-pro" element={<QSPro />} />
       <Route path="/eng-pro" element={<EngPro />} />
       <Route path="/boq-stairs" element={<StairsView />} />
-
+      <Route path="/boq-slab" element={<SlabView />} />
+      <Route path="/boq-columns" element={<ColumnView />} />
+      <Route path="/boq-tiebeam" element={<TiebeamView />} />
     </Routes>
   </Router>
 );
