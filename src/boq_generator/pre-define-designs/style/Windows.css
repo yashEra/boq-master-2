@@ -1,0 +1,192 @@
+
+.window {
+    background-color: var(--light-gray);
+  }
+  .window .box-container .box .image {
+    margin-top: 2rem;
+    height: 20rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border:#000a47
+    
+  }
+
+  .window .box-container .box .image img {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    box-shadow: #000a47;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0), 0 6px 8px 0 rgba(0, 0, 0, 0);
+    border-radius: 10px;
+
+  }
+    
+
+  .window .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 3rem;
+  }
+
+  .window .box-container .box {
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+  }
+  .window .box-container .box .info {
+    text-align: center;
+  }
+  .window .box-container .box .info h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  .window .heading{
+    font-size: 3rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 3rem;
+  }
+ 
+  .window .box-container .box .info p {
+    font-size: 1rem;
+    font-family: "Georgia, 'Times New Roman', Times, serif";
+    line-height: 1.5;
+    letter-spacing: 0.05rem;
+    color: var(--gray);
+    transform: none;
+  }
+  .window .box-container .box .image img:hover {
+    transform: scale(1.1);
+  }
+
+  .window .button{
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 12px 24px;
+  border: 0;
+  color: #fff;
+  background: #000a47;
+  line-height: 1.15;
+  font-size: 16px;
+  :hover {
+      transition: all .1s ease;
+      box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
+  }
+  margin-bottom: 2rem;
+  
+  }
+
+  hr.new2 {
+    border-top: 1px dashed rgb(14, 5, 43);
+  }
+
+.archi .box-container .box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .carchi .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+  }
+  
+  .archi .box-container .box p {
+    font-size: 1.5rem;
+    line-height: 2;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.1rem;
+    color: var(--gray);
+    text-overflow: none;
+  }
+  
+.archi .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 5rem;
+  }
+  
+  .archi .box-container .box {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+  }
+  
+  .serces .box-container .box:hover {
+    box-shadow: none;
+  }
+  
+  .serces .box-container .box ion-icon {
+    font-size: 6rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+  }
+  
+  .erces .box-container .box span {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .erces .box-container .box p {
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    color: var(--gray);
+    line-height: 2;
+  }
+  .top .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  }
+  
+  .top .box-container .box .form-group ion-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+  }
+  
+  .top .box-container .box .form-group span {
+    font-size: 2rem;
+    margin-left: 1rem;
+  }
+  
+  .top .box-container .box .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .top .box-container .box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  
+  .top .box-container .box input {
+    border: 0.1rem solid #000;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .top .box-container .box textarea {
+    border: 0.1rem solid #000;
+    padding: 1rem;
+  }
+  
+  .top .box-container .box button {
+    margin-top: 1rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .top .box-container .box button:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+  }

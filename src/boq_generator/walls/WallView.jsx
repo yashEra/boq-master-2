@@ -4,10 +4,13 @@ import Footer from "../../components/Footer";
 import axios from "axios";
 
 const WallView = () => {
+  const backgroundImageUrl = "https://images.pexels.com/photos/276514/pexels-photo-276514.jpeg";
+
   const [formData, setFormData] = useState({
     height: "",
     length: "",
     unit: "ft",
+    brickTypes: "Clay Brick"
   });
 
   const handleSubmit = async (e) => {
@@ -44,8 +47,8 @@ const WallView = () => {
     <div>
       <Navbar />
 
-      <div className="bg-gray-100 min-h-screen flex items-center justify-center">
-        <div className="bg-white rounded p-8 shadow-md">
+      <div className=" min-h-screen flex items-center justify-center" style={{ backgroundImage: `url('${backgroundImageUrl}')` }}>
+        <div className="bg-white rounded p-16 shadow-md">
         <h1 className="block text-sm font-medium text-xl text-gray-700 text-center pb-10">Add wall dimention</h1>
 
           <form onSubmit={handleSubmit}>
@@ -82,19 +85,37 @@ const WallView = () => {
 
             <div className="mb-4">
               <label
-                htmlFor="currency"
+                htmlFor="unit"
                 className="block text-sm font-medium text-gray-700"
               >
-                Unit
+                Select Unit
               </label>
               <select
                 name="unit"
-                value={formData.currency}
+                value={formData.unit}
                 onChange={handleInputChange}
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               >
                 <option value="ft">ft</option>
                 <option value="m">m</option>
+              </select>
+            </div>
+
+            <div className="mb-4">
+              <label
+                htmlFor="brickTypes"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Select Brick Type
+              </label>
+              <select
+                name="brickTypes"
+                value={formData.brickTypes}
+                onChange={handleInputChange}
+                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              >
+                <option value="clayBrick">Clay Brick</option>
+                <option value="cementBrick">Cement Brick</option>
               </select>
             </div>
 
