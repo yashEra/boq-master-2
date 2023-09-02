@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react'
-import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
+import { Dialog, Disclosure, Popover, Transition,  } from '@headlessui/react'
 import {
   ArrowPathIcon,
   Bars3Icon,
@@ -9,10 +9,11 @@ import {
   SquaresPlusIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import { ChevronDownIcon, PhoneIcon, PlayCircleIcon, BanknotesIcon, WindowIcon,DocumentTextIcon, UserCircleIcon} from '@heroicons/react/20/solid'
 import Logo from '../images/logo.jpg'
 
 const products = [
+
   {
     name: "Meet Professionals",
     description: "Get a better understanding of your traffic",
@@ -44,9 +45,16 @@ const products = [
     icon: ArrowPathIcon,
   },
 ];
+=======
+  { name: 'Meet Professionals', description: 'Get a better understanding of your traffic', href: '/pro-home', icon: UserCircleIcon },
+  { name: 'Generate BoQ', description: 'Speak directly to your customers', href: '/boq-home', icon: DocumentTextIcon },
+  { name: 'Our Designs', description: 'Your customers’ data will be safe and secure', href: '#', icon: WindowIcon },
+  { name: 'Current Material Prices', description: 'Connect with third-party tools', href: '#', icon: BanknotesIcon },
+  { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
+]
 const callsToAction = [
-  { name: 'Video demo', href: '#', icon: PlayCircleIcon },
-  { name: 'Contact Professionals', href: '#', icon: PhoneIcon },
+  { name: 'Video demo', href: 'help-center', icon: PlayCircleIcon },
+  { name: 'Contact us', href: '/contact', icon: PhoneIcon },
 ]
 
 function classNames(...classes) {
@@ -127,7 +135,7 @@ export default function NavBar() {
             </Transition>
           </Popover>
 
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="boq-home" className="text-sm font-semibold leading-6 text-gray-900">
             BoQ Tool
           </a>
           <a href="/about" className="text-sm font-semibold leading-6 text-gray-900">
@@ -193,7 +201,7 @@ export default function NavBar() {
                   )}
                 </Disclosure>
                 <a
-                  href="#"
+                  href="/boq-tool"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   BoQ Tool
