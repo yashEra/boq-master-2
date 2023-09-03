@@ -56,7 +56,7 @@ function QSAbout() {
             <p>[Your City]</p>
           </section>
           <button className="chat_button_q">Click to Chat</button>
-          <button className="portfolio_button_q">Portfolio</button>
+          <a href="/qs-portfolio"><button className="portfolio_button_q">Portfolio</button></a>
         </div>
       </div>
     </div>

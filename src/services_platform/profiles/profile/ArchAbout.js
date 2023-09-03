@@ -1,6 +1,6 @@
-import React from 'react'
-import "../style_profile/ArchAbout.css"
-import ArchDp from "../profile/assets/ArchDp.jpg"
+import React from "react";
+import "../style_profile/ArchAbout.css";
+import ArchDp from "../profile/assets/ArchDp.jpg";
 
 function ArchAbout() {
   return (
@@ -58,11 +58,13 @@ function ArchAbout() {
             <p>[Your City]</p>
           </section>
           <button className="chat_button_a">Click to Chat</button>
-          <button className="portfolio_button_a">Portfolio</button>
+          <a href="/architect-portfolio">
+            <button className="portfolio_button_a">Portfolio</button>
+          </a>
         </div>
       </div>
     </div>
   );
 }
 
-export default ArchAbout
+export default ArchAbout;
