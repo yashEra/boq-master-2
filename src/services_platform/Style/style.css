@@ -4,6 +4,7 @@ body{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background-color: rgba(0, 0, 21, 47);
 }
 #table{
     width:100%;
@@ -24,13 +25,13 @@ table td{
     background-color: #fff;
     padding:20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 15px 2px teal;
+    box-shadow: 0px 0px 15px 2px white;
     transition: 0.5s;
     
 }
 .div1:hover{
     transform:scale(0.9);
-    box-shadow:0px 0px 5px 7px teal;
+    box-shadow:0px 0px 5px 7px white;
     transition: 0.3s;
 }
 .btn{

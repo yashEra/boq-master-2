@@ -9,15 +9,15 @@
 }
 
 .page_e {
-  /* background-color: rgba(0, 0, 21, 47);
+  background-color: rgba(0, 0, 21, 47);
   background-size: auto;
   height: auto;
   margin: 0;
-  padding: 0; */
+  padding: 0;
   
 }
 
-.background_img_e{
+/* .background_img_e{
   background-image: url("../profile/assets/EngProfile.jpg");
   background-size: cover;
   width: auto;
@@ -32,10 +32,10 @@
   right: 0;
   bottom: 0;
   z-index: -10;
-}
+} */
 
 .topic_e {
-  color: black;
+  color: white;
   font-size: 50px; /* Font size */
   font-weight: bold;
   /* justify-content: center; */
@@ -45,12 +45,12 @@
   width:50%;
   position: absolute;
   text-align: center;
-  padding-top: 170px;
+  padding-top: 190px;
   
 }
 
 .main_e{
-  color: rgba(255, 68, 0, 0.897);
+  color: orange;
   font-size: 60px; /* Font size */
   font-weight: bold;
 
@@ -64,7 +64,7 @@
   height: 100vh;
   align-items: right;
   padding-right: 30px;
-  padding-top:50px;
+  padding-top:100px;
   
 }
 

@@ -125,7 +125,7 @@ p {
   border-radius: 10px; /* Add rounded corners */
   cursor: pointer; /* Change cursor to a pointer on hover */
   text-decoration: none; /* Remove underline for links */
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   margin-top: 40px;
   /* animation: blink 1s infinite; Use the "blink" animation for 1 second, infinitely */
@@ -144,7 +144,7 @@ p {
   border-radius: 10px; /* Add rounded corners */
   cursor: pointer; /* Change cursor to a pointer on hover */
   text-decoration: none; /* Remove underline for links */
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   margin-left: 10px;
   /* animation: blink 1s infinite; Use the "blink" animation for 1 second, infinitely */
