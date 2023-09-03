@@ -26,7 +26,7 @@ function QSMainProfile() {
               here to provide the expertise you need.
             </span>
             <br />
-            <a href="./aboutQS">
+            <a href="#">
               <button className="about_button_q">More about me</button>
             </a>
 

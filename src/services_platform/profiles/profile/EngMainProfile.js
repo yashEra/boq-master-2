@@ -23,7 +23,7 @@ function EngMainProfile() {
               success.
             </span>
             <br />
-            <a href="./about-engineer">
+            <a href="#">
               <button className="about_button_e">More about me</button>
             </a>
             <button className="project_button_e">Projects</button>
