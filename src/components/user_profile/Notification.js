@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
-import './App.css';
 import '../style/Notification.css';
 import '../style/UserProfile.css';
 import { FaBell, 
@@ -63,105 +62,134 @@ function Notification() {
   }, []);
   return (
     <div >
-      	<div id="menu-btn" className="fas fa-bars"><FaBars/></div>
-			<nav className="navbar nav1" >
-				<section className="navItems">
-
-					<p className="setting">Settings</p>
-					<ul className="items">
-					    <li><i><FaPen /></i> Edit Profile</li>
-						<li><i><FaBell/></i> Notification</li>
-						<li><i><FaLock/></i> Security</li>
-						<li><i><FaCogs/></i>Appearance</li>
-						<li><i><FaQuestionCircle/></i> Help</li>
-
-					</ul>
-				</section>
-			</nav>
+      	<div
+        id="menu-btn_up"
+        className="fas fa-bars_up"
+        style={{ paddingTop: "100px" }}
+      >
+        <FaBars />
+      </div>
+      <nav className="navbar nav1_up">
+        <section className="navItems_up">
+          <p className="setting_up">Settings</p>
+          <ul className="items_up">
+            <li>
+              <i>
+                <FaPen />
+              </i>{" "}
+              Edit Profile
+            </li>
+            <li>
+              <i>
+                <FaBell />
+              </i>{" "}
+              Notification
+            </li>
+            <li>
+              <i>
+                <FaLock />
+              </i>{" "}
+              Security
+            </li>
+            <li>
+              <i>
+                <FaCogs />
+              </i>
+              Appearance
+            </li>
+            <li>
+              <i>
+                <FaQuestionCircle />
+              </i>{" "}
+              Help
+            </li>
+          </ul>
+        </section>
+      </nav>
       {/* ----Notification ---- */}
       
-      <div className="body">
+      <div className="body_notifi">
         
-      <div className ="container">
-                <header>
-                    <div class="notif_box">
-                        <h2 class ="title">Notification</h2>
-                        <span id="notifications">{unreadCount}</span>
+      <div className ="container_notifi">
+                <header className='header_notifi'>
+                    <div class="notif_box_notifi">
+                        <h2 class ="title_notifi">Notification</h2>
+                        <span id="notifications_notifi">{unreadCount}</span>
                     </div>
-                    <p id ="mark_all">Mark all as read</p>
+                    <p className='p_notifi' id ="mark_all_notifi">Mark all as read</p>
                 </header>
-                <main>
+                <main className='main_notifi'>
                     <div className="notif_card unread">
-                       <img src={image1} alt="avatar" className='img'></img> 
-                      <div className="description">
-                        <p className="user_activity">
+                       <img src={image1} alt="avatar" className='img_notifi'></img> 
+                      <div className="description_notifi">
+                        <p className="user_activity_notifi">
                           <strong>Mark Croos</strong> Type the message....
                         </p>
-                        <p className="time">1m ago</p>
+                        <p className="time_notifi">1m ago</p>
                       </div>
                     </div>
                     <div className="notif_card unread">
-                    <img src={image2} alt="avatar" className='img'></img> 
-                      <div className="description">
-                        <p className="user_activity">
+                    <img src={image2} alt="avatar" className='img_notifi'></img> 
+                      <div className="description_notifi">
+                        <p className="user_activity_notifi">
                           <strong>Angela Webber</strong> Type the message....
                         </p>
-                        <p className="time">10m ago</p>
+                        <p className="time_notifi">10m ago</p>
                       </div>
                     </div>
                     <div className="notif_card unread">
-                    <img src={image3} alt="avatar" className='img'></img> 
-                      <div className="description">
-                        <p className="user_activity">
+                    <img src={image3} alt="avatar" className='img_notifi'></img> 
+                      <div className="description_notifi">
+                        <p className="user_activity_notifi">
                           <strong>Jacob Fenando</strong> Type the message....
                         </p>
-                        <p className="time">1 day ago</p>
+                        <p className="time_notifi">1 day ago</p>
                       </div>
                     </div>
                     <div className="notif_card">
-                      <div className="message_card">
-                      <img src={image4} alt="avatar" className='img'></img> 
-                      <div className="description">
-                        <p className="user_activity">
+                      <div className="message_card_notifi">
+                      <img src={image4} alt="avatar" className='img_notifi'></img> 
+                      <div className="description_notifi">
+                        <p className="user_activity_notifi">
                           <strong>Jayathilaka Perera</strong> sent you a private message
                         </p>
-                        <p className="time">5 days ago</p>
+                        <p className="time_notifi">5 days ago</p>
                         </div>
                       </div>
                     </div>
-                    <div className="message">
+                    <div className="message_notifi">
                       <p>
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ornare tempus aliquet. Pellentesque finibus, est et iaculis suscipit, dolor nulla commodo dui, nec ultricies arcu nisl tristique eros. Morbi eros est, pulvinar eget ornare ac, ultrices eget risus. Ut lobortis pellentesque pretium. Praesent sollicitudin vestibulum iaculis. Mauris a finibus orci. Quisque ipsum nunc, efficitur sit amet blandit ut, aliquam quis dui. Phasellus interdum leo eu ipsum malesuada, et interdum diam egestas. Maecenas pretium fermentum tortor ac tincidunt. Curabitur consectetur dolor libero, at aliquam est ornare eleifend. Aliquam at finibus dolor
                       </p>
                     </div>
                     <div className="notif_card">
-                    <img src={image5} alt="avatar" className='img'></img> 
-                       <div className="description">
-                        <p className="user_activity">
+                    <img src={image5} alt="avatar" className='img_notifi'></img> 
+                       <div className="description_notifi">
+                        <p className="user_activity_notifi">
                         <strong>Hewage Dias</strong> sent you a private message
                         
                         </p>
-                        <p className="time">2 weeks ago</p>
+                        <p className="time_notifi">2 weeks ago</p>
                        </div>
                        {/* <img src="" alt="avatar"></img> */}
                        </div>
                        <div className="notif_card">
-                       <img src={image6} alt="avatar" className='img'></img> 
-                        <div className="description">
-                        <p className="user_activity">
+                       <img src={image6} alt="avatar" className='img_notifi'></img> 
+                        <div className="description_notifi">
+                        <p className="user_activity_notifi">
                         <strong>Reina Croos</strong> sent you a private message
                           </p> 
-                          <p className="time">3 weeks ago</p>
+                          <p className="time_notifi">3 weeks ago</p>
                         </div>
                        </div>
                        <div className="notif_card">
-                       <img src={image7} alt="avatar" className='img'></img> 
-                        <div className="description">
-                        <p className="user_activity">
+                       <img src={image7} alt="avatar" className='img_notifi'></img> 
+                        <div className="description_notifi">
+                        <p className="user_activity_notifi">
                         <strong>Selena Perera</strong> sent you a private message_card
-                        <strong className="link">link</strong>
+                        <strong className="link_notifi">link</strong>
                           </p> 
-                          <p className="time">1 month ago</p>
+                          <p className="time_notifi">1 month ago</p>
                         </div>
                        </div>
                     

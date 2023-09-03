@@ -29,6 +29,8 @@ import SlabView from "./boq_generator/slabs/SlabView";
 import ColumnView from "./boq_generator/columns/ColumnView";
 import TiebeamView from "./boq_generator/tiebeam/TiebeamView";
 
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Router>

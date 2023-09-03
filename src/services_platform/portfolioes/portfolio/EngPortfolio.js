@@ -4,14 +4,13 @@ import React from 'react';
 // import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 // import logo from './logo.svg';
 // import { FaExternalLinkAlt } from 'react-icons/fa';
-import './App.css';
 import '../style_portfolio/EngPortfolio.css';
-import image1 from './assets/image1.jpg';
-import image2 from './assets/image2.jpg';
-import image3 from './assets/image3.jpg';
-import image4 from './assets/image4.jpg';
-import image5 from './assets/image5.jpg';
-import image6 from './assets/image6.jpg';
+import image_e1 from './assests/image_e1.jpg';
+import image_e2 from './assests/image_e2.jpg';
+import image_e3 from './assests/image_e3.jpg';
+import image_e4 from './assests/image_e4.jpg';
+import image_e5 from './assests/image_e5.jpg';
+import image_e6 from './assests/image_e6.jpg';
 
 
 function App() {
@@ -24,7 +23,7 @@ function App() {
 
 	<div className='portfolio-container_e'>
 		<div className ='portfolio-box_e'>
-    <img src={image1} alt=""  ></img>
+    <img src={image_e1} alt=""  ></img>
     <div className='portfolio-layer_e'>
       <h4>Residential Housing Development</h4>
       <p>residential housing development is a multifaceted process that aims to create livable, sustainable, and safe communities for 
@@ -37,7 +36,7 @@ function App() {
           </div>
 
           <div className ='portfolio-box_e'>
-    <img src={image2} alt="" ></img>
+    <img src={image_e2} alt="" ></img>
     <div className='portfolio-layer_e'>
       <h4>Commercial Building Construction</h4>
       <p> commercial building construction involves a complex and collaborative effort among architects, engineers, construction professionals, and business owners. It aims to create functional, safe, 
@@ -49,7 +48,7 @@ function App() {
           </div>
 
           <div className ='portfolio-box_e'>
-    <img src={image3} alt="" ></img>
+    <img src={image_e3} alt="" ></img>
     <div className='portfolio-layer_e'>
       <h4>Mall and Shopping Center Development</h4>
       <p>mall and shopping center development is a multidisciplinary effort that relies on engineering expertise to create functional,
@@ -62,7 +61,7 @@ function App() {
           </div>
 
           <div className ='portfolio-box_e'>
-    <img src={image4} alt="" ></img>
+    <img src={image_e4} alt="" ></img>
     <div className='portfolio-layer_e'>
       <h4>Modular Construction</h4>
       <p>Modular construction is a modern building technique that offers speed, efficiency, quality control, and sustainability benefits. It's an increasingly popular choice in the construction industry, 
@@ -74,7 +73,7 @@ function App() {
           </div>
 
           <div className ='portfolio-box_e'>
-    <img src={image5} alt="" ></img>
+    <img src={image_e5} alt="" ></img>
     <div className='portfolio-layer_e'>
       <h4>Educational Institutions</h4>
       <p>educational institution construction is a complex and multifaceted process that aims to create safe, efficient, and inspiring learning environments. These projects require
@@ -87,7 +86,7 @@ function App() {
           </div>
 
           <div className ='portfolio-box_e'>
-    <img src={image6} alt="" ></img>
+    <img src={image_e6} alt="" ></img>
     <div className='portfolio-layer_e'>
       <h4>Green Building and Sustainability Projects</h4>
       <p>Green Building Technology is an ever expanding world of new green building products and procedures that enable us to utilize natural resources and provide power and heating to our homes. 

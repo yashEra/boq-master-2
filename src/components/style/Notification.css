@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-.body{
+.body_notifi{
     height: 100vh;
     width: 70%;
     display: flex;
@@ -19,14 +19,14 @@
     padding: 0;
     margin: 0;
 }
-.container{
+.container_notifi{
     margin:2rem;
     width: 700px;
     background-color: #f2f8fa;
     padding: 1.5rem 1rem;
     border-radius: .5rem;
 }
-header{
+.header_notifi{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -51,11 +51,11 @@ header{
 #mark_all{
     cursor: pointer;
 }
-p{
+.p_notifi{
     color: #5e6778;
 
 }
-main{
+.main_notifi{
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -66,12 +66,12 @@ main{
     border-radius: .5rem;
     padding: 1rem;
 }
-img{
+.img_notifi{
     width: 45px;
     height: 45px;
     border-radius: 100px;
 }
-.description{
+.description_notifi{
     margin-left: 1rem;
     display: flex;
     flex-direction: column;
@@ -97,18 +97,18 @@ strong:hover{
     display: inline-block;
     border-radius: 50%;
 }
-.message_card{
+.message_card_notifi{
     display: flex;
     align-items: center;
 }
-.message{
+.message_notifi{
     padding: 1rem;
     border:1px solid #dde7ee;
     border-radius: .3rem;
     cursor: pointer;
     margin: 0 0 0 5rem;
 }
-.message:hover{
+.message_notifi:hover{
     background-color: #e5effa;
 }
 .chess_img{
