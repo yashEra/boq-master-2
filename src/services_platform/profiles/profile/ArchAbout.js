@@ -1,6 +1,6 @@
-import React from 'react'
-import "../style_profile/ArchAbout.css"
-import ArchDp from "../profile/assets/ArchDp.jpg"
+import React from "react";
+import "../style_profile/ArchAbout.css";
+import ArchDp from "../profile/assets/ArchDp.jpg";
 
 function ArchAbout() {
   return (
@@ -13,10 +13,10 @@ function ArchAbout() {
         and seasoned knowledge. Graduating with a Bachelor's in Architecture
         from a prestigious institution, my architectural journey commenced
         early, nurturing my innate creativity. My professional path led me
-        through esteemed firms like sigma, where I played a pivotal
-        role in shaping iconic cityscapes. Now, with a wealth of experience, I
-        am uniquely positioned to fuse innovation and precision in crafting
-        spaces that redefine modern living.
+        through esteemed firms like sigma, where I played a pivotal role in
+        shaping iconic cityscapes. Now, with a wealth of experience, I am
+        uniquely positioned to fuse innovation and precision in crafting spaces
+        that redefine modern living.
       </div>
 
       <div className="about-me_a">
@@ -58,10 +58,13 @@ function ArchAbout() {
             <p>[Your City]</p>
           </section>
           <button className="chat_button_a">Click to Chat</button>
+          <a href="/architect-portfolio">
+            <button className="portfolio_button_a">Portfolio</button>
+          </a>
         </div>
       </div>
     </div>
   );
 }
 
-export default ArchAbout
+export default ArchAbout;
