@@ -28,13 +28,13 @@ import StairsView from "./boq_generator/stairs/StairsView";
 import SlabView from "./boq_generator/slabs/SlabView";
 import ColumnView from "./boq_generator/columns/ColumnView";
 import TiebeamView from "./boq_generator/tiebeam/TiebeamView";
+import SingleUnitCalculator from "./boq_generator/SingleUnitCalculator";
 import ArchPortfolio from "./services_platform/portfolioes/portfolio/ArchiPortfolio"
 import EngPortfolio from "./services_platform/portfolioes/portfolio/EngPortfolio";
 import QSPortfolio from "./services_platform/portfolioes/portfolio/QSPortfolio";
 import QSList from "./services_platform/profiles/profile/QSList"
 import EngList from "./services_platform/profiles/profile/EngineerList"
 import ArchList from "./services_platform/profiles/profile/ArchitectList"
-
 
 
 
@@ -66,7 +66,7 @@ root.render(
       <Route path="/boq-slab" element={<SlabView />} />
       <Route path="/boq-columns" element={<ColumnView />} />
       <Route path="/boq-tiebeam" element={<TiebeamView />} />
-      <Route path="/architect-portfolio" element={<ArchPortfolio />} />
+      <Route path="/boq-singleunitcal" element={<SingleUnitCalculator />} /><Route path="/architect-portfolio" element={<ArchPortfolio />} />
       <Route path="/eng-portfolio" element={<EngPortfolio />} />
       <Route path="/qs-portfolio" element={<QSPortfolio />} />
       <Route path="/qs-list" element={<QSList />} />

@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import axios from "axios";
+import WallsImg from '../Assets/wall.jpg'
+
 
 const WallView = () => {
-  const backgroundImageUrl = "https://images.pexels.com/photos/276514/pexels-photo-276514.jpeg";
+  const backgroundImageUrl = WallsImg;
 
   const [formData, setFormData] = useState({
     height: "",
