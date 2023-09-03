@@ -7,12 +7,13 @@ const StairsView = () => {
   const backgroundImageUrl = "https://images.pexels.com/photos/276514/pexels-photo-276514.jpeg";
 
   const [formData, setFormData] = useState({
-    height: "",
     length: "",
     width: "",
     unit: "ft",
     noOfSteps: "",
-    thread: ""
+    thread: "",
+    riser:"",
+    thickness:"",
   });
 
   const [showDataSection, setShowDataSection] = useState(false);
@@ -139,14 +140,14 @@ const StairsView = () => {
                 </div>
                 <div className="mb-4">
                 <label
-                  htmlFor="noOfSteps"
+                  htmlFor="thread"
                   className="block text-sm font-medium text-gray-700"
                 >
                   Thread
                 </label>
                 <input
                   type="text"
-                  name="tread"
+                  name="thread"
                   value={formData.thread}
                   onChange={handleInputChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
@@ -154,7 +155,7 @@ const StairsView = () => {
                 </div>
                 <div className="mb-4">
                 <label
-                  htmlFor="noOfSteps"
+                  htmlFor="riser"
                   className="block text-sm font-medium text-gray-700"
                 >
                   Riser
@@ -169,7 +170,7 @@ const StairsView = () => {
                 </div>
               <div className="mb-4">
                 <label
-                  htmlFor="height"
+                  htmlFor="width"
                   className="block text-sm font-medium text-gray-700"
                 >
                   Width of Stairs
@@ -199,15 +200,15 @@ const StairsView = () => {
               </div>
               <div className="mb-4">
                 <label
-                  htmlFor="length"
+                  htmlFor="thickness"
                   className="block text-sm font-medium text-gray-700"
                 >
                   Thicknes of Staircase
                 </label>
                 <input
                   type="text"
-                  name="V"
-                  value={formData.C}
+                  name="thickness"
+                  value={formData.thickness}
                   onChange={handleInputChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                 />
