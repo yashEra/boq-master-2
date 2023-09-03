@@ -97,7 +97,7 @@ const WallView = () => {
         <td className=""></td>
         </tr>
         <tr>
-        <td className="border px-4 py-2"></td>
+        <td className=""></td>
           <td className="border px-4 py-2"><b>Total Cost</b></td>
           <td className="border px-4 py-2"><b>{data.totalCost}LKR</b></td>
         </tr>

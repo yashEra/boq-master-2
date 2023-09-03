@@ -17,12 +17,10 @@ const SlabView = () => {
   const [showDataSection, setShowDataSection] = useState(false);
 
   const [data, setData] = useState({
-    sandQ: null,
-    cemntQ: null,
-    metalQ: null,
-    reinforcementQ: null,
-    bindingWiresQ: null,
-    totalCost: null,
+    thickness: "",
+    length: "",
+    width: "",
+    unit: "ft",
   });
 
   const handleSubmit = async (e) => {
@@ -30,7 +28,7 @@ const SlabView = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/Models/Process/PartsOfConstructions/Slab_Process.php",
+        "http://localhost:8080/Models/Process/PartsOfConstructions/slab_process.php",
         formData,
         {
           headers: {
@@ -180,53 +178,6 @@ const SlabView = () => {
                 />
               </div>
 
-              <div className="mb-4">
-                <label
-                  htmlFor="metal"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Metal
-                </label>
-                <input
-                  type="text"
-                  name="metal"
-                  value={formData.metal}
-                  onChange={handleInputChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                />
-              </div>
-
-              <div className="mb-4">
-                <label
-                  htmlFor="reinforcement"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Reinforcement Bars
-                </label>
-                <input
-                  type="text"
-                  name="reinforcement"
-                  value={formData.reinforcement}
-                  onChange={handleInputChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                />
-              </div>
-
-              <div className="mb-4">
-                <label
-                  htmlFor="bindingWires"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Binding Wires
-                </label>
-                <input
-                  type="text"
-                  name="bindingWires"
-                  value={formData.bindingWires}
-                  onChange={handleInputChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                />
-              </div>
 
               <div className="mb-4">
                 <label

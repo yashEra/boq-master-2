@@ -30,7 +30,7 @@ const StairsView = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/Models/Process/PartsOfConstructions/stairs_process.php",
+        "http://localhost:8080/Models/Process/PartsOfConstructions/stairs-process.php",
         formData,
         {
           headers: {
@@ -44,10 +44,12 @@ const StairsView = () => {
       
       if (response.data.message === "Data received successfully") {
         setData({
-          noOfBricks: response.data.numberOfBricks,
-          sandQ: response.data.Sand,
-          cemntQ: response.data.CementKg,
-          totalCost: response.data.cost
+          cementQ: response.data.cement,
+          sandQ: response.data.sand,
+          matelQ: response.data.matel,
+          rainforcementBarsQ: response.data.rainforcementBars,
+          bindingWirestQ: response.data.bindingWires,
+          totalCost: response.data.cost,
         });
         setShowDataSection(true);
       }
@@ -83,36 +85,36 @@ const StairsView = () => {
       <tbody>
         <tr>
           <td className="border px-4 py-2">Matel</td>
-          <td className="border px-4 py-2">NOS</td>
-          <td className="border px-4 py-2">{data.noOfBricks}</td>
+          <td className="border px-4 py-2">Cubic feet</td>
+          <td className="border px-4 py-2">{data.matelQ}</td>
         </tr>
         <tr>
           <td className="border px-4 py-2">Sand</td>
-          <td className="border px-4 py-2">Cubes</td>
+          <td className="border px-4 py-2">Cubic feet</td>
           <td className="border px-4 py-2">{data.sandQ}</td>
         </tr>
         <tr>
           <td className="border px-4 py-2">Cement</td>
-          <td className="border px-4 py-2">Kg</td>
-          <td className="border px-4 py-2">{data.cemntQ}</td>
+          <td className="border px-4 py-2">50Kg Bags</td>
+          <td className="border px-4 py-2">{data.cementQ}</td>
         </tr>
 
         <tr>
           <td className="border px-4 py-2">Rainforcement Bars</td>
           <td className="border px-4 py-2">m</td>
-          <td className="border px-4 py-2">{data.cemntQ}</td>
+          <td className="border px-4 py-2">{data.rainforcementBarsQ}</td>
         </tr>
         <tr>
           <td className="border px-4 py-2">Binding Wires</td>
           <td className="border px-4 py-2">Kg</td>
-          <td className="border px-4 py-2">{data.cemntQ}</td>
+          <td className="border px-4 py-2">{data.bindingWirestQ}</td>
         </tr>
 
         <tr>
         <td className=""></td>
         </tr>
         <tr>
-        <td className="border px-4 py-2"></td>
+        <td className=""></td>
           <td className="border px-4 py-2"><b>Total Cost</b></td>
           <td className="border px-4 py-2"><b>{data.totalCost}LKR</b></td>
         </tr>
