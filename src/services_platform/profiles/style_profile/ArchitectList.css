@@ -1,0 +1,15 @@
+.page{
+    background-color: rgba(0, 0, 21, 47);
+    background-size: auto;
+
+}
+
+.architectlist {
+    
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  width: auto;
+  height: 100vh;
+  align-items: center;
+}

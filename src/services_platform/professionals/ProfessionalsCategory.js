@@ -31,7 +31,7 @@ const ProfessionalsCategory = () => {
                 </p>
                 <button
                   className="btn btn1"
-                  onClick={() => (window.location.href = "#")}
+                  onClick={() => (window.location.href = "/architect-list")}
                 >
                   Architecture
                 </button>
@@ -48,7 +48,7 @@ const ProfessionalsCategory = () => {
                 </p>
                 <button
                   className="btn btn2"
-                  onClick={() => (window.location.href = "#")}
+                  onClick={() => (window.location.href = "/qs-list")}
                 >
                   Quantity Surveyors
                 </button>
@@ -66,7 +66,7 @@ const ProfessionalsCategory = () => {
                 </p>
                 <button
                   className="btn btn3"
-                  onClick={() => (window.location.href = "#")}
+                  onClick={() => (window.location.href = "/engineer-list")}
                 >
                   Civil Engineers
                 </button>
