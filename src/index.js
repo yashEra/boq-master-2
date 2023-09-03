@@ -28,6 +28,13 @@ import StairsView from "./boq_generator/stairs/StairsView";
 import SlabView from "./boq_generator/slabs/SlabView";
 import ColumnView from "./boq_generator/columns/ColumnView";
 import TiebeamView from "./boq_generator/tiebeam/TiebeamView";
+import ArchPortfolio from "./services_platform/portfolioes/portfolio/ArchiPortfolio"
+import EngPortfolio from "./services_platform/portfolioes/portfolio/EngPortfolio";
+import QSPortfolio from "./services_platform/portfolioes/portfolio/QSPortfolio";
+import QSList from "./services_platform/profiles/profile/QSList"
+import EngList from "./services_platform/profiles/profile/EngineerList"
+import ArchList from "./services_platform/profiles/profile/ArchitectList"
+
 
 
 
@@ -50,15 +57,21 @@ root.render(
       <Route path="/help-center" element={<Help_center />} />
       <Route path="/pro-home" element={<ProfessionalsCategory />} />
       <Route path="/about-architect" element={<AboutArchitect />} />
-      <Route path="/aboutQS" element={<AboutQS />} />
+      <Route path="/about-qs" element={<AboutQS />} />
       <Route path="/about-engineer" element={<AboutEngineer />} />
       <Route path="/architect-pro" element={<ArchitectPro />} />
-      <Route path="/QS-pro" element={<QSPro />} />
+      <Route path="/qs-pro" element={<QSPro />} />
       <Route path="/eng-pro" element={<EngPro />} />
       <Route path="/boq-stairs" element={<StairsView />} />
       <Route path="/boq-slab" element={<SlabView />} />
       <Route path="/boq-columns" element={<ColumnView />} />
       <Route path="/boq-tiebeam" element={<TiebeamView />} />
+      <Route path="/architect-portfolio" element={<ArchPortfolio />} />
+      <Route path="/eng-portfolio" element={<EngPortfolio />} />
+      <Route path="/qs-portfolio" element={<QSPortfolio />} />
+      <Route path="/qs-list" element={<QSList />} />
+      <Route path="/engineer-list" element={<EngList />} />
+      <Route path="/architect-list" element={<ArchList />} />
     </Routes>
   </Router>
 );

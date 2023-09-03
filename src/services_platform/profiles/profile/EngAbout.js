@@ -56,6 +56,7 @@ function EngAbout() {
             <p>[Your City]</p>
           </section>
           <button className="chat_button_e">Click to Chat</button>
+          <a href="/eng-portfolio"><button className="portfolio_button_e">Portfolio</button></a>
         </div>
       </div>
     </div>

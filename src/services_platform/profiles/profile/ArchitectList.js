@@ -3,10 +3,11 @@ import "../style_profile/ArchitectList.css";
 
 const people = [
   {
-    name: "[name]",
-    email: "[email]",
-    role: "[role]",
-    imageUrl: "#",
+    name: "A.R.D. Rathnayake",
+    email: "ardrathnayake.gmail.com",
+    role: "Chief Architect & Revit Expert || Permit Plans Drafter || BIM || MEP",
+    imageUrl:
+      "https://t3.ftcdn.net/jpg/04/19/88/96/360_F_419889684_ZcIYZWwxtns7Q469DcLVybs94GIHNHjm.jpg",
 
     // lastSeen: "3h ago",
     // lastSeenDateTime: "2023-01-23T13:23Z",
@@ -43,7 +44,7 @@ const people = [
     // lastSeenDateTime: "2023-01-23T13:23Z",
   },
   {
-    name: "[name]",
+    name: "",
     email: "[email]",
     role: "[role]",
     imageUrl: "#",
@@ -53,9 +54,14 @@ const people = [
 
 export default function ArchitectList() {
   return (
-    <div className="page">
+    <div className="page_a">
+      <div className="background_img_a"></div>
+      <div className="topic_a">
+        Let Our <br /> <span className="main_a">ARCHITECT EXPERTS</span>
+        <br /> Show you the Way
+      </div>
       <div className="architectlist">
-        <ul role="list" className="divide-y divide-white">
+        <ul role="list" className="divide-y divide-black">
           {people.map((person) => (
             <li
               key={person.email}
@@ -68,18 +74,20 @@ export default function ArchitectList() {
                   alt=""
                 />
                 <div className="min-w-0 flex-auto">
-                  <p className="text-sm font-semibold leading-6 text-white">
-                    {person.name}
+                  <p className="text-sm font-semibold leading-6 text-black">
+                   <a href="/about-architect"> {person.name}</a>
                   </p>
-                  <p className="mt-1 truncate text-xs leading-5 text-white">
+                  <p className="mt-1 truncate text-xs leading-5 text-black">
                     {person.email}
                   </p>
                 </div>
               </div>
               <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-                <p className="text-sm leading-6 text-white">{person.role}</p>
+                <p className="text-sm leading-6 text-orange-500">
+                  {person.role}
+                </p>
                 {person.lastSeen ? (
-                  <p className="mt-1 text-xs leading-5 text-white">
+                  <p className="mt-1 text-xs leading-5 text-black">
                     Last seen{" "}
                     <time dateTime={person.lastSeenDateTime}>
                       {person.lastSeen}

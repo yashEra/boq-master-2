@@ -26,7 +26,7 @@ function ArchMainProfile() {
               Contact me today, and together, we can create spaces that inspire.
             </span>
             <br />
-            <a href="./about-architect">
+            <a href="#">
               <button className="about_button_a">More about me</button>
             </a>
 

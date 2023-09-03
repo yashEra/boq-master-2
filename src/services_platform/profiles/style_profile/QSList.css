@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Josefin+Sans:ital,wght@0,600;0,700;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,600;0,700;1,600;1,700&display=swap");
+
+* {
+  font-family: "Inter", "Josefin Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  /* overflow-x: hidden; */
+}
+
+.page_q {
+  /* background-color: rgba(0, 0, 21, 47);
+  background-size: auto;
+  height: auto;
+  margin: 0;
+  padding: 0; */
+  
+}
+
+.background_img_q{
+  background-image: url("../profile/assets/QSProfile.jpg");
+  background-size: cover;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  position:fixed;
+  left:0;
+  top:0;
+  right: 0;
+  bottom: 0;
+  z-index: -10;
+}
+
+.topic_q {
+  color: black;
+  font-size: 50px; /* Font size */
+  font-weight: bold;
+  /* justify-content: center; */
+  align-items: left;
+  /* display: flex; */
+  padding-top: 20px;
+  width:50%;
+  position: absolute;
+  text-align: center;
+  padding-top: 170px;
+  
+}
+
+
+
+.main_q{
+  color: rgba(255, 68, 0, 0.897);
+  font-size: 60px; /* Font size */
+  font-weight: bold;
+
+}
+
+.qslist {
+  width: 40%;
+  display: flex;
+  justify-content: right;
+  width: auto;
+  height: 100vh;
+  align-items: right;
+  padding-right: 30px;
+  padding-top:50px;
+  
+}
+
+
