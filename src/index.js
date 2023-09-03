@@ -28,6 +28,7 @@ import StairsView from "./boq_generator/stairs/StairsView";
 import SlabView from "./boq_generator/slabs/SlabView";
 import ColumnView from "./boq_generator/columns/ColumnView";
 import TiebeamView from "./boq_generator/tiebeam/TiebeamView";
+import SingleUnitCalculator from "./boq_generator/SingleUnitCalculator";
 
 
 
@@ -59,6 +60,8 @@ root.render(
       <Route path="/boq-slab" element={<SlabView />} />
       <Route path="/boq-columns" element={<ColumnView />} />
       <Route path="/boq-tiebeam" element={<TiebeamView />} />
+      <Route path="/boq-singleunitcal" element={<SingleUnitCalculator />} />
+
     </Routes>
   </Router>
 );

@@ -45,11 +45,11 @@ const products = [
 //     icon: ArrowPathIcon,
 //   },
 // ];
-  { name: 'Meet Professionals', description: 'Get a better understanding of your traffic', href: '/pro-home', icon: UserCircleIcon },
-  { name: 'Generate BoQ', description: 'Speak directly to your customers', href: '/boq-home', icon: DocumentTextIcon },
-  { name: 'Our Designs', description: 'Your customers’ data will be safe and secure', href: '#', icon: WindowIcon },
-  { name: 'Current Material Prices', description: 'Connect with third-party tools', href: '#', icon: BanknotesIcon },
-  { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
+  { name: 'Meet Professionals', description: '', href: '/pro-home', icon: UserCircleIcon },
+  { name: 'Generate BoQ', description: '', href: '/boq-home', icon: DocumentTextIcon },
+  { name: 'Our Designs', description: '', href: '/pre-define', icon: WindowIcon },
+  { name: 'Current Material Prices', description: '', href: '/raw-material-db', icon: BanknotesIcon },
+  { name: 'Single Unit Calculator', description: '', href: '/boq-singleunitcal', icon: ArrowPathIcon },
 ]
 const callsToAction = [
   { name: 'Video demo', href: 'help-center', icon: PlayCircleIcon },
