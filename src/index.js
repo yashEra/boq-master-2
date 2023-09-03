@@ -73,7 +73,7 @@ root.render(
       <Route path="/qs-list" element={<QSList />} />
       <Route path="/engineer-list" element={<EngList />} />
       <Route path="/architect-list" element={<ArchList />} />
-      <Route path="material-price-list" element={<RawMaterialsTable />} />
+      <Route path="/material-price-list" element={<RawMaterialsTable />} />
     </Routes>
   </Router>
 );

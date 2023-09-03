@@ -48,7 +48,7 @@ const products = [
   { name: 'Meet Professionals', description: '', href: '/pro-home', icon: UserCircleIcon },
   { name: 'Generate BoQ', description: '', href: '/boq-home', icon: DocumentTextIcon },
   { name: 'Our Designs', description: '', href: '/pre-define', icon: WindowIcon },
-  { name: 'Current Material Prices', description: '', href: '/raw-material-db', icon: BanknotesIcon },
+  { name: 'Current Material Prices', description: '', href: '/material-price-list', icon: BanknotesIcon },
   { name: 'Single Unit Calculator', description: '', href: '/boq-singleunitcal', icon: ArrowPathIcon },
 ]
 const callsToAction = [
