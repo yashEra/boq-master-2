@@ -1,6 +1,6 @@
 import React from "react";
 import "../style_profile/EngAbout.css";
-import EngDp from "./assets/EngDp.png";
+import EngDp from "../profile/assets/EngDp.png";
 
 function EngAbout() {
   return (
