@@ -41,12 +41,12 @@ const SlabView = () => {
 
       if (response.data.message === "Data received successfully") {
         setData({
-          sandQ: response.data.Sand,
-          cemntQ: response.data.CementKg,
-          metalQ: response.data.metal,
-          reinforcementQ: response.data.reinforcement,
-          bindingWiresQ: response.data.bindingWires,
-          totalCost: response.data.cost,
+          sandQ: parseFloat(response.data.sand).toFixed(2), // Format to 2 decimal places
+          cemntQ: parseFloat(response.data.cement).toFixed(2), // Format to 2 decimal places
+          metalQ: parseFloat(response.data.matel).toFixed(2), // Format to 2 decimal places
+          reinforcementQ: parseFloat(response.data.rainforcementBars).toFixed(2), // Format to 2 decimal places
+          bindingWiresQ: parseFloat(response.data.bindingWires).toFixed(2), // Format to 2 decimal places
+          totalCost: parseFloat(response.data.cost).toFixed(2), // Format to 2 decimal places
         });
         setShowDataSection(true);
       }
@@ -139,7 +139,7 @@ const SlabView = () => {
                   Width
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   name="width"
                   value={formData.width}
                   onChange={handleInputChange}
@@ -154,7 +154,7 @@ const SlabView = () => {
                   Length
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   name="length"
                   value={formData.length}
                   onChange={handleInputChange}
@@ -170,7 +170,7 @@ const SlabView = () => {
                   Thickness
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   name="thickness"
                   value={formData.thickness}
                   onChange={handleInputChange}

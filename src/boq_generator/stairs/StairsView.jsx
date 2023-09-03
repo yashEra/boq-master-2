@@ -44,12 +44,12 @@ const StairsView = () => {
       
       if (response.data.message === "Data received successfully") {
         setData({
-          cementQ: response.data.cement,
-          sandQ: response.data.sand,
-          matelQ: response.data.matel,
-          rainforcementBarsQ: response.data.rainforcementBars,
-          bindingWirestQ: response.data.bindingWires,
-          totalCost: response.data.cost,
+          cementQ: parseFloat(response.data.cement).toFixed(2),
+          sandQ: parseFloat(response.data.sand).toFixed(2),
+          matelQ: parseFloat(response.data.matel).toFixed(2),
+          rainforcementBarsQ: parseFloat(response.data.rainforcementBars).toFixed(2),
+          bindingWirestQ: parseFloat(response.data.bindingWires).toFixed(2),
+          totalCost: parseFloat(response.data.cost).toFixed(2),
         });
         setShowDataSection(true);
       }
