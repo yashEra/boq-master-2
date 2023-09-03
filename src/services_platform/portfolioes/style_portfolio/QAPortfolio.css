@@ -20,37 +20,34 @@
   --text-color: #fff;
   --main-color: #0ef;
 }
-<<<<<<< Updated upstream
-.headportfolio_q{
-   background-color: var(--bg-color);
-   color: var(--text-color);
-   height: auto;
-   padding-top: 100px;
-   
- }
-.portfolio_q header{
-    font-size:62.5%;
-    overflow: hidden;
-    
- }
- 
-.portfolio_q section{
-    height :100vh;
-    padding: 10rem 9% 2rem;
- }
+.headportfolio_q {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  height: auto;
+  padding-top: 100px;
+}
+.portfolio_q header {
+  font-size: 62.5%;
+  overflow: hidden;
+}
 
- .portfolio_q span{
-    color:var(--main-color);
- }
+.portfolio_q section {
+  height: 100vh;
+  padding: 10rem 9% 2rem;
+}
 
- h2.heading_q{
-    text-align: center;
-    font-size: 4.5rem;  
- }
+.portfolio_q span {
+  color: var(--main-color);
+}
 
-.portfolio_q h2{
-    margin-bottom: 5rem; 
-=======
+h2.heading_q {
+  text-align: center;
+  font-size: 4.5rem;
+}
+
+.portfolio_q h2 {
+  margin-bottom: 5rem;
+}
 .headportfolio_q {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -59,7 +56,6 @@
 .portfolio_q header {
   font-size: 62.5%;
   overflow: hidden;
->>>>>>> Stashed changes
 }
 
 .portfolio_q section {
