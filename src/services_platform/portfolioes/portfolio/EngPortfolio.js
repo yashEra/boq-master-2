@@ -11,15 +11,17 @@ import image_e3 from './assests/image_e3.jpg';
 import image_e4 from './assests/image_e4.jpg';
 import image_e5 from './assests/image_e5.jpg';
 import image_e6 from './assests/image_e6.jpg';
+import NavBar from '../../../components/Navbar';
+import Footer from '../../../components/Footer';
 
 
 function App() {
   return (
     <div>
-     
+     <NavBar />
      <header className='headportfolio_e'>
       <section className='portfolio_e'>
-	<h2 className='heading_e'>Latest <span>Project</span></h2>
+	<h2 className='heading_e'>Latest <span>Projects</span></h2>
 
 	<div className='portfolio-container_e'>
 		<div className ='portfolio-box_e'>
@@ -105,6 +107,7 @@ function App() {
 
 
 </header>
+<Footer />
     </div>
    
   );
