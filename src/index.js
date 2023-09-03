@@ -35,6 +35,7 @@ import QSPortfolio from "./services_platform/portfolioes/portfolio/QSPortfolio";
 import QSList from "./services_platform/profiles/profile/QSList"
 import EngList from "./services_platform/profiles/profile/EngineerList"
 import ArchList from "./services_platform/profiles/profile/ArchitectList"
+import RawMaterialsTable from "./boq_generator/RawMaterialDatabase";
 
 
 
@@ -72,6 +73,7 @@ root.render(
       <Route path="/qs-list" element={<QSList />} />
       <Route path="/engineer-list" element={<EngList />} />
       <Route path="/architect-list" element={<ArchList />} />
+      <Route path="material-price-list" element={<RawMaterialsTable />} />
     </Routes>
   </Router>
 );
