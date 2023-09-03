@@ -41,10 +41,10 @@ const WallView = () => {
       
       if (response.data.message === "Data received successfully") {
         setData({
-          noOfBricks: response.data.numberOfBricks,
-          sandQ: response.data.Sand,
-          cemntQ: response.data.CementKg,
-          totalCost: response.data.cost
+          noOfBricks: parseFloat(response.data.numberOfBricks).toFixed(0),
+          sandQ: parseFloat(response.data.Sand).toFixed(2),
+          cemntQ: parseFloat(response.data.CementKg).toFixed(2),
+          totalCost: parseFloat(response.data.cost).toFixed(2)
         });
         setShowDataSection(true);
       }
@@ -97,7 +97,7 @@ const WallView = () => {
         <td className=""></td>
         </tr>
         <tr>
-        <td className="border px-4 py-2"></td>
+        <td className=""></td>
           <td className="border px-4 py-2"><b>Total Cost</b></td>
           <td className="border px-4 py-2"><b>{data.totalCost}LKR</b></td>
         </tr>

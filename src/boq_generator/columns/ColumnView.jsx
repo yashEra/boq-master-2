@@ -17,12 +17,10 @@ const ColumnView = () => {
   const [showDataSection, setShowDataSection] = useState(false);
 
   const [data, setData] = useState({
-    sandQ: null,
-    cemntQ: null,
-    metalQ: null,
-    reinforcementQ: null,
-    bindingWiresQ: null,
-    totalCost: null,
+    height: "",
+    length: "",
+    width: "",
+    unit: "ft",
   });
 
   const handleSubmit = async (e) => {
@@ -43,12 +41,12 @@ const ColumnView = () => {
 
       if (response.data.message === "Data received successfully") {
         setData({
-          sandQ: response.data.Sand,
-          cemntQ: response.data.CementKg,
-          metalQ: response.data.metal,
-          reinforcementQ: response.data.reinforcement,
-          bindingWiresQ: response.data.bindingWires,
-          totalCost: response.data.cost,
+          sandQ: parseFloat(response.data.sand).toFixed(2), // Format to 2 decimal places
+          cemntQ: parseFloat(response.data.cement).toFixed(2), // Format to 2 decimal places
+          metalQ: parseFloat(response.data.matel).toFixed(2), // Format to 2 decimal places
+          reinforcementQ: parseFloat(response.data.rainforcementBars).toFixed(2), // Format to 2 decimal places
+          bindingWiresQ: parseFloat(response.data.bindingWires).toFixed(2), // Format to 2 decimal places
+          totalCost: parseFloat(response.data.cost).toFixed(2), // Format to 2 decimal places
         });
         setShowDataSection(true);
       }
@@ -76,7 +74,7 @@ const ColumnView = () => {
         {showDataSection ? (
           <div className="bg-white rounded p-16 shadow-md">
             <h1 className="block text-sm font-medium text-xl text-gray-700 text-center pb-10">
-              Cost and Quantity Estimation of Columns
+              Cost and Quantity Estimation of Column
             </h1>
             <table className="table-auto">
               <thead>
@@ -130,7 +128,7 @@ const ColumnView = () => {
         ) : (
           <div className="bg-white rounded p-16 shadow-md" style={{ marginTop: '120px',marginBottom:'80px' }}>
             <h1 className="block text-sm font-medium text-xl text-gray-700 text-center pb-10">
-              Add Columns Dimension
+              Add Column Dimension
             </h1>
             <form onSubmit={handleSubmit}>
               <div className="mb-4">
@@ -141,7 +139,7 @@ const ColumnView = () => {
                   Width
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   name="width"
                   value={formData.width}
                   onChange={handleInputChange}
@@ -156,7 +154,7 @@ const ColumnView = () => {
                   Length
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   name="length"
                   value={formData.length}
                   onChange={handleInputChange}
@@ -166,67 +164,20 @@ const ColumnView = () => {
 
               <div className="mb-4">
                 <label
-                  htmlFor="thickness"
+                  htmlFor="height"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Thickness
+                  Height
                 </label>
                 <input
-                  type="text"
-                  name="thickness"
+                  type="number"
+                  name="height"
                   value={formData.thickness}
                   onChange={handleInputChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                 />
               </div>
 
-              <div className="mb-4">
-                <label
-                  htmlFor="metal"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Metal
-                </label>
-                <input
-                  type="text"
-                  name="metal"
-                  value={formData.metal}
-                  onChange={handleInputChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                />
-              </div>
-
-              <div className="mb-4">
-                <label
-                  htmlFor="reinforcement"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Reinforcement Bars
-                </label>
-                <input
-                  type="text"
-                  name="reinforcement"
-                  value={formData.reinforcement}
-                  onChange={handleInputChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                />
-              </div>
-
-              <div className="mb-4">
-                <label
-                  htmlFor="bindingWires"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Binding Wires
-                </label>
-                <input
-                  type="text"
-                  name="bindingWires"
-                  value={formData.bindingWires}
-                  onChange={handleInputChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                />
-              </div>
 
               <div className="mb-4">
                 <label
