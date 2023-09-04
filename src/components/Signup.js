@@ -20,6 +20,7 @@ const Signup = () => {
     const url = "http://localhost:8080/Models/Process/signup-process.php"
     axios.post(url, inputs);
     console.log(inputs);
+    
   };
 
   // const handleSubmit = useCallback(

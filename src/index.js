@@ -39,6 +39,10 @@ import RawMaterialsTable from "./boq_generator/RawMaterialDatabase";
 import CostEstimationTool from "./boq_generator/CostEstimationTool";
 import PreDefineHome from "./boq_generator/pre-define-designs/PreDefineHome";
 import ChatBox from "./services_platform/chatbox";
+import Doors from "./boq_generator/pre-define-designs/Doors";
+import Floor from "./boq_generator/pre-define-designs/Floor";
+import Roofs from "./boq_generator/pre-define-designs/Roof";
+import Windows from "./boq_generator/pre-define-designs/Window";
 
 
 
@@ -80,6 +84,11 @@ root.render(
       <Route path="/cost-estimation" element={<CostEstimationTool />} />
       <Route path="/pre-define" element={<PreDefineHome />} />
       <Route path="/chat-box" element={<ChatBox />} />
+      <Route path="/door" element={<Doors />} />
+      <Route path="/floor" element={<Floor />} />
+      <Route path="/roof" element={<Roofs />} />
+      <Route path="/window" element={<Windows />} />
+
 
     </Routes>
   </Router>
