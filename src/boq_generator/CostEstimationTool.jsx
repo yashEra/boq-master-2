@@ -72,14 +72,14 @@ function CostEstimationTool() {
         className=" min-h-screen flex items-center justify-center"
         style={{ backgroundImage: `url('${backgroundImageUrl}')` }}
       >
-        <div className="bg-white rounded p-16 shadow-md">
-          <h1 className="block text-sm font-medium text-xl text-gray-700 text-center pb-10">
+        <div className="rounded p-16 " >
+          {/* <h1 className="block text-sm font-medium text-xl text-gray-700 text-center pb-10">
             Material Price Calculator
-          </h1>
-          <div className="p-8">
-            {/* <h1 className="text-2xl font-semibold mb-4">
+          </h1> */}
+          <div className="p-8 bg-white shadow-md rounded">
+            <h1 className="block text-sm font-medium text-xl text-gray-700 text-center pb-10">
               Material Price Calculator
-            </h1> */}
+            </h1>
             <form onSubmit={handleSubmit} className="mb-8">
               <label htmlFor="material" className="block font-medium mb-2">
                 Select Material:
@@ -97,7 +97,7 @@ function CostEstimationTool() {
                       key={material.material_id}
                       value={material.material_id}
                     >
-                      {material.material_name}
+                      {material.material_name.replace(/_/g, ' ').toUpperCase()}
                     </option>
                   ))}
               </select>
