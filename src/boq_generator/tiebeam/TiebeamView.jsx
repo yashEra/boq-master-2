@@ -11,6 +11,7 @@ const TiebeamView = () => {
     height: "",
     width: "",
     length: "",
+    noOfTiebeams: "",
     unit: "ft",
   });
 
@@ -20,6 +21,7 @@ const TiebeamView = () => {
     height: "",
     length: "",
     width: "",
+    noOfTiebeams: "",
     unit: "ft",
   });
 
@@ -178,6 +180,22 @@ const TiebeamView = () => {
                   type="number"
                   name="height"
                   value={formData.thickness}
+                  onChange={handleInputChange}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                />
+              </div>
+
+              <div className="mb-4">
+                <label
+                  htmlFor="noOfTiebeams"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Number Of Tiebams
+                </label>
+                <input
+                  type="number"
+                  name="noOfTiebeams"
+                  value={formData.noOfTiebeams}
                   onChange={handleInputChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                 />

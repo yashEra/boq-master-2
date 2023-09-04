@@ -4,10 +4,9 @@ import {
   ArrowPathIcon,
   Bars3Icon,
   ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
   SquaresPlusIcon,
   XMarkIcon,
+  DocumentArrowDownIcon
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon, BanknotesIcon, WindowIcon,DocumentTextIcon, UserCircleIcon} from '@heroicons/react/20/solid'
 import Logo from '../images/logo.jpg'
@@ -45,11 +44,12 @@ const products = [
 //     icon: ArrowPathIcon,
 //   },
 // ];
-  { name: 'Meet Professionals', description: '', href: '/pro-home', icon: UserCircleIcon },
   { name: 'Generate BoQ', description: '', href: '/boq-home', icon: DocumentTextIcon },
-  { name: 'Our Designs', description: '', href: '/pre-define', icon: WindowIcon },
-  { name: 'Current Material Prices', description: '', href: '/material-price-list', icon: BanknotesIcon },
   { name: 'Single Unit Calculator', description: '', href: '/boq-singleunitcal', icon: ArrowPathIcon },
+  { name: 'Cost Estimation Matrial Calculator', description: '', href: '/cost-estimation', icon: BanknotesIcon },
+  { name: 'Current Material Price List', description: '', href: '/material-price-list', icon:   DocumentArrowDownIcon },
+  { name: 'Meet Professionals', description: '', href: '/pro-home', icon: UserCircleIcon },
+  { name: 'Our Designs', description: '', href: '/pre-define', icon: WindowIcon },
 ]
 const callsToAction = [
   { name: 'Video demo', href: 'help-center', icon: PlayCircleIcon },

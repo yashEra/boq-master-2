@@ -36,6 +36,7 @@ import QSList from "./services_platform/profiles/profile/QSList"
 import EngList from "./services_platform/profiles/profile/EngineerList"
 import ArchList from "./services_platform/profiles/profile/ArchitectList"
 import RawMaterialsTable from "./boq_generator/RawMaterialDatabase";
+import CostEstimationTool from "./boq_generator/CostEstimationTool";
 
 
 
@@ -74,6 +75,7 @@ root.render(
       <Route path="/engineer-list" element={<EngList />} />
       <Route path="/architect-list" element={<ArchList />} />
       <Route path="/material-price-list" element={<RawMaterialsTable />} />
+      <Route path="/cost-estimation" element={<CostEstimationTool />} />
     </Routes>
   </Router>
 );

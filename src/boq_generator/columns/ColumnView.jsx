@@ -11,6 +11,7 @@ const ColumnView = () => {
     height: "",
     width: "",
     length: "",
+    noOfColumns: "",
     unit: "ft",
   });
 
@@ -20,6 +21,7 @@ const ColumnView = () => {
     height: "",
     length: "",
     width: "",
+    noOfColumns: "",
     unit: "ft",
   });
 
@@ -173,6 +175,21 @@ const ColumnView = () => {
                   type="number"
                   name="height"
                   value={formData.thickness}
+                  onChange={handleInputChange}
+                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  htmlFor="noOfColumns"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Number of Columns
+                </label>
+                <input
+                  type="number"
+                  name="noOfColumns"
+                  value={formData.noOfColumns}
                   onChange={handleInputChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                 />
