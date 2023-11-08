@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import axios from "axios";
+import { saveToLocalStorage } from "../../services/localstorage";
+import SavedItems from "../../components/SavedItems";
 
 const ColumnView = () => {
   const backgroundImageUrl =
@@ -41,6 +43,8 @@ const ColumnView = () => {
 
       console.log("Response from PHP:", response.data);
 
+      await saveToLocalStorage("column", formData);
+
       if (response.data.message === "Data received successfully") {
         setData({
           sandQ: parseFloat(response.data.sand).toFixed(2), // Format to 2 decimal places
@@ -70,7 +74,7 @@ const ColumnView = () => {
       <Navbar />
 
       <div
-        className=" min-h-screen flex items-center justify-center"
+        className="pt-12 min-h-screen flex items-center justify-center"
         style={{ backgroundImage: `url('${backgroundImageUrl}')` }}
       >
         {showDataSection ? (
@@ -126,6 +130,9 @@ const ColumnView = () => {
                 </tr>
               </tbody>
             </table>
+            <div className="float-right mt-2">
+              <SavedItems type={"column"} />
+              </div>
           </div>
         ) : (
           <div className="bg-white rounded p-16 shadow-md" style={{ marginTop: '120px',marginBottom:'80px' }}>

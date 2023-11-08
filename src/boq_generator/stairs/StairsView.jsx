@@ -3,6 +3,8 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import axios from "axios";
 import StairsImg from '../Assets/stairs.jpg'
+import { saveToLocalStorage } from '../../services/localstorage'
+import SavedItems from "../../components/SavedItems";
 
 
 const StairsView = () => {
@@ -14,8 +16,8 @@ const StairsView = () => {
     unit: "ft",
     noOfSteps: "",
     thread: "",
-    riser:"",
-    thickness:"",
+    riser: "",
+    thickness: "",
   });
 
   const [showDataSection, setShowDataSection] = useState(false);
@@ -43,7 +45,10 @@ const StairsView = () => {
 
       console.log("Response from PHP:", response.data);
       console.log("Response from PHP:", response.data.numberOfBricks);
-      
+
+      await saveToLocalStorage('stairs', formData)
+
+
       if (response.data.message === "Data received successfully") {
         setData({
           cementQ: parseFloat(response.data.cement).toFixed(2),
@@ -72,62 +77,65 @@ const StairsView = () => {
     <div>
       <Navbar />
 
-      <div className=" min-h-screen flex items-center justify-center" style={{ backgroundImage: `url('${backgroundImageUrl}')` }}>
-      {showDataSection ? (
-  <div className="bg-white rounded p-16 shadow-md">
-    <h1 className="block text-sm font-medium text-xl text-gray-700 text-center pb-10">Cost and Quantity Estimation of Wall</h1>
-    <table className="table-auto">
-      <thead>
-        <tr>
-          <th className="px-4 py-2">Material</th>
-          <th className="px-4 py-2">Unit</th>
-          <th className="px-4 py-2">Quantity</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td className="border px-4 py-2">Matel</td>
-          <td className="border px-4 py-2">Cubic feet</td>
-          <td className="border px-4 py-2">{data.matelQ}</td>
-        </tr>
-        <tr>
-          <td className="border px-4 py-2">Sand</td>
-          <td className="border px-4 py-2">Cubic feet</td>
-          <td className="border px-4 py-2">{data.sandQ}</td>
-        </tr>
-        <tr>
-          <td className="border px-4 py-2">Cement</td>
-          <td className="border px-4 py-2">50Kg Bags</td>
-          <td className="border px-4 py-2">{data.cementQ}</td>
-        </tr>
+      <div className="pt-12 min-h-screen flex items-center justify-center" style={{ backgroundImage: `url('${backgroundImageUrl}')` }}>
+        {showDataSection ? (
+          <div className="bg-white rounded p-16 shadow-md">
+            <h1 className="block text-sm font-medium text-xl text-gray-700 text-center pb-10">Cost and Quantity Estimation of Wall</h1>
+            <table className="table-auto">
+              <thead>
+                <tr>
+                  <th className="px-4 py-2">Material</th>
+                  <th className="px-4 py-2">Unit</th>
+                  <th className="px-4 py-2">Quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border px-4 py-2">Matel</td>
+                  <td className="border px-4 py-2">Cubic feet</td>
+                  <td className="border px-4 py-2">{data.matelQ}</td>
+                </tr>
+                <tr>
+                  <td className="border px-4 py-2">Sand</td>
+                  <td className="border px-4 py-2">Cubic feet</td>
+                  <td className="border px-4 py-2">{data.sandQ}</td>
+                </tr>
+                <tr>
+                  <td className="border px-4 py-2">Cement</td>
+                  <td className="border px-4 py-2">50Kg Bags</td>
+                  <td className="border px-4 py-2">{data.cementQ}</td>
+                </tr>
 
-        <tr>
-          <td className="border px-4 py-2">Rainforcement Bars</td>
-          <td className="border px-4 py-2">m</td>
-          <td className="border px-4 py-2">{data.rainforcementBarsQ}</td>
-        </tr>
-        <tr>
-          <td className="border px-4 py-2">Binding Wires</td>
-          <td className="border px-4 py-2">Kg</td>
-          <td className="border px-4 py-2">{data.bindingWirestQ}</td>
-        </tr>
+                <tr>
+                  <td className="border px-4 py-2">Rainforcement Bars</td>
+                  <td className="border px-4 py-2">m</td>
+                  <td className="border px-4 py-2">{data.rainforcementBarsQ}</td>
+                </tr>
+                <tr>
+                  <td className="border px-4 py-2">Binding Wires</td>
+                  <td className="border px-4 py-2">Kg</td>
+                  <td className="border px-4 py-2">{data.bindingWirestQ}</td>
+                </tr>
 
-        <tr>
-        <td className=""></td>
-        </tr>
-        <tr>
-        <td className=""></td>
-          <td className="border px-4 py-2"><b>Total Cost</b></td>
-          <td className="border px-4 py-2"><b>{data.totalCost}LKR</b></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-) : (
-          <div className="bg-white rounded p-16 shadow-md" style={{ marginTop: '120px',marginBottom:'80px' }}>
+                <tr>
+                  <td className=""></td>
+                </tr>
+                <tr>
+                  <td className=""></td>
+                  <td className="border px-4 py-2"><b>Total Cost</b></td>
+                  <td className="border px-4 py-2"><b>{data.totalCost}LKR</b></td>
+                </tr>
+              </tbody>
+            </table>
+            <div className="float-right">
+              <SavedItems type={'stair'} />
+            </div>
+          </div>
+        ) : (
+          <div className="bg-white rounded p-16 shadow-md" style={{ marginTop: '120px', marginBottom: '80px' }}>
             <h1 className="block text-sm font-medium text-xl text-gray-700 text-center pb-10">Add Stairs dimension</h1>
             <form onSubmit={handleSubmit}>
-            <div className="mb-4">
+              <div className="mb-4">
                 <label
                   htmlFor="noOfSteps"
                   className="block text-sm font-medium text-gray-700"
@@ -141,8 +149,8 @@ const StairsView = () => {
                   onChange={handleInputChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                 />
-                </div>
-                <div className="mb-4">
+              </div>
+              <div className="mb-4">
                 <label
                   htmlFor="thread"
                   className="block text-sm font-medium text-gray-700"
@@ -156,8 +164,8 @@ const StairsView = () => {
                   onChange={handleInputChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                 />
-                </div>
-                <div className="mb-4">
+              </div>
+              <div className="mb-4">
                 <label
                   htmlFor="riser"
                   className="block text-sm font-medium text-gray-700"
@@ -171,7 +179,7 @@ const StairsView = () => {
                   onChange={handleInputChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                 />
-                </div>
+              </div>
               <div className="mb-4">
                 <label
                   htmlFor="width"
