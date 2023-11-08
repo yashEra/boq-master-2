@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Josefin+Sans:ital,wght@0,600;0,700;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,600;0,700;1,600;1,700&display=swap");
+* {
+  font-family: "Inter", "Josefin Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  /* overflow-x: hidden; */
+}
+
+.header__title__container {
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
+    linear-gradient(90deg, rgba(0, 21, 47, 1), rgba(0, 0, 0, 0.4)),
+    url(../../images/boqHeader.png);
+  overflow: hidden;
+}
+
+.header__title {
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0)),
+    linear-gradient(90deg, rgba(0, 21, 47, 1), rgba(0, 0, 0, 0.4)),
+    url(../../images/boqHeader.png);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding-left: 5%;
+}
+
+.header__title__component {
+  color: #c0c0c0;
+  font-size: 30px;
+  font-weight: 900;
+  width: 50%;
+}
+
+.header__title__component h1 {
+  font-weight: 900;
+  font-size: 140%;
+}
+.header__title__component h4 {
+  font-weight: 600;
+  /* margin-bottom: 20px; */
+  text-align: justify;
+}
+.header__title__component p {
+  font-weight: 400;
+  margin-bottom: 20px;
+  font-size: 16px;
+  text-align: justify;
+}
+
+.button__arrange {
+  width: 22%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 0;
+}
+/* .button__arrange ButtonOutline{
+    margin-right: 20px;
+} */
+
+@media screen and (max-width: 1000px) {
+  .header__title__component {
+    width: 100%;
+  }
+  .button__arrange {
+    width: 80%;
+  }
+}

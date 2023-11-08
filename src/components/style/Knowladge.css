@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Josefin+Sans:ital,wght@0,600;0,700;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,600;0,700;1,600;1,700&display=swap");
+* {
+  font-family: "Inter", "Josefin Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  /* overflow-x: hidden; */
+}
+
+.knowladge__container {
+  display: flex;
+  padding: 5%;
+  align-items: center;
+  height: 100vh;
+  background: transparent;
+}
+
+.Knowladge__component {
+  width: 50%;
+  color: #28282b;
+}
+
+.Knowladge__component img {
+  width: 100%;
+  height: auto;
+}
+
+.Knowladge__component h1 {
+  color: #28282b;
+  font-size: 300%;
+  font-weight: 700;
+  padding-bottom: 10%;
+}
+
+.Knowladge__component p {
+  text-align: justify;
+  padding-right: 10%;
+}
+
+@media screen and (max-width: 1000px) {
+  .knowladge__container {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+  .Knowladge__component {
+    width: 100%;
+  }
+  .Knowladge__component p {
+    padding-right: 0;
+  }
+}
