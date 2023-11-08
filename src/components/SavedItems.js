@@ -1,50 +1,6 @@
 import { useState, useEffect } from "react";
 import { getFromLocalStorage, removeFromLocalStorage } from "../services/localstorage";
-
-// columns
-// {
-//     height: "",
-//     width: "",
-//     length: "",
-//     noOfColumns: "",
-//     unit: "ft",
-//   }
-const types_columns = {
-    'wall': {
-        height: "Height",
-        length: "Length",
-        unit: "Unit",
-        brickTypes: "Brick Type"
-    },
-    'tiebeam': {
-        height: "Height",
-        width: "Width",
-        length: "Length",
-        noOfTiebeams: "No of Tiebeams",
-        unit: "Unit",
-    },
-    "stair":{
-        length: "Length",
-        width: "Width",
-        unit: "Unit",
-        noOfSteps: "No of Steps",
-        thread: "Thread",
-        riser:"Riser",
-        thickness:"Thickness",
-    },
-    "slab": {
-        thickness: "Thickness",
-        width: "Width",
-        length: "Length",
-        unit: "Unit",
-    },
-    "column": {
-        height: "Height",
-        width: "Width",
-        unit: "Unit",
-        noOfColumns: "No of Columns",
-    },
-}
+import  types_columns  from "../services/units_types.json";
 
 const SavedItems = ({ type }) => {
     const [data, setData] = useState([]);
