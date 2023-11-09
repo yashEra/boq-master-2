@@ -1,48 +1,48 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Footer from "../../components/Footer";
-import WindowsOne from "../Assets/window.jpg";
+import DoorsOne from "../Assets/window.jpg";
 import NavBar from "../../components/Navbar";
 
-const WallView = () => {
-    const windowTypes = [
-        { type: "Aluminium Window", image: WindowsOne },
-        { type: "Aluminium Window", image: WindowsOne },
-        { type: "Aluminium Window", image: WindowsOne },
-        { type: "Aluminium Window", image: WindowsOne },
-        { type: "Aluminium Window", image: WindowsOne },
-        { type: "Aluminium Window", image: WindowsOne },
+const DoorView = () => {
+    const doorsTypes = [
+        { type: "Aluminium door", image: DoorsOne },
+        { type: "Aluminium door", image: DoorsOne },
+        { type: "Aluminium door", image: DoorsOne },
+        { type: "Aluminium door", image: DoorsOne },
+        { type: "Aluminium door", image: DoorsOne },
+        { type: "Aluminium door", image: DoorsOne },
         // Add more window types as needed
     ];
-    const [selectedWindow, setSelectedWindow] = useState(null);
+    const [selectedDoor, setSelectedDoor] = useState(null);
     const [quantity, setQuantity] = useState("");
     const [size, setSize] = useState("");
 
     const [showDataSection, setShowDataSection] = useState(false);
 
     const [data, setData] = useState({
-        windowType: null,
+        doorType: null,
         quantity: null,
         price: null,
         size: null,
     });
 
     const handleSubmit = async () => {
-        if (!selectedWindow || !quantity || !size) {
+        if (!selectedDoor || !quantity || !size) {
             alert("Please fill in all fields");
             return;
         }
 
         const formData = {
-            windowType: selectedWindow.type,
-            windowImage: selectedWindow.image,
+            doorType: selectedDoor.type,
+            doorImage: selectedDoor.image,
             size: size,
             quantity: quantity,
         };
 
         try {
             const response = await axios.post(
-                "http://localhost:8080/Models/Process/PartsOfConstructions/window_process.php",
+                "http://localhost:8080/Models/Process/PartsOfConstructions/door_process.php",
                 formData,
                 {
                     headers: {
@@ -54,7 +54,7 @@ const WallView = () => {
             console.log(response.data); // Handle the response from the backend
             if (response.data.status === "1") {
                 setData({
-                    windowType: response.data.windowType,
+                    doorType: response.data.doorType,
                     quantity: response.data.quantity,
                     size: response.data.size,
                     price: parseFloat(response.data.price).toFixed(2),
@@ -68,11 +68,11 @@ const WallView = () => {
     };
 
     const openPopup = (windowType) => {
-        setSelectedWindow(windowType);
+        setSelectedDoor(windowType);
     };
 
     const closePopup = () => {
-        setSelectedWindow(null);
+        setSelectedDoor(null);
         setQuantity("");
         setSize("");
     };
@@ -86,7 +86,7 @@ const WallView = () => {
                         <h1 className="text-3xl font-bold text-gray-900 text-center pb-16">Windows Type</h1>
 
                         <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
-                            {windowTypes.map(({ type, image }) => (
+                            {doorsTypes.map(({ type, image }) => (
                                 <div key={type} className="group relative pb-16">
                                     <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
                                         <img
@@ -108,7 +108,7 @@ const WallView = () => {
                 </div>
 
                 {/* Popup/Modal */}
-                {selectedWindow && (
+                {selectedDoor && (
                     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
                         {showDataSection ? (
                             <div className="bg-white rounded p-16 shadow-md">
@@ -116,14 +116,14 @@ const WallView = () => {
                                 <table className="table-auto">
                                     <thead>
                                         <tr>
-                                            <th className="px-4 py-2">Window Type</th>
+                                            <th className="px-4 py-2">Door Type</th>
                                             <th className="px-4 py-2">Quantity</th>
                                             <th className="px-4 py-2">Size</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td className="border px-4 py-2">{data.windowType}</td>
+                                            <td className="border px-4 py-2">{data.doorType}</td>
                                             <td className="border px-4 py-2">{data.quantity}</td>
                                             <td className="border px-4 py-2">{data.size}</td>
                                         </tr>
@@ -137,7 +137,7 @@ const WallView = () => {
 
                             </div>) : (
                             <div className="bg-white p-6 rounded-md">
-                                <h2 className="text-2xl font-bold mb-4">{selectedWindow.type}</h2>
+                                <h2 className="text-2xl font-bold mb-4">{selectedDoor.type}</h2>
 
                                 <label className="block mb-2">
                                     Size:
@@ -185,4 +185,4 @@ const WallView = () => {
     );
 };
 
-export default WallView;
+export default DoorView;

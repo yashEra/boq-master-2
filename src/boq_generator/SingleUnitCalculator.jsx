@@ -61,7 +61,14 @@ const callouts = [
     description: "",
     imageSrc:WindowsImg,
     imageAlt: "",
-    href: "boq-tiebeam",
+    href: "boq-window",
+  },
+  {
+    name: "Door",
+    description: "",
+    imageSrc:WindowsImg,
+    imageAlt: "",
+    href: "boq-door",
   },
   
 ];
