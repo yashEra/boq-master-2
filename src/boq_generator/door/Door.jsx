@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Footer from "../../components/Footer";
-import DoorsOne from "../Assets/window.jpg";
+import DoorsOne from "../Assets/img11.jpg";
 import NavBar from "../../components/Navbar";
 
 const DoorView = () => {
@@ -83,7 +83,7 @@ const DoorView = () => {
             <div className="bg-gray-100">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-32">
-                        <h1 className="text-3xl font-bold text-gray-900 text-center pb-16">Windows Type</h1>
+                        <h1 className="text-3xl font-bold text-gray-900 text-center pb-16">Doors Type</h1>
 
                         <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
                             {doorsTypes.map(({ type, image }) => (
