@@ -43,7 +43,8 @@ import Doors from "./boq_generator/pre-define-designs/Doors";
 import Floor from "./boq_generator/pre-define-designs/Floor";
 import Roofs from "./boq_generator/pre-define-designs/Roof";
 import Windows from "./boq_generator/pre-define-designs/Window";
-import BoQFinal from './boq_generator/boq-final/summary'
+import BoQFinal from './boq_generator/boq-final/summary';
+import WindowsView from "./boq_generator/window/Windows";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -89,6 +90,7 @@ root.render(
       <Route path="/floor" element={<Floor />} />
       <Route path="/roof" element={<Roofs />} />
       <Route path="/window" element={<Windows />} />
+      <Route path="/boq-window" element={<WindowsView />} />
 
 
     </Routes>
