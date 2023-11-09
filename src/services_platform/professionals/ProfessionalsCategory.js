@@ -1,8 +1,8 @@
 import React from "react";
-import "../style/style.css";
-import img1 from "../assests/img1.jpg";
-import img2 from "../assests/img2.jpg";
-import img3 from "../assests/img3.jpg";
+import "../Style/style.css";
+import img1 from "../Assests/img1.jpg";
+import img2 from "../Assests/img2.jpg";
+import img3 from "../Assests/img3.jpg";
 import NavBar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
@@ -27,7 +27,7 @@ const ProfessionalsCategory = () => {
             <tr>
               <td>
                 <div className="div1">
-                  <img src={img1} style={{ width: "100%" }} />
+                  {/* <img src={img1} style={{ width: "100%" }} /> */}
                   <p>
                     "Discover awe-inspiring architectural wonders that redefine
                     innovation and elegance in our curated collection on the BoQ
@@ -45,7 +45,7 @@ const ProfessionalsCategory = () => {
               </td>
               <td>
                 <div className="div1">
-                  <img src={img2} style={{ width: "100%" }} />
+                  {/* <img src={img2} style={{ width: "100%" }} /> */}
                   <p>
                     "Empowering efficient construction with precise cost
                     management - Your trusted Quantity Surveyors."
@@ -62,7 +62,7 @@ const ProfessionalsCategory = () => {
               </td>
               <td>
                 <div className="div1">
-                  <img src={img3} style={{ width: "100%" }} />
+                  {/* <img src={img3} style={{ width: "100%" }} /> */}
                   <p>
                     "Building the world's foundation, one blueprint at a time -
                     Trust our skilled civil engineers to construct your dreams

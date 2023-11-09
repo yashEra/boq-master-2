@@ -1,0 +1,37 @@
+{
+    "wall": {
+        "height": "Height",
+        "length": "Length",
+        "unit": "Unit",
+        "brickTypes": "Brick Type"
+    },
+    "tiebeam": {
+        "height": "Height",
+        "width": "Width",
+        "length": "Length",
+        "noOfTiebeams": "No of Tiebeams",
+        "unit": "Unit"
+    },
+    "stair": {
+        "length": "Length",
+        "width": "Width",
+        "unit": "Unit",
+        "noOfSteps": "No of Steps",
+        "thread": "Thread",
+        "riser": "Riser",
+        "thickness": "Thickness"
+    },
+    "slab": {
+        "thickness": "Thickness",
+        "width": "Width",
+        "length": "Length",
+        "unit": "Unit"
+    },
+    "column": {
+        "height": "Height",
+        "width": "Width",
+        "length": "Length",
+        "unit": "Unit",
+        "noOfColumns": "No of Columns"
+    }
+}

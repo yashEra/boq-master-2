@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import axios from "axios";
-
+import { saveToLocalStorage } from "../../services/localstorage";
+import SavedItems from "../../components/SavedItems";
 const TiebeamView = () => {
   const backgroundImageUrl =
     "https://images.pexels.com/photos/276514/pexels-photo-276514.jpeg";
@@ -41,6 +42,8 @@ const TiebeamView = () => {
 
       console.log("Response from PHP:", response.data);
 
+      await saveToLocalStorage("tiebeam", formData);
+
       if (response.data.message === "Data received successfully") {
         setData({
           sandQ: parseFloat(response.data.sand).toFixed(2), // Format to 2 decimal places
@@ -70,7 +73,7 @@ const TiebeamView = () => {
       <Navbar />
 
       <div
-        className=" min-h-screen flex items-center justify-center"
+        className="pt-12 min-h-screen flex items-center justify-center"
         style={{ backgroundImage: `url('${backgroundImageUrl}')` }}
       >
         {showDataSection ? (
@@ -128,6 +131,9 @@ const TiebeamView = () => {
                 </tr>
               </tbody>
             </table>
+            <div className="float-right mt-2">
+              <SavedItems type={"tiebeam"} />
+            </div>
           </div>
         ) : (
           <div

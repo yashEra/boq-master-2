@@ -3,7 +3,8 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import axios from "axios";
 import WallsImg from '../Assets/wall.jpg'
-
+import { saveToLocalStorage } from '../../services/localstorage'
+import SavedItems from "../../components/SavedItems";
 
 const WallView = () => {
   const backgroundImageUrl = WallsImg;
@@ -40,7 +41,9 @@ const WallView = () => {
 
       console.log("Response from PHP:", response.data);
       console.log("Response from PHP:", response.data.numberOfBricks);
-      
+
+      await saveToLocalStorage('wall', formData)
+
       if (response.data.message === "Data received successfully") {
         setData({
           noOfBricks: parseFloat(response.data.numberOfBricks).toFixed(0),
@@ -66,47 +69,48 @@ const WallView = () => {
   return (
     <div>
       <Navbar />
-
       <div className=" min-h-screen flex items-center justify-center" style={{ backgroundImage: `url('${backgroundImageUrl}')` }}>
-      {showDataSection ? (
-  <div className="bg-white rounded p-16 shadow-md">
-    <h1 className="block text-sm font-medium text-xl text-gray-700 text-center pb-10">Cost and Quantity Estimation of Wall</h1>
-    <table className="table-auto">
-      <thead>
-        <tr>
-          <th className="px-4 py-2">Material</th>
-          <th className="px-4 py-2">Unit</th>
-          <th className="px-4 py-2">Quantity</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td className="border px-4 py-2">No of Bricks</td>
-          <td className="border px-4 py-2">NOS</td>
-          <td className="border px-4 py-2">{data.noOfBricks}</td>
-        </tr>
-        <tr>
-          <td className="border px-4 py-2">Sand Quantity</td>
-          <td className="border px-4 py-2">Cubes</td>
-          <td className="border px-4 py-2">{data.sandQ}</td>
-        </tr>
-        <tr>
-          <td className="border px-4 py-2">Cement Quantity</td>
-          <td className="border px-4 py-2">Kg</td>
-          <td className="border px-4 py-2">{data.cemntQ}</td>
-        </tr>
-        <tr>
-        <td className=""></td>
-        </tr>
-        <tr>
-        <td className=""></td>
-          <td className="border px-4 py-2"><b>Total Cost</b></td>
-          <td className="border px-4 py-2"><b>{data.totalCost}LKR</b></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-) : (
+        {showDataSection ? (
+          <div className="bg-white rounded p-16 shadow-md">
+            <h1 className="block text-sm font-medium text-xl text-gray-700 text-center pb-10">Cost and Quantity Estimation of Wall</h1>
+            <table className="table-auto">
+              <thead>
+                <tr>
+                  <th className="px-4 py-2">Material</th>
+                  <th className="px-4 py-2">Unit</th>
+                  <th className="px-4 py-2">Quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border px-4 py-2">No of Bricks</td>
+                  <td className="border px-4 py-2">NOS</td>
+                  <td className="border px-4 py-2">{data.noOfBricks}</td>
+                </tr>
+                <tr>
+                  <td className="border px-4 py-2">Sand Quantity</td>
+                  <td className="border px-4 py-2">Cubes</td>
+                  <td className="border px-4 py-2">{data.sandQ}</td>
+                </tr>
+                <tr>
+                  <td className="border px-4 py-2">Cement Quantity</td>
+                  <td className="border px-4 py-2">Kg</td>
+                  <td className="border px-4 py-2">{data.cemntQ}</td>
+                </tr>
+                <tr>
+                  <td className=""></td>
+                </tr>
+                <tr>
+                  <td className=""></td>
+                  <td className="border px-4 py-2"><b>Total Cost</b></td>
+                  <td className="border px-4 py-2"><b>{data.totalCost}LKR</b></td>
+                </tr>
+              </tbody>
+            </table>
+            <div className="float-right mt-2">
+            <SavedItems type={'wall'}/></div>
+          </div>
+        ) : (
           <div className="bg-white rounded p-16 shadow-md">
             <h1 className="block text-sm font-medium text-xl text-gray-700 text-center pb-10">Add wall dimension</h1>
             <form onSubmit={handleSubmit}>
@@ -186,6 +190,7 @@ const WallView = () => {
             </form>
           </div>
         )}
+
       </div>
       <Footer />
     </div>
