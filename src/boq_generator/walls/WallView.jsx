@@ -68,7 +68,7 @@ const WallView = () => {
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className=" min-h-screen flex items-center justify-center" style={{ backgroundImage: `url('${backgroundImageUrl}')` }}>
         {showDataSection ? (
           <div className="bg-white rounded p-16 shadow-md">
@@ -192,7 +192,7 @@ const WallView = () => {
         )}
 
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
