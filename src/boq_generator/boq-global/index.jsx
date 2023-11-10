@@ -86,7 +86,9 @@ export default function BOQMain() {
 }
 
 function DemoWidget({ state }) {
-    return <pre><h1>Sal</h1>{JSON.stringify(state)}</pre>;
+    return <div className="container mx-auto">
+         <p><pre>floors: {JSON.stringify(state.floors,null,4)}</pre></p>
+    </div>;
 }
 
 function SelectBuildingType({ state, setState }) {
@@ -210,9 +212,10 @@ function AddComponents({ state, setState }) {
     const [floor,setFloor] = useState(0)
     async function onClick(floorid) {
         const walls= await getFromLocalStorage('wall')
-        console.log(walls)
         const floors = [...state.floors];
-        floors[floorid].components.push(walls)
+        floors[floorid].components.push(walls.map(e=>{
+            return {...e,type:'wall'}
+        }))
         setState({ ...state, floors: floors });
         setShowModel(false)
     }
@@ -230,7 +233,7 @@ function AddComponents({ state, setState }) {
                         <div className="grid grid-cols-3 gap-4 mt-4">
                             <div className="border-2 border-gray-400 px-8 py-3 text-center rounded-lg mb-2">
                                 <div>
-                                    <h2 className="font-bold text-xl">Walls {floor.components.count}</h2>
+                                    <h2 className="font-bold text-xl">Walls ({floor.components[0].length})</h2>
                                     <SavedItems type={'wall'}/>
                                     <button onClick={() => {
                                         setShowModel(true);
