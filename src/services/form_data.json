@@ -1,0 +1,135 @@
+{
+    "wall": {
+      "height": {
+        "label": "Height",
+        "type": "number",
+        "unit": "feet"
+      },
+      "length": {
+        "label": "Length",
+        "type": "number",
+        "unit": "feet"
+      },
+      "unit": {
+        "label": "Unit",
+        "type": "select",
+        "options": ["feet", "inches", "meters"]
+      },
+      "brickTypes": {
+        "label": "Brick Type",
+        "type": "select",
+        "options": ["Clay Brick","Cement Brick"]
+      }
+    },
+    "tiebeam": {
+      "height": {
+        "label": "Height",
+        "type": "number",
+        "unit": "feet"
+      },
+      "width": {
+        "label": "Width",
+        "type": "number",
+        "unit": "feet"
+      },
+      "length": {
+        "label": "Length",
+        "type": "number",
+        "unit": "feet"
+      },
+      "noOfTiebeams": {
+        "label": "No of Tiebeams",
+        "type": "number"
+      },
+      "unit": {
+        "label": "Unit",
+        "type": "select",
+        "options": ["feet", "inches", "meters"]
+      }
+    },
+    "stair": {
+      "length": {
+        "label": "Length",
+        "type": "number",
+        "unit": "feet"
+      },
+      "width": {
+        "label": "Width",
+        "type": "number",
+        "unit": "feet"
+      },
+      "unit": {
+        "label": "Unit",
+        "type": "select",
+        "options": ["feet", "inches", "meters"]
+      },
+      "noOfSteps": {
+        "label": "No of Steps",
+        "type": "number"
+      },
+      "thread": {
+        "label": "Thread",
+        "type": "number",
+        "unit": "inches"
+      },
+      "riser": {
+        "label": "Riser",
+        "type": "number",
+        "unit": "inches"
+      },
+      "thickness": {
+        "label": "Thickness",
+        "type": "number",
+        "unit": "inches"
+      }
+    },
+    "slab": {
+      "thickness": {
+        "label": "Thickness",
+        "type": "number",
+        "unit": "inches"
+      },
+      "width": {
+        "label": "Width",
+        "type": "number",
+        "unit": "feet"
+      },
+      "length": {
+        "label": "Length",
+        "type": "number",
+        "unit": "feet"
+      },
+      "unit": {
+        "label": "Unit",
+        "type": "select",
+        "options": ["feet", "inches", "meters"]
+      }
+    },
+    "column": {
+      "height": {
+        "label": "Height",
+        "type": "number",
+        "unit": "feet"
+      },
+      "width": {
+        "label": "Width",
+        "type": "number",
+        "unit": "feet"
+      },
+      "length": {
+        "label": "Length",
+        "type": "number",
+        "unit": "feet"
+      },
+      "unit": {
+        "label": "Unit",
+        "type": "select",
+        "options": ["feet", "inches", "meters"]
+      },
+      "noOfColumns": {
+        "label": "No of Columns",
+        "type": "number"
+      }
+    }
+  }
+  

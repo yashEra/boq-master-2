@@ -2,11 +2,15 @@ import { useEffect, useState } from "react";
 import NavBar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import PickMeals from "./../Assets/pick-meals-image.png";
-import { DeleteForeverOutlined } from '@mui/icons-material'
+import { DeleteForeverOutlined, AddOutlined } from '@mui/icons-material'
 import ColumnView from "../columns/ColumnView";
 import WallView from "../walls/WallView";
-import {getFromLocalStorage} from '../../services/localstorage'
+import { getFromLocalStorage, saveToLocalStorage } from '../../services/localstorage'
 import SavedItems from "../../components/SavedItems";
+import DynamicForm from "./dynamic_form";
+
+import formData from "../../services/form_data.json"
+
 export default function BOQMain() {
     const [state, setState] = useState({
         selectedStep: -1,
@@ -17,7 +21,7 @@ export default function BOQMain() {
             name: "Ground Floor",
             description: "Ground Floor",
             isRoof: true,
-            components:[]
+            components: []
         }]
     });
 
@@ -87,7 +91,7 @@ export default function BOQMain() {
 
 function DemoWidget({ state }) {
     return <div className="container mx-auto">
-         <p><pre>floors: {JSON.stringify(state.floors,null,4)}</pre></p>
+        <p><pre>floors: {JSON.stringify(state.floors, null, 4)}</pre></p>
     </div>;
 }
 
@@ -154,7 +158,7 @@ function AddFloors({ state, setState }) {
             name: "Floor " + id,
             description: "Floor " + id,
             isRoof: false,
-            components:[]
+            components: []
         });
         setState({ ...state, floors: floors });
     }
@@ -209,82 +213,70 @@ function AddFloors({ state, setState }) {
 
 function AddComponents({ state, setState }) {
     const [showModel, setShowModel] = useState(false)
-    const [floor,setFloor] = useState(0)
-    async function onClick(floorid) {
-        const walls= await getFromLocalStorage('wall')
+    const [formType, setFormType] = useState('wall')
+    const [floor, setFloor] = useState(0)
+
+    const handleComplete = () => {
+        const steps = [...state.steps];
+        steps[2].isCompleted = true;
+        setState({ ...state, selectedStep: 3, steps: steps });
+    };
+
+    const handleSubmit = async (data) => {
         const floors = [...state.floors];
-        floors[floorid].components.push(walls.map(e=>{
-            return {...e,type:'wall'}
-        }))
+        floors[floor].components.push(data)
+        await saveToLocalStorage(data.type, data)
         setState({ ...state, floors: floors });
+        setShowModel(false)
+    };
+    const handleCancel = () => {
         setShowModel(false)
     }
     return (
         <>
             <h2 className="text-center text-2xl m-8">Now lets add components to your {state.buildingType}</h2>
-            <div className="mx-auto max-w-xl m-2">
+            <div className="mx-auto max-w-4xl m-2">
                 {state.floors.map((floor) => (
                     <div className="border-2 border-gray-400 px-8 py-3 text-center rounded-lg mb-2">
                         <div>
                             <h2 className="font-bold text-xl">Floor {floor.id}</h2>
                             <p className="text-sm -mt-2">{floor.name}</p>
                         </div>
-                        {/* grid */}
-                        <div className="grid grid-cols-3 gap-4 mt-4">
-                            <div className="border-2 border-gray-400 px-8 py-3 text-center rounded-lg mb-2">
-                                <div>
-                                    <h2 className="font-bold text-xl">Walls ({floor.components[0].length})</h2>
-                                    <SavedItems type={'wall'}/>
-                                    <button onClick={() => {
-                                        setShowModel(true);
-                                        setFloor(floor.id-1)
-                                    }} className="text-indigo-500 my-2">Add Wall</button>
+                        <div className="grid md:grid-cols-4 gap-4 mt-4">
+
+                            {Object.keys(formData).map((formType, index) => (
+                                <div key={index} className="border-2 border-gray-400 px-8 py-3 text-center rounded-lg mb-2">
+                                    <div>
+                                        <h2 className="font-bold text-xl">{formType.charAt(0).toUpperCase() + formType.slice(1)}s</h2>
+                                        <SavedItems type={formType} />
+                                        <button
+                                            onClick={() => {
+                                                setFormType(formType);
+                                                setShowModel(true);
+                                                setFloor(floor.id - 1);
+                                            }}
+                                            className="bg-indigo-400 text-white py-1 px-2 rounded-md mt-2"
+                                        >
+                                            <AddOutlined /> {formType.charAt(0).toUpperCase() + formType.slice(1)}
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="border-2 border-gray-400 px-8 py-3 text-center rounded-lg mb-2">
-                                <div>
-                                    <h2 className="font-bold text-xl">Doors</h2>
-                                    <p className="text-sm -mt-2">Doors</p>
-                                </div>
-                            </div>
-                            <div className="border-2 border-gray-400 px-8 py-3 text-center rounded-lg mb-2">
-                                <div>
-                                    <h2 className="font-bold text-xl">Windows</h2>
-                                    <p className="text-sm -mt-2">Windows</p>
-                                </div>
-                            </div>
-                            <div className="border-2 border-gray-400 px-8 py-3 text-center rounded-lg mb-2">
-                                <div>
-                                    <h2 className="font-bold text-xl">Roof</h2>
-                                    <p className="text-sm -mt-2">Roof</p>
-                                </div>
-                            </div>
-                            <div className="border-2 border-gray-400 px-8 py-3 text-center rounded-lg mb-2">
-                                <div>
-                                    <h2 className="font-bold text-xl">Stairs</h2>
-                                    <p className="text-sm -mt-2">Stairs</p>
-                                </div>
-                            </div>
-                            <div className="border-2 border-gray-400 px-8 py-3 text-center rounded-lg mb-2">
-                                <div>
-                                    <h2 className="font-bold text-xl">Balcony</h2>
-                                    <p className="text-sm -mt-2">Balcony</p>
-                                </div>
-                            </div>
+                            ))}
                         </div>
+
                     </div>
                 ))}
             </div>
             {showModel &&
                 <div className="top-0 left-0 right-0 absolute z-50">
-                    {/* done button tool bar */}
-                    <div className="flex justify-center mt-44 bg-white w-full">
-                        <button className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 my-2 mb-4 px-4 rounded-2xl" onClick={() => onClick(floor)}>
-                            Done
-                        </button>
-                    </div>
-                    <WallView />
+                    <DynamicForm formData={formData} onSubmit={handleSubmit} formType={formType} onClose={handleCancel} />
                 </div>}
+            {/* continue button */}
+            <div className="flex justify-center py-12">
+                <button className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full" onClick={() => handleComplete()}>
+                    Continue
+                </button>
+            </div>
         </>
     );
 }
