@@ -15,7 +15,9 @@ const Signup = () => {
 
     if (name === "accountType" && value === "professional") {
       setAccountType(value);
-      setInputs((values) => ({ ...values, architect: "", surveyor: "", civilEngineer: "" }));
+      setInputs((values) => ({ ...values, [name]: value }));
+
+      // setInputs((values) => ({ ...values, architect: "", surveyor: "", civilEngineer: "" }));
     } else {
       setInputs((values) => ({ ...values, [name]: value }));
     }
@@ -113,7 +115,7 @@ const Signup = () => {
                 <div style={{paddingRight:'10px'}}>
                   <input
                     type="radio"
-                    id="architect"
+                    id="professionalType"
                     name="professionalType"
                     value="Architect"
                     onChange={handleChange}
@@ -123,9 +125,9 @@ const Signup = () => {
                 <div style={{paddingRight:'10px'}}>
                   <input
                     type="radio"
-                    id="surveyor"
+                    id="professionalType"
                     name="professionalType"
-                    value="Quantity Surveyor"
+                    value="QuantitySurveyor"
                     onChange={handleChange}
                   />
                   <label htmlFor="surveyor">QS</label>
@@ -133,9 +135,9 @@ const Signup = () => {
                 <div>
                   <input
                     type="radio"
-                    id="civilEngineer"
+                    id="professionalType"
                     name="professionalType"
-                    value="Civil Engineer"
+                    value="CivilEngineer"
                     onChange={handleChange}
                   />
                   <label htmlFor="civilEngineer">Civil Engineer</label>
@@ -150,6 +152,15 @@ const Signup = () => {
                 type="password"
                 name="password"
                 placeholder="Password"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="input-field">
+              <input
+                className="input"
+                type="retypePassword"
+                name="retypePassword"
+                placeholder="Retype Password"
                 onChange={handleChange}
               />
             </div>
