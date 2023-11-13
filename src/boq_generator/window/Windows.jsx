@@ -77,6 +77,8 @@ const WallView = () => {
 
   const closePopup = () => {
     setSelectedWindow(null);
+    // setResetForm(true);
+    setShowDataSection(false);
     setQuantity("");
     setSize("");
   };
