@@ -1,21 +1,19 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Footer from "../../components/Footer";
-import DoorsOne from "../Assets/img11.jpg";
+import DoorOne from "../Assets/door1.jpg";
+import DoorTwo from "../Assets/door2.jpg";
 import NavBar from "../../components/Navbar";
 
 const DoorView = () => {
   const doorsTypes = [
-    { type: "Aluminium door", image: DoorsOne, size1: "Size 1", size2: "Size 2" },
-    { type: "Aluminium door", image: DoorsOne },
-    { type: "Aluminium door", image: DoorsOne },
-    { type: "Aluminium door", image: DoorsOne },
-    { type: "Aluminium door", image: DoorsOne },
-    { type: "Aluminium door", image: DoorsOne },
+    { id: "1", type: "Wooden Doors 7ft X 3ft", image: DoorOne, material1: 'tualang', material2: 'kempas', material3: 'teak', material4: 'jack', material5: 'mahogany' },
+    { id: "2", type: "Armee Teak Wooden Door 7ft X 3ft", image: DoorTwo, material1: 'armee_teak'},
   ];
+
   const [selectedDoor, setSelectedDoor] = useState(null);
   const [quantity, setQuantity] = useState("");
-  const [size, setSize] = useState("");
+  const [material, setMaterial] = useState("");
 
   const [showDataSection, setShowDataSection] = useState(false);
 
@@ -23,19 +21,20 @@ const DoorView = () => {
     doorType: null,
     quantity: null,
     price: null,
-    size: null,
+    Material: null,
   });
 
   const handleSubmit = async () => {
-    if (!selectedDoor || !quantity || !size) {
+    if (!selectedDoor || !quantity || !material) {
       alert("Please fill in all fields");
       return;
     }
 
     const formData = {
+      doorTypeId:selectedDoor.id,
       doorType: selectedDoor.type,
       doorImage: selectedDoor.image,
-      size: size,
+      material: material,
       quantity: quantity,
     };
 
@@ -55,7 +54,7 @@ const DoorView = () => {
         setData({
           doorType: response.data.doorType,
           quantity: response.data.quantity,
-          size: response.data.size,
+          material: response.data.material,
           price: parseFloat(response.data.price).toFixed(2),
         });
         setShowDataSection(true);
@@ -67,13 +66,14 @@ const DoorView = () => {
 
   const openPopup = (doorType) => {
     setSelectedDoor(doorType);
-    setSize(""); // Reset size when a new door type is selected
+    setMaterial(""); // Reset material when a new door type is selected
   };
 
   const closePopup = () => {
     setSelectedDoor(null);
     setQuantity("");
-    setSize("");
+    setMaterial("");
+    setShowDataSection(false);
   };
 
   return (
@@ -87,8 +87,8 @@ const DoorView = () => {
             </h1>
 
             <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
-              {doorsTypes.map(({ type, image, size1, size2 }) => (
-                <div key={type} className="group relative pb-16">
+              {doorsTypes.map(({ id, type, image, material1, material2 }) => (
+                <div key={id} className="group relative pb-16">
                   <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
                     <img
                       src={image}
@@ -97,7 +97,7 @@ const DoorView = () => {
                     />
                   </div>
                   <button
-                    onClick={() => openPopup({ type, image, size1, size2 })}
+                    onClick={() => openPopup({ id, type, image, material1, material2 })}
                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2 w-full"
                   >
                     {type}
@@ -120,14 +120,14 @@ const DoorView = () => {
                     <tr>
                       <th className="px-4 py-2">Door Type</th>
                       <th className="px-4 py-2">Quantity</th>
-                      <th className="px-4 py-2">Size</th>
+                      <th className="px-4 py-2">Material</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td className="border px-4 py-2">{data.doorType}</td>
                       <td className="border px-4 py-2">{data.quantity}</td>
-                      <td className="border px-4 py-2">{data.size}</td>
+                      <td className="border px-4 py-2">{data.material}</td>
                     </tr>
                     <tr>
                       <td className=""></td>
@@ -140,25 +140,45 @@ const DoorView = () => {
                     </tr>
                   </tbody>
                 </table>
+                <button
+                  onClick={closePopup}
+                  className="ml-4 text-gray-600 hover:text-gray-800"
+                >
+                  Close
+                </button>
               </div>
             ) : (
               <div className="bg-white p-6 rounded-md">
                 <h2 className="text-2xl font-bold mb-4">
                   {selectedDoor.type}
                 </h2>
+                <p style={{ display: "none" }}>{selectedDoor.id}</p>
+
 
                 <label className="block mb-2">
-                  Size:
+                  Material:
                   <select
-                    value={size}
-                    onChange={(e) => setSize(e.target.value)}
+                    value={material}
+                    onChange={(e) => setMaterial(e.target.value)}
                     className="form-select mt-1 block w-full"
                   >
-                    {selectedDoor.size1 && (
-                      <option value="size1">{selectedDoor.size1}</option>
+
+                      <option value="">--Select Door Material--</option>
+
+                    {selectedDoor.material1 && (
+                      <option value={selectedDoor.material1}>{selectedDoor.material1}</option>
                     )}
-                    {selectedDoor.size2 && (
-                      <option value="size2">{selectedDoor.size2}</option>
+                    {selectedDoor.material2 && (
+                      <option value={selectedDoor.material2}>{selectedDoor.material2}</option>
+                    )}
+                    {selectedDoor.material3 && (
+                      <option value={selectedDoor.material3}>{selectedDoor.material3}</option>
+                    )}
+                    {selectedDoor.material4 && (
+                      <option value={selectedDoor.material4}>{selectedDoor.material4}</option>
+                    )}
+                    {selectedDoor.material5 && (
+                      <option value={selectedDoor.material5}>{selectedDoor.material5}</option>
                     )}
                   </select>
                 </label>
