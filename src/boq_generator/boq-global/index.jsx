@@ -3,13 +3,12 @@ import NavBar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import PickMeals from "./../Assets/pick-meals-image.png";
 import { DeleteForeverOutlined, AddOutlined } from '@mui/icons-material'
-import ColumnView from "../columns/ColumnView";
-import WallView from "../walls/WallView";
 import { getFromLocalStorage, saveToLocalStorage } from '../../services/localstorage'
 import SavedItems from "../../components/SavedItems";
 import DynamicForm from "./dynamic_form";
 
 import formData from "../../services/form_data.json"
+import axios from "axios";
 
 export default function BOQMain() {
     const [state, setState] = useState({
@@ -82,7 +81,7 @@ export default function BOQMain() {
                 {state.selectedStep === 0 && <SelectBuildingType state={state} setState={setState} />}
                 {state.selectedStep === 1 && <AddFloors state={state} setState={setState} />}
                 {state.selectedStep === 2 && <AddComponents state={state} setState={setState} />}
-                {state.selectedStep === 3 && <DemoWidget state={state} />}
+                {state.selectedStep === 3 && <SummaryComponent floors={state.floors} />}
             </div>
             <Footer />
         </>
@@ -248,7 +247,7 @@ function AddComponents({ state, setState }) {
                                 <div key={index} className="border-2 border-gray-400 px-8 py-3 text-center rounded-lg mb-2">
                                     <div>
                                         <h2 className="font-bold text-xl">{formType.charAt(0).toUpperCase() + formType.slice(1)}s</h2>
-                                        <SavedItems type={formType} />
+                                        <SavedItems state={state} formType={formType} floor={floor.id} />
                                         <button
                                             onClick={() => {
                                                 setFormType(formType);
@@ -271,7 +270,6 @@ function AddComponents({ state, setState }) {
                 <div className="top-0 left-0 right-0 absolute z-50">
                     <DynamicForm formData={formData} onSubmit={handleSubmit} formType={formType} onClose={handleCancel} />
                 </div>}
-            {/* continue button */}
             <div className="flex justify-center py-12">
                 <button className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full" onClick={() => handleComplete()}>
                     Continue
@@ -280,3 +278,112 @@ function AddComponents({ state, setState }) {
         </>
     );
 }
+const SummaryComponent = ({ floors }) => {
+    const [summaries, setSummaries] = useState([]);
+  
+    useEffect(() => {
+      const fetchSummaries = async () => {
+        try {
+          const summariesData = {};
+  
+          for (const floor of floors) {
+            for (const component of floor.components) {
+              const summaryUrl = getSummaryUrl(component.type);
+              const response = await axios.post(summaryUrl, component);
+  
+              if (!summariesData[component.type]) {
+                summariesData[component.type] = {
+                  type: component.type,
+                  summary: {},
+                  components: [],
+                };
+              }
+  
+              // Accumulate numeric values
+              Object.entries(response.data).forEach(([key, value]) => {
+                if (typeof value === "number") {
+                  summariesData[component.type].summary[key] =
+                    (summariesData[component.type].summary[key] || 0) + value;
+                } else {
+                  summariesData[component.type].summary[key] = value;
+                }
+              });
+  
+              // Add component to the list
+              summariesData[component.type].components.push(component);
+            }
+          }
+  
+          setSummaries(Object.values(summariesData));
+        } catch (error) {
+          console.error("Error fetching summaries:", error);
+        }
+      };
+  
+      fetchSummaries();
+    }, [floors]);
+  
+    useEffect(() => {
+      console.log(summaries);
+    }, [summaries]);
+  
+    const getSummaryUrl = (componentType) => {
+      // Replace with your actual hardcoded URLs
+      const urlMappings = {
+        wall: "http://localhost:8080/Models/Process/PartsOfConstructions/wall_process.php",
+        tiebeam: "http://localhost:8080/Models/Process/PartsOfConstructions/Tiebeam_process.php",
+        roof: "http://localhost:8080/Models/Process/PartsOfConstructions/roof_process.php",
+        column: "http://localhost:8080/Models/Process/PartsOfConstructions/Columns_Process.php",
+        beam: "http://localhost:8080/Models/Process/PartsOfConstructions/beam_process.php",
+        slab: "http://localhost:8080/Models/Process/PartsOfConstructions/slab_process.php",
+        door: "http://localhost:8080/Models/Process/PartsOfConstructions/door_process.php",
+        window: "http://localhost:8080/Models/Process/PartsOfConstructions/window_process.php",
+        stair: "http://localhost:8080/Models/Process/PartsOfConstructions/stairs-process.php",
+      };
+  
+      return urlMappings[componentType];
+    };
+  
+    return (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-24 my-8 ">
+        {summaries.map((summary, index) => (
+          <div key={index} className="bg-white p-4 shadow-md rounded-md border-gray-200 border">
+            <h3 className="text-xl font-bold mb-2">{summary.type.toUpperCase()} SUMMARY</h3>
+            <ul>
+              {Object.entries(summary.summary).map(([key, value]) => (
+                <div key={key}>
+                  {key !== "message" && (
+                    <li className="mb-1">
+                      <strong className="font-medium">
+                        {key.charAt(0).toUpperCase() + key.slice(1)}:
+                      </strong>{" "}
+                      {value}
+                    </li>
+                  )}
+                </div>
+              ))}
+            </ul>
+            <h4 className="text-lg font-bold mt-4">Components</h4>
+            <ul>
+              {summary.components.map((component, compIndex) => (
+                <li key={compIndex} className="p-2 border border-gray-300 rounded-lg my-2">
+                  {Object.entries(component).map(([key, value]) => (
+                    <div key={key}>
+                      {key !== "message" && (
+                        <p className="mb-1">
+                          <strong className="font-medium">
+                            {key.charAt(0).toUpperCase() + key.slice(1)}:
+                          </strong>{" "}
+                          {value}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    );
+  };
