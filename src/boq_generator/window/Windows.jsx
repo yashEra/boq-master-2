@@ -6,18 +6,17 @@ import WindowsTwo from "../Assets/design2.jpg";
 import WindowsThree from "../Assets/design3.jpg";
 import WindowsFour from "../Assets/design4.jpg";
 import WindowsFive from "../Assets/design5.jpg";
-// import WindowsOne from "../Assets/design1.jpg";
 import NavBar from "../../components/Navbar";
 
 const WallView = () => {
   const windowTypes = [
-    { type: "Frame+Glass Sash+Fittings", image: WindowsOne, size1: "20″x48″", size2: "20″x60″" },
-    { type: "Frame+2Glass Sash+Fittings", image: WindowsTwo, size1: "39″x48″",},
-    { type: "Frame+3Glass Sash+Fittings", image: WindowsThree, size1: "58″x48″", size2: "58″x60″" },
-    { type: "Frame+4Glass Sash+Fittings", image: WindowsFour, size1: "77″x48″"},
-    { type: "Fan Light Window", image: WindowsFive, size1: "22″x18″", size2: "30″x18″" },
-    // { type: "Aluminium Window", image: WindowsOne },
+    { id: "1", type: "Frame+Glass Sash+Fittings", image: WindowsOne, size1: '20″x48″', size2: '20″x60″' },
+    { id: "2", type: "Frame+2Glass Sash+Fittings", image: WindowsTwo, size1: '39″x48″' },
+    { id: "3", type: "Frame+3Glass Sash+Fittings", image: WindowsThree, size1: '58″x48″', size2: '58″x60″' },
+    { id: "4", type: "Frame+4Glass Sash+Fittings", image: WindowsFour, size1: '77″x48″' },
+    { id: "5", type: "Fan Light Window", image: WindowsFive, size1: '22″x18″', size2: '30″x18″' },
   ];
+
   const [selectedWindow, setSelectedWindow] = useState(null);
   const [quantity, setQuantity] = useState("");
   const [size, setSize] = useState("");
@@ -38,6 +37,7 @@ const WallView = () => {
     }
 
     const formData = {
+      windowTypeId: selectedWindow.id,
       windowType: selectedWindow.type,
       windowImage: selectedWindow.image,
       size: size,
@@ -92,8 +92,8 @@ const WallView = () => {
             </h1>
 
             <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
-              {windowTypes.map(({ type, image, size1, size2 }) => (
-                <div key={type} className="group relative pb-16">
+              {windowTypes.map(({ id, type, image, size1, size2 }) => (
+                <div key={id} className="group relative pb-16">
                   <div className="relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
                     <img
                       src={image}
@@ -102,7 +102,7 @@ const WallView = () => {
                     />
                   </div>
                   <button
-                    onClick={() => openPopup({ type, image, size1, size2 })}
+                    onClick={() => openPopup({ id, type, image, size1, size2 })}
                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2 w-full"
                   >
                     {type}
@@ -145,12 +145,19 @@ const WallView = () => {
                     </tr>
                   </tbody>
                 </table>
+                <button
+                    onClick={closePopup}
+                    className="ml-4 text-gray-600 hover:text-gray-800"
+                  >
+                    Close
+                  </button>
               </div>
             ) : (
               <div className="bg-white p-6 rounded-md">
                 <h2 className="text-2xl font-bold mb-4">
                   {selectedWindow.type}
                 </h2>
+                <p style={{ display: "none" }}>{selectedWindow.id}</p>
 
                 <label className="block mb-2">
                   Size:
@@ -159,11 +166,12 @@ const WallView = () => {
                     onChange={(e) => setSize(e.target.value)}
                     className="form-select mt-1 block w-full"
                   >
+                    <option value="size0">--Select Size--</option>
                     {selectedWindow.size1 && (
-                      <option value="size1">{selectedWindow.size1}</option>
+                      <option value={selectedWindow.size1}>{selectedWindow.size1}</option>
                     )}
                     {selectedWindow.size2 && (
-                      <option value="size2">{selectedWindow.size2}</option>
+                      <option value={selectedWindow.size2}>{selectedWindow.size2}</option>
                     )}
                   </select>
                 </label>
