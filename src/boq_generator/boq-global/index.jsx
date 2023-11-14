@@ -9,6 +9,7 @@ import DynamicForm from "./dynamic_form";
 
 import formData from "../../services/form_data.json"
 import axios from "axios";
+import FinalSummary from "./final_summary";
 
 export default function BOQMain() {
     const [state, setState] = useState({
@@ -57,12 +58,13 @@ export default function BOQMain() {
         });
     }, []);
 
+    const [showFinalSummary, setShowFinalSummary] = useState(false);
 
     return (
         <>
             <NavBar />
             <div className="pt-24"></div>
-            <div className="border-2 py-2 border-gray-300 flex flex-wrap justify-evenly">
+            {<div className="border-2 py-2 border-gray-300 flex flex-wrap justify-evenly">
                 {state.steps.map((step, i) => (
                     <div key={step.id} onClick={() => setState({ ...state, selectedStep: i })}>
                         <div className="flex items-center">
@@ -76,12 +78,15 @@ export default function BOQMain() {
                         </div>
                     </div>
                 ))}
-            </div>
+            </div>}
+
             <div className="mx-auto">
+                {state.selectedStep === 3 && <div className="flex justify-center"><button className="bg-gray-500 text-white rounded-md m-2 p-4 hover:bg-gray-600" onClick={() => { setShowFinalSummary(!showFinalSummary) }}>{showFinalSummary ? 'Show' : 'Hide'} Final Summary</button></div>}
+                {showFinalSummary && state.selectedStep === 3 && <FinalSummary props={state} />}
                 {state.selectedStep === 0 && <SelectBuildingType state={state} setState={setState} />}
                 {state.selectedStep === 1 && <AddFloors state={state} setState={setState} />}
                 {state.selectedStep === 2 && <AddComponents state={state} setState={setState} />}
-                {state.selectedStep === 3 && <SummaryComponent floors={state.floors} />}
+                {state.selectedStep === 3 && !showFinalSummary && <SummaryComponent state={state} floors={state.floors} updateState={setState} />}
             </div>
             <Footer />
         </>
@@ -278,7 +283,7 @@ function AddComponents({ state, setState }) {
         </>
     );
 }
-const SummaryComponent = ({ floors }) => {
+const SummaryComponent = ({ floors, updateState, state }) => {
     const [summaries, setSummaries] = useState([]);
 
     useEffect(() => {
@@ -296,6 +301,7 @@ const SummaryComponent = ({ floors }) => {
                                 type: component.type,
                                 summary: {},
                                 components: [],
+                                responses: [],
                             };
                         }
 
@@ -309,8 +315,8 @@ const SummaryComponent = ({ floors }) => {
                             }
                         });
 
-                        // Add component to the list
                         summariesData[component.type].components.push(component);
+                        summariesData[component.type].responses.push(response.data);
                     }
                 }
 
@@ -324,11 +330,10 @@ const SummaryComponent = ({ floors }) => {
     }, [floors]);
 
     useEffect(() => {
-        console.log(summaries);
+        updateState({ ...state, summaries: summaries });
     }, [summaries]);
 
     const getSummaryUrl = (componentType) => {
-        // Replace with your actual hardcoded URLs
         const urlMappings = {
             wall: "http://localhost:8080/Models/Process/PartsOfConstructions/wall_process.php",
             tiebeam: "http://localhost:8080/Models/Process/PartsOfConstructions/Tiebeam_process.php",
@@ -402,7 +407,6 @@ const SummaryComponent = ({ floors }) => {
                                                 </strong>{" "}
                                                 {value}
                                             </p>
-
                                         </div>
                                 ))}
                             </li>
