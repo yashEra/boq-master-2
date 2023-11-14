@@ -33,5 +33,15 @@
         "length": "Length",
         "unit": "Unit",
         "noOfColumns": "No of Columns"
+    },
+    "window":{
+        "windowType": "Window Type",
+        "quantity":"Quantity",
+        "size":"Size"
+    },
+    "door":{
+        "doorType": "Door Type",
+        "quantity":"Quantity",
+        "size":"Size"
     }
 }

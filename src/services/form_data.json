@@ -130,6 +130,47 @@
         "label": "No of Columns",
         "type": "number"
       }
+    },
+    "window" :{
+      "windowType": {
+        "label": "Window Type",
+        "type": "select",
+        "options": ["Wooden", "Aluminium", "Steel"]
+      },
+      "quantity": {
+        "label": "Quantity",
+        "type": "number"
+      },
+      "price": {
+        "label": "Price",
+        "type": "number",
+        "unit": "Rs"
+      },
+      "size":{
+        "label": "Size",
+        "type": "number"
+      }
+    },
+    "door" :{
+      "doorTypeId": {
+        "label": "Door Type ID",
+        "type": "select",
+        "options": ["1", "2"]
+      },
+      "doorType": {
+        "label": "Door Type",
+        "type": "select",
+        "options": ["Wooden Doors 7ft X 3ft", "Armee Teak Wooden Door 7ft X 3ft"]
+      },
+      "material": {
+        "label": "Material",
+        "type": "select",
+        "options": ["tualang", "kempas", "teak"]
+      },
+      "quantity": {
+        "label": "Quantity",
+        "type": "number"
+      }
     }
   }
   
