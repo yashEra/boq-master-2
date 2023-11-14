@@ -113,7 +113,7 @@ function SelectBuildingType({ state, setState }) {
 
     function onClickItem(title) {
         const steps = [...state.steps];
-        console.log(state.steps)
+        // console.log(state.steps)
         steps[0].isCompleted = true;
         setState({ ...state, steps: steps, buildingType: title });
 
