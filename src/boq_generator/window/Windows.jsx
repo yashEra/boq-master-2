@@ -8,7 +8,7 @@ import WindowsFour from "../Assets/design4.jpg";
 import WindowsFive from "../Assets/design5.jpg";
 import NavBar from "../../components/Navbar";
 
-const WallView = () => {
+const WindowView = () => {
   const windowTypes = [
     { id: "1", type: "Frame+Glass Sash+Fittings", image: WindowsOne, size1: '20″x48″', size2: '20″x60″' },
     { id: "2", type: "Frame+2Glass Sash+Fittings", image: WindowsTwo, size1: '39″x48″' },
@@ -212,4 +212,4 @@ const WallView = () => {
   );
 };
 
-export default WallView;
+export default WindowView;

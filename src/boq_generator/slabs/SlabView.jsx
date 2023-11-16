@@ -45,12 +45,15 @@ const SlabView = () => {
 
       if (response.data.message === "Data received successfully") {
         setData({
-          sandQ: parseFloat(response.data.sand).toFixed(2), // Format to 2 decimal places
-          cemntQ: parseFloat(response.data.cement).toFixed(2), // Format to 2 decimal places
-          metalQ: parseFloat(response.data.matel).toFixed(2), // Format to 2 decimal places
-          reinforcementQ: parseFloat(response.data.rainforcementBars).toFixed(2), // Format to 2 decimal places
-          bindingWiresQ: parseFloat(response.data.bindingWires).toFixed(2), // Format to 2 decimal places
-          totalCost: parseFloat(response.data.cost).toFixed(2), // Format to 2 decimal places
+          descriptionC: response.data.descriptionC,
+          descriptionF: response.data.descriptionF,
+          volume: parseFloat(response.data.volume).toFixed(2),
+          area: parseFloat(response.data.area).toFixed(2),
+          // reinforcementQ: parseFloat(response.data.rainforcementBars).toFixed(2),
+          unitC: parseFloat(response.data.unitC).toFixed(2),
+          unitF: parseFloat(response.data.unitF).toFixed(2),
+          cCost: parseFloat(response.data.cCost).toFixed(2),
+          fCost: parseFloat(response.data.fCost).toFixed(2),
         });
         setShowDataSection(true);
       }
@@ -66,6 +69,13 @@ const SlabView = () => {
       [name]: value,
     }));
   };
+
+  const closePopup = () => {
+    // setResetForm(true);
+    setShowDataSection(false);
+
+  };
+
 
   return (
     <div>
@@ -83,54 +93,49 @@ const SlabView = () => {
             <table className="table-auto">
               <thead>
                 <tr>
-                  <th className="px-4 py-2">Material</th>
+                  <th className="px-4 py-2">Description</th>
                   <th className="px-4 py-2">Unit</th>
                   <th className="px-4 py-2">Quantity</th>
+                  <th className="px-4 py-2">Rate</th>
+                  <th className="px-4 py-2">Amount-SL-Rs.</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td className="border px-4 py-2">Sand Quantity</td>
-                  <td className="border px-4 py-2">Cubes</td>
-                  <td className="border px-4 py-2">{data.sandQ}</td>
+              <tr>
+                  <td className="border px-4 py-2">{data.descriptionC}</td>
+                  <td className="border px-4 py-2">Cubic Meter</td>
+                  <td className="border px-4 py-2">{data.volume}</td>
+                  <td className="border px-4 py-2">{data.unitC}</td>
+                  <td className="border px-4 py-2">{data.cCost}</td>
+
                 </tr>
-                <tr>
-                  <td className="border px-4 py-2">Cement Quantity</td>
-                  <td className="border px-4 py-2">Kg</td>
-                  <td className="border px-4 py-2">{data.cemntQ}</td>
-                </tr>
-                <tr>
-                  <td className="border px-4 py-2">Metal Quantity</td>
-                  <td className="border px-4 py-2">Cubes</td>
-                  <td className="border px-4 py-2">{data.metalQ}</td>
-                </tr>
-                <tr>
-                  <td className="border px-4 py-2">Reinforcement Bars Quantity</td>
-                  <td className="border px-4 py-2">Meters</td>
-                  <td className="border px-4 py-2">{data.reinforcementQ}</td>
-                </tr>
-                <tr>
-                  <td className="border px-4 py-2">Binding Wires Quantity</td>
-                  <td className="border px-4 py-2">Meters</td>
-                  <td className="border px-4 py-2">{data.bindingWiresQ}</td>
+              <tr>
+                  <td className="border px-4 py-2">{data.descriptionF}</td>
+                  <td className="border px-4 py-2">Square Meter</td>
+                  <td className="border px-4 py-2">{data.area}</td>
+                  <td className="border px-4 py-2">{data.unitF}</td>
+                  <td className="border px-4 py-2">{data.fCost}</td>
+
                 </tr>
                 <tr>
                   <td className=""></td>
-                </tr>
-                <tr>
-                  <td className="border px-4 py-2"></td>
-                  <td className="border px-4 py-2">
-                    <b>Total Cost</b>
-                  </td>
-                  <td className="border px-4 py-2">
-                    <b>{data.totalCost}LKR</b>
-                  </td>
+                  <td className=""></td>
+                  <td className=""></td>
+                  <td className=""></td>
+                  <td className="">            
+                  <button
+                    onClick={closePopup}
+                    className="bg-red-600 text-white py-1 px-2 rounded-md"
+                  >
+                    Close
+                  </button></td>
+
                 </tr>
               </tbody>
             </table>
-            <div className="float-right mt-2">
+            {/* <div className="float-right mt-2">
               <SavedItems type={'slab'}/>
-              </div>
+              </div> */}
           </div>
         ) : (
           <div className="bg-white rounded p-16 shadow-md" style={{ marginTop: '120px',marginBottom:'80px' }}>

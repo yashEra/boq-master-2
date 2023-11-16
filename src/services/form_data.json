@@ -1,26 +1,38 @@
 {
-    "wall": {
-      "height": {
-        "label": "Height",
-        "type": "number",
-        "unit": "feet"
-      },
-      "length": {
-        "label": "Length",
-        "type": "number",
-        "unit": "feet"
-      },
-      "unit": {
-        "label": "Unit",
-        "type": "select",
-        "options": ["feet", "inches", "meters"]
-      },
-      "brickTypes": {
-        "label": "Brick Type",
-        "type": "select",
-        "options": ["Clay Brick","Cement Brick"]
-      }
+
+  "wall": {
+    "height": {
+      "label": "Height",
+      "type": "number",
+      "unit": "feet"
     },
+    "length": {
+      "label": "Length",
+      "type": "number",
+      "unit": "feet"
+    },
+    "unit": {
+      "label": "Unit",
+      "type": "select",
+      "options": ["feet", "meters"]
+    },
+    "brickTypes": {
+      "label": "Brick Type",
+      "type": "select",
+      "options": ["Clay Brick", "Cement Brick"]
+    },
+    "brickTypeOption": {
+      "label": "Brick Type Options",
+      "type": "radio",
+      "options": [
+        {"value": "singleBrick", "label": "Single Brick"},
+        {"value": "doubleBrick", "label": "Double Brick"},
+        {"value": "polishedBrick", "label": "Polished Brick"}
+      ]
+    }
+  }
+
+  ,
     "tiebeam": {
       "height": {
         "label": "Height",

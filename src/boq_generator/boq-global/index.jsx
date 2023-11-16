@@ -6,6 +6,7 @@ import { DeleteForeverOutlined, AddOutlined } from '@mui/icons-material'
 import { getFromLocalStorage, saveToLocalStorage } from '../../services/localstorage'
 import SavedItems from "../../components/SavedItems";
 import DynamicForm from "./dynamic_form";
+import WindowView from "../window/Windows";
 
 import formData from "../../services/form_data.json"
 import axios from "axios";
@@ -86,7 +87,7 @@ export default function BOQMain() {
                 {state.selectedStep === 0 && <SelectBuildingType state={state} setState={setState} />}
                 {state.selectedStep === 1 && <AddFloors state={state} setState={setState} />}
                 {state.selectedStep === 2 && <AddComponents state={state} setState={setState} />}
-                {state.selectedStep === 3 && !showFinalSummary && <SummaryComponent state={state} floors={state.floors} updateState={setState} />}
+                {state.selectedStep === 3 && <SummaryComponent state={state} floors={state.floors} updateState={setState} />}
             </div>
             <Footer />
         </>
@@ -276,6 +277,7 @@ function AddComponents({ state, setState }) {
                     <DynamicForm formData={formData} onSubmit={handleSubmit} formType={formType} onClose={handleCancel} />
                 </div>}
             <div className="flex justify-center py-12">
+            {/* <WindowView/> */}
                 <button className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full" onClick={() => handleComplete()}>
                     Continue
                 </button>

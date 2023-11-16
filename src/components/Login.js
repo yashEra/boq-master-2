@@ -1,10 +1,7 @@
 import React, { useState, useCallback } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
-import Signup from "./Signup";
 import "./style/Login.css";
-// import { Link } from "react-scroll";
-//import { Link } from "react-router-dom";
 import Footer from "./Footer";
 
 const Login = () => {
@@ -33,7 +30,11 @@ const Login = () => {
         if (res.data.success === true) {
 
           console.log("Redirecting..."); // Log the redirection
+
           window.location.href = "/";
+          let id=res.data.id;
+          sessionStorage.setItem('userId', id);
+
 
         } else {
 
