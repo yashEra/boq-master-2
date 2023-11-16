@@ -30,6 +30,10 @@ const FinalSummary = ({ props }) => {
     const wallAmount = wallSummary
       ? wallSummary.summary.cost
       : 0;
+    const wallfAmount = wallSummary
+      ? wallSummary.summary.wallFinishingCost
+      : 0;
+      
     //"Slabs" summary
     const slabdes = slabSummary
       ? slabSummary.summary.descriptionC
@@ -56,22 +60,22 @@ const FinalSummary = ({ props }) => {
       ? slabSummary.summary.fCost
       : 0;
 
-      //"tiebeam" summary
+    //"tiebeam" summary
     const tiebeamCementQuantity = tiebeamSummary
-    ? tiebeamSummary.summary.cement
-    : 0;
-  const tiebeamSandQuantity = tiebeamSummary
-    ? tiebeamSummary.summary.sand
-    : 0;
+      ? tiebeamSummary.summary.cement
+      : 0;
+    const tiebeamSandQuantity = tiebeamSummary
+      ? tiebeamSummary.summary.sand
+      : 0;
 
 
-          //"stair" summary
+    //"stair" summary
     const stairCementQuantity = stairSummary
-          ? stairSummary.summary.cement
-          : 0;
+      ? stairSummary.summary.cement
+      : 0;
     const stairSandQuantity = tiebeamSummary
-          ? stairSummary.summary.sand
-          : 0;
+      ? stairSummary.summary.sand
+      : 0;
 
 
     return (
@@ -88,14 +92,46 @@ const FinalSummary = ({ props }) => {
             </tr>
           </thead>
           <tbody>
-          <tr>
+            <tr>
+              <td className="border px-4 py-2">Rate shall include for lifting, handling, wetting, all<br />
+                rough and fair cuttings, plumbing, reveals, rough<br />
+                arches, raking out all joints for pointing plastering,<br />
+                cutting chases, making good at the completion <br /><br />
+              </td>
+              <td className="border px-4 py-2">note</td>
+              <td className="border px-4 py-2"></td>
+              <td className="border px-4 py-2"></td>
+              <td className="border px-4 py-2"></td>
+            </tr>
+            <tr>
               <td className="border px-4 py-2">{walldes}</td>
               <td className="border px-4 py-2">Sq.m</td>
               <td className="border px-4 py-2">{wallQuantity}</td>
               <td className="border px-4 py-2">{wallRate}</td>
               <td className="border px-4 py-2">{wallAmount}</td>
-            </tr>            <tr>
-            <th className="border px-4 py-2 px-4 py-2">TOTAL FOR WALL SUMMARY</th>
+            </tr>
+            <tr>
+              <td className="border px-4 py-2">Rate shall include for all temporary rules screed, <br />
+                ground etc. for raking out joints of new brick work<br />
+                or backing new concrete for key internal and <br />
+                coved angles joints between new and old  <br />plastering arises inter sections between curved or <br />
+                irregular surface etc.,.. and all making good <br />
+                around pipes sanitary fittings and similar fixtures. <br /><br />
+              </td>
+              <td className="border px-4 py-2">note</td>
+              <td className="border px-4 py-2"></td>
+              <td className="border px-4 py-2"></td>
+              <td className="border px-4 py-2"></td>
+            </tr>
+            <tr>
+            <td className="border px-4 py-2">WALL FINISHES (All Floors)</td>
+              <td className="border px-4 py-2">Sq.m</td>
+              <td className="border px-4 py-2">{wallQuantity}</td>
+              <td className="border px-4 py-2">100</td>
+              <td className="border px-4 py-2">{wallfAmount}</td>
+            </tr>
+            <tr>
+              <th className="border px-4 py-2 px-4 py-2">TOTAL FOR WALL SUMMARY</th>
               <th className="border px-4 py-2 "></th>
               <th className="border px-4 py-2 px-4 py-2"></th>
               <th className="border px-4 py-2 px-4 py-2"></th>
@@ -123,10 +159,10 @@ const FinalSummary = ({ props }) => {
               <td className="border px-4 py-2">{slabfAmount}</td>
             </tr>
             <th className="border px-4 py-2 px-4 py-2">TOTAL FOR WALL SUMMARY</th>
-              <th className="border px-4 py-2 "></th>
-              <th className="border px-4 py-2 px-4 py-2"></th>
-              <th className="border px-4 py-2 px-4 py-2"></th>
-              <th className="border px-4 py-2 px-4 py-2">{slabAmount+slabfAmount}</th>
+            <th className="border px-4 py-2 "></th>
+            <th className="border px-4 py-2 px-4 py-2"></th>
+            <th className="border px-4 py-2 px-4 py-2"></th>
+            <th className="border px-4 py-2 px-4 py-2">{slabAmount + slabfAmount}</th>
 
           </tbody>
         </table>

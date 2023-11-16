@@ -17,18 +17,14 @@
       "options": ["feet", "meters"]
     },
     "brickTypes": {
-      "label": "Brick Type",
+      "label": "Brick Types",
       "type": "select",
-      "options": ["Clay Brick", "Cement Brick"]
+      "options": ["clayBrick", "cementBrick"]
     },
     "brickTypeOption": {
       "label": "Brick Type Options",
-      "type": "radio",
-      "options": [
-        {"value": "singleBrick", "label": "Single Brick"},
-        {"value": "doubleBrick", "label": "Double Brick"},
-        {"value": "polishedBrick", "label": "Polished Brick"}
-      ]
+      "type": "select",
+      "options": ["--if clay brick selected--","singleBrick","doubleBrick","polishedBrick"]
     }
   }
 
