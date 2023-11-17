@@ -11,6 +11,7 @@ import WindowView from "../window/Windows";
 import formData from "../../services/form_data.json"
 import axios from "axios";
 import FinalSummary from "./final_summary";
+import { convertWordsToTitleCase } from "../../services/utils";
 
 export default function BOQMain() {
     const [state, setState] = useState({
@@ -346,6 +347,9 @@ const SummaryComponent = ({ floors, updateState, state }) => {
             door: "http://localhost:8080/Models/Process/PartsOfConstructions/door_process.php",
             window: "http://localhost:8080/Models/Process/PartsOfConstructions/window_process.php",
             stair: "http://localhost:8080/Models/Process/PartsOfConstructions/stairs-process.php",
+            slab1: "http://localhost:8080/Models/Process/PartsOfConstructions/slab_process.php",
+            slab2: "http://localhost:8080/Models/Process/PartsOfConstructions/slab_process.php",
+            slab3: "http://localhost:8080/Models/Process/PartsOfConstructions/slab_process.php",
         };
 
         return urlMappings[componentType];
@@ -361,19 +365,6 @@ const SummaryComponent = ({ floors, updateState, state }) => {
         }
     }
 
-    function convertWordsToTitleCase(inputString) {
-        if (!inputString) return '';
-
-        const words = inputString.split(/(?=[A-Z])/);
-
-        const titleCaseWords = words.map(word => {
-            return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-        });
-
-        const titleCaseString = titleCaseWords.join(' ');
-
-        return titleCaseString;
-    }
 
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-24 my-8 ">
