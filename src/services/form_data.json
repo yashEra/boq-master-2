@@ -279,32 +279,76 @@
     }
   },
   "door": {
-    "doorTypeId": {
-      "label": "Door Type ID",
-      "type": "select",
-      "options": [
-        "1",
-        "2"
-      ],
-      "helperText": "Select the ID of the door type"
-    },
     "doorType": {
-      "label": "Door Type",
-      "type": "select",
-      "options": [
-        "Wooden Doors 7ft X 3ft",
-        "Armee Teak Wooden Door 7ft X 3ft"
-      ],
-      "helperText": "Select the type of door"
+      "type": "grid",
+      "data": [
+        {
+          "name": "1",
+          "description": "Wooden Doors 7ft X 3ft",
+          "price": 4000,
+          "image": "img1"
+        },
+        {
+          "name": "2",
+          "description": "Armee Teak Wooden Door 7ft X 3ft",
+          "price": 13000,
+          "image": "img2"
+        }
+      ]
     },
     "material": {
+      "type": "conditional-select",
+      "dependsOn": "doorType",
+    
+      "selections": {
+        "1": {
+          "label": "Material",
+          "type": "select",
+          "options": [
+            "tualang",
+            "kempas",
+            "teak",
+            "jack",
+            "mahogany"
+          ],
+          "helperText": "Select the material of the wooden door"
+        },
+        "2": {
+          "label": "Material",
+          "type": "select",
+          "options": [
+            "armee_teak"
+          ],
+          "helperText": "Select the material of the Armee Teak wooden door"
+        }
+      }
+    },
+    "materialDoor1": {
       "label": "Material",
       "type": "select",
       "options": [
         "tualang",
         "kempas",
-        "teak"
+        "teak",
+        "jack",
+        "mahogany"
       ],
+      "conditions": {
+        "dependsOn": "doorType",
+        "showIf": "1"
+      },
+      "helperText": "Select the material of the door"
+    },
+    "materialDoor2": {
+      "label": "Material",
+      "type": "select",
+      "options": [
+        "armee_teak"
+      ],
+      "conditions": {
+        "dependsOn": "doorType",
+        "showIf": "2"
+      },
       "helperText": "Select the material of the door"
     },
     "quantity": {

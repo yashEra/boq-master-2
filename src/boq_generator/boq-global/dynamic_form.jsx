@@ -6,6 +6,7 @@ const DynamicForm = ({ formData, formType, onSubmit, onClose }) => {
   const [formValues, setFormValues] = useState({});
 
   const handleChange = (field, value) => {
+    console.log(field, value);
     setFormValues({ ...formValues, [field]: value });
   };
 
@@ -26,7 +27,6 @@ const DynamicForm = ({ formData, formType, onSubmit, onClose }) => {
         formValuesCopy[field] = null;
       }
     });
-
     setFormValues(formValuesCopy);
   }, [formData, formType]);
 
@@ -51,6 +51,30 @@ const DynamicForm = ({ formData, formType, onSubmit, onClose }) => {
               }
             }
 
+            
+
+            if (type === 'conditional-select') {
+              const conditionalOptions = formData[formType][field].selections[formValues[formData[formType][field]['dependsOn']]];
+              console.log(formData[formType][field]['dependsOn'])
+              return <><pre>{JSON.stringify(conditionalOptions,null,4)}</pre></>
+              // return (
+              //   <div key={fieldIndex} className="mb-2">
+              //     <label className="block text-sm font-medium text-gray-600">{conditionalOptions.label}</label>
+              //     <select
+              //       onChange={(e) => handleChange(field, e.target.value)}
+              //       className="mt-1 p-2 w-full border rounded-md"
+              //     >
+              //       {conditionalOptions.options.map((option, optionIndex) => (
+              //         <option key={optionIndex} value={option}>
+              //           {convertWordsToTitleCase(option)}
+              //         </option>
+              //       ))}
+              //     </select>
+              //     {conditionalOptions.helperText && <p className="text-xs text-gray-500">{conditionalOptions.helperText}</p>}
+              //   </div>
+              // );
+            }
+
             if (type === 'grid') {
               return (
                 <div key={fieldIndex} className="mb-2">
@@ -60,15 +84,17 @@ const DynamicForm = ({ formData, formType, onSubmit, onClose }) => {
                       data.map((item, index) => (
                         <label
                           key={index}
-                          className={`flex items-center justify-center cursor-pointer border border-gray-200 rounded-lg p-4 transition duration-300 ease-in-out hover:shadow-md ${formValues[item.name] ? 'border-blue-500' : ''}`}
-                        >                          <input
+                          className={`flex items-center justify-center cursor-pointer border  rounded-lg p-4 transition duration-300 ease-in-out hover:shadow-md ${formValues[field] === item.name ? 'border-blue-500' : 'border-gray-200'}`}
+                        >
+                          <input
                             type="radio"
-                            checked={formValues[item.name] || false}
-                            onChange={(e) => handleChange(item.name, e.target.checked)}
+                            name={field}
+                            value={item.name}
+                            onChange={(e) => handleChange(field, item.name)}
                             className="sr-only"
                           />
                           <div className="w-full text-center">
-                            <img src={images[formType + "_" + item.image]} alt={item.name} className="w-24 h-24 object-cover mx-auto mb-2 rounded-md" />
+                            <img src={images[formType + '_' + item.image]} alt={item.name} className="w-24 h-24 object-cover mx-auto mb-2 rounded-md" />
                             <p className="text-sm font-medium text-gray-600">{item.name}</p>
                             <p className="text-xs text-gray-500">{item.description}</p>
                           </div>

@@ -7,4 +7,6 @@ export const images = {
     "roof_img6": require("../boq_generator/pre-define-designs/assets/img6.jpg"),
     "roof_img7": require("../boq_generator/pre-define-designs/assets/img7.jpg"),
     "roof_img8": require("../boq_generator/pre-define-designs/assets/img8.jpg"),
+    "door_img1": require("../boq_generator/Assets/door1.jpg"),
+    "door_img2": require("../boq_generator/Assets/door2.jpg"),
 };
