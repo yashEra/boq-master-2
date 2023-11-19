@@ -131,7 +131,7 @@
     "thickness": {
       "label": "Thickness",
       "type": "number",
-      "helperText": "Enter the thickness of the slab",
+      "helperText": "Enter the height of the slab",
       "unit": "inches"
     },
     "width": {
@@ -157,11 +157,11 @@
       "helperText": "Select the unit of measurement"
     }
   },
-  "slab1": {
-    "thickness": {
-      "label": "Thickness",
+  "fountation": {
+    "height": {
+      "label": "height",
       "type": "number",
-      "helperText": "Enter the thickness of the slab",
+      "helperText": "Enter the height of the slab",
       "unit": "inches"
     },
     "width": {
@@ -181,15 +181,14 @@
       "type": "select",
       "options": [
         "feet",
-        "inches",
         "meters"
       ],
       "helperText": "Select the unit of measurement"
     }
   },
-  "slab2": {
-    "thickness": {
-      "label": "Thickness",
+  "ColumnFooting": {
+    "height": {
+      "label": "height",
       "type": "number",
       "helperText": "Enter the thickness of the slab",
       "unit": "inches"
@@ -211,7 +210,6 @@
       "type": "select",
       "options": [
         "feet",
-        "inches",
         "meters"
       ],
       "helperText": "Select the unit of measurement"

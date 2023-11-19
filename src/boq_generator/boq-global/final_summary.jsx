@@ -158,11 +158,13 @@ const FinalSummary = ({ props }) => {
               <td className="border px-4 py-2">{slabfRate}</td>
               <td className="border px-4 py-2">{slabfAmount}</td>
             </tr>
+            <tr>
             <th className="border px-4 py-2 px-4 py-2">TOTAL FOR WALL SUMMARY</th>
             <th className="border px-4 py-2 "></th>
             <th className="border px-4 py-2 px-4 py-2"></th>
             <th className="border px-4 py-2 px-4 py-2"></th>
             <th className="border px-4 py-2 px-4 py-2">{slabAmount + slabfAmount}</th>
+            </tr>
 
           </tbody>
         </table>
