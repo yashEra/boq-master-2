@@ -44,7 +44,7 @@ const products = [
 //     icon: ArrowPathIcon,
 //   },
 // ];
-  { name: 'Generate BoQ', description: '', href: '/boq-home', icon: DocumentTextIcon },
+  { name: 'Generate BoQ', description: '', href: 'boq-wizard', icon: DocumentTextIcon },
   { name: 'Single Unit Calculator', description: '', href: '/boq-singleunitcal', icon: ArrowPathIcon },
   { name: 'Cost Estimation Matrial Calculator', description: '', href: '/cost-estimation', icon: BanknotesIcon },
   { name: 'Current Material Price List', description: '', href: '/material-price-list', icon:   DocumentArrowDownIcon },
@@ -134,7 +134,7 @@ export default function NavBar() {
             </Transition>
           </Popover>
 
-          <a href="boq-home" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="boq-wizard" className="text-sm font-semibold leading-6 text-gray-900">
             BoQ Tool
           </a>
           <a href="/about" className="text-sm font-semibold leading-6 text-gray-900">
@@ -200,7 +200,7 @@ export default function NavBar() {
                   )}
                 </Disclosure>
                 <a
-                  href="/boq-tool"
+                  href="boq-wizard"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   BoQ Tool

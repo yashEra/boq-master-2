@@ -1,0 +1,395 @@
+{
+  "wall": {
+    "height": {
+      "label": "Height",
+      "type": "number",
+      "helperText": "Enter the height of the wall",
+      "unit": "feet"
+    },
+    "length": {
+      "label": "Length",
+      "type": "number",
+      "helperText": "Enter the length of the wall",
+      "unit": "feet"
+    },
+    "unit": {
+      "label": "Unit",
+      "type": "select",
+      "options": [
+        "feet",
+        "meters"
+      ],
+      "helperText": "Select the unit of measurement"
+    },
+    "brickTypes": {
+      "label": "Brick Types",
+      "type": "select",
+      "options": [
+        "clayBrick",
+        "cementBrick"
+      ],
+      "helperText": "Select the type of bricks used"
+    },
+    "brickTypeOption": {
+      "label": "Brick Type Options",
+      "type": "select",
+      "options": [
+        "singleBrick",
+        "doubleBrick",
+        "polishedBrick"
+      ],
+      "conditions": {
+        "dependsOn": "brickTypes",
+        "showIf": "clayBrick"
+      },
+      "helperText": "Select specific options for clay bricks"
+    }
+  },
+  "tiebeam": {
+    "height": {
+      "label": "Height",
+      "type": "number",
+      "helperText": "Enter the height of the tiebeam",
+      "unit": "feet"
+    },
+    "width": {
+      "label": "Width",
+      "type": "number",
+      "helperText": "Enter the width of the tiebeam",
+      "unit": "feet"
+    },
+    "length": {
+      "label": "Length",
+      "type": "number",
+      "helperText": "Enter the length of the tiebeam",
+      "unit": "feet"
+    },
+    "noOfTiebeams": {
+      "label": "No of Tiebeams",
+      "type": "number",
+      "helperText": "Enter the quantity of tiebeams"
+    },
+    "unit": {
+      "label": "Unit",
+      "type": "select",
+      "options": [
+        "feet",
+        "inches",
+        "meters"
+      ],
+      "helperText": "Select the unit of measurement"
+    }
+  },
+  "stair": {
+    "length": {
+      "label": "Length",
+      "type": "number",
+      "helperText": "Enter the length of the stair",
+      "unit": "feet"
+    },
+    "width": {
+      "label": "Width",
+      "type": "number",
+      "helperText": "Enter the width of the stair",
+      "unit": "feet"
+    },
+    "unit": {
+      "label": "Unit",
+      "type": "select",
+      "options": [
+        "feet",
+        "inches",
+        "meters"
+      ],
+      "helperText": "Select the unit of measurement"
+    },
+    "noOfSteps": {
+      "label": "No of Steps",
+      "type": "number",
+      "helperText": "Enter the quantity of steps"
+    },
+    "thread": {
+      "label": "Thread",
+      "type": "number",
+      "helperText": "Enter the thread size",
+      "unit": "inches"
+    },
+    "riser": {
+      "label": "Riser",
+      "type": "number",
+      "helperText": "Enter the riser size",
+      "unit": "inches"
+    },
+    "thickness": {
+      "label": "Thickness",
+      "type": "number",
+      "helperText": "Enter the thickness of the stair",
+      "unit": "inches"
+    }
+  },
+  "slab": {
+    "thickness": {
+      "label": "Thickness",
+      "type": "number",
+      "helperText": "Enter the height of the slab",
+      "unit": "inches"
+    },
+    "width": {
+      "label": "Width",
+      "type": "number",
+      "helperText": "Enter the width of the slab",
+      "unit": "feet"
+    },
+    "length": {
+      "label": "Length",
+      "type": "number",
+      "helperText": "Enter the length of the slab",
+      "unit": "feet"
+    },
+    "unit": {
+      "label": "Unit",
+      "type": "select",
+      "options": [
+        "feet",
+        "inches",
+        "meters"
+      ],
+      "helperText": "Select the unit of measurement"
+    }
+  },
+  "fountation": {
+    "height": {
+      "label": "height",
+      "type": "number",
+      "helperText": "Enter the height of the slab",
+      "unit": "inches"
+    },
+    "width": {
+      "label": "Width",
+      "type": "number",
+      "helperText": "Enter the width of the slab",
+      "unit": "feet"
+    },
+    "length": {
+      "label": "Length",
+      "type": "number",
+      "helperText": "Enter the length of the slab",
+      "unit": "feet"
+    },
+    "unit": {
+      "label": "Unit",
+      "type": "select",
+      "options": [
+        "feet",
+        "meters"
+      ],
+      "helperText": "Select the unit of measurement"
+    }
+  },
+  "footings": {
+    "height": {
+      "label": "Height",
+      "type": "number",
+      "helperText": "Enter the thickness of the Column Footings",
+      "unit": "inches"
+    },
+    "width": {
+      "label": "Width",
+      "type": "number",
+      "helperText": "Enter the width of the Column Footings",
+      "unit": "feet"
+    },
+    "length": {
+      "label": "Length",
+      "type": "number",
+      "helperText": "Enter the length of the Column Footings",
+      "unit": "feet"
+    },
+    "unit": {
+      "label": "Unit",
+      "type": "select",
+      "options": [
+        "feet",
+        "meters"
+      ],
+      "helperText": "Select the unit of measurement"
+    }
+  },
+  "column": {
+    "height": {
+      "label": "Height",
+      "type": "number",
+      "helperText": "Enter the height of the column",
+      "unit": "feet"
+    },
+    "width": {
+      "label": "Width",
+      "type": "number",
+      "helperText": "Enter the width of the column",
+      "unit": "feet"
+    },
+    "length": {
+      "label": "Length",
+      "type": "number",
+      "helperText": "Enter the length of the column",
+      "unit": "feet"
+    },
+    "unit": {
+      "label": "Unit",
+      "type": "select",
+      "options": [
+        "feet",
+        "meters"
+      ],
+      "helperText": "Select the unit of measurement"
+    },
+    "noOfColumns": {
+      "label": "NoOfColumns",
+      "type": "number",
+      "helperText": "Enter the quantity of columns"
+    }
+  },
+  "window": {
+    "windowType": {
+      "label": "Window Type",
+      "type": "select",
+      "options": [
+        "Wooden",
+        "Aluminium",
+        "Steel"
+      ],
+      "helperText": "Select the type of window"
+    },
+    "quantity": {
+      "label": "Quantity",
+      "type": "number",
+      "helperText": "Enter the quantity of windows"
+    },
+    "price": {
+      "label": "Price",
+      "type": "number",
+      "helperText": "Enter the price of the window",
+      "unit": "Rs"
+    },
+    "size": {
+      "label": "Size",
+      "type": "number",
+      "helperText": "Enter the size of the window"
+    }
+  },
+  "door": {
+    "doorType": {
+      "type": "grid",
+      "data": [
+        {
+          "name": "1",
+          "description": "Wooden Doors 7ft X 3ft",
+          "price": 4000,
+          "image": "img1"
+        },
+        {
+          "name": "2",
+          "description": "Armee Teak Wooden Door 7ft X 3ft",
+          "price": 13000,
+          "image": "img2"
+        }
+      ]
+    },
+    "material": {
+      "type": "conditional-select",
+      "dependsOn": "doorType",
+    
+      "selections": {
+        "1": {
+          "label": "Material",
+          "type": "select",
+          "options": [
+            "tualang",
+            "kempas",
+            "teak",
+            "jack",
+            "mahogany"
+          ],
+          "helperText": "Select the material of the wooden door"
+        },
+        "2": {
+          "label": "Material",
+          "type": "select",
+          "options": [
+            "armee_teak"
+          ],
+          "helperText": "Select the material of the Armee Teak wooden door"
+        }
+      }
+    },
+    "materialDoor1": {
+      "label": "Material",
+      "type": "select",
+      "options": [
+        "tualang",
+        "kempas",
+        "teak",
+        "jack",
+        "mahogany"
+      ],
+      "conditions": {
+        "dependsOn": "doorType",
+        "showIf": "1"
+      },
+      "helperText": "Select the material of the door"
+    },
+    "materialDoor2": {
+      "label": "Material",
+      "type": "select",
+      "options": [
+        "armee_teak"
+      ],
+      "conditions": {
+        "dependsOn": "doorType",
+        "showIf": "2"
+      },
+      "helperText": "Select the material of the door"
+    },
+    "quantity": {
+      "label": "Quantity",
+      "type": "number",
+      "helperText": "Enter the quantity of doors"
+    }
+  },
+  "roof": {
+    "type": {
+      "type": "grid",
+      "data": [
+        {
+          "name": "Rhino Cement Roofing sheet",
+          "description": "1750mm Rhino Cement Roofing sheet",
+          "price": 4000,
+          "image": "img3"
+        },
+        {
+          "name": "Anton Armor Roofing Sheet",
+          "description": "8 Feet x 3 Feet Red color Armor sheet",
+          "price": 13000,
+          "image": "img4"
+        },
+        {
+          "name": "Roof Max Roofing Sheet",
+          "description": "7 Feet x 3 Feet Green color",
+          "price": 16000,
+          "image": "img5"
+        },
+        {
+          "name": "AC Terres Roofing Sheet",
+          "description": "1700mm Blue color AC Terres Roofing Sheet",
+          "price": 10000,
+          "image": "img6"
+        }
+      ]
+    },
+    "quantity": {
+      "label": "Quantity",
+      "type": "number",
+      "helperText": "Enter the quantity of doors"
+    }
+  }
+}

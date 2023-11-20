@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
 import axios from "axios";
 import WallsImg from '../Assets/wall.jpg'
 import { saveToLocalStorage } from '../../services/localstorage'
 import SavedItems from "../../components/SavedItems";
+import NavBar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 const WallView = () => {
   const backgroundImageUrl = WallsImg;
@@ -13,7 +13,7 @@ const WallView = () => {
     height: "",
     length: "",
     unit: "ft",
-    brickTypes: "Clay Brick"
+    brickTypes: "clayBrick"
   });
 
   const [showDataSection, setShowDataSection] = useState(false);
@@ -25,13 +25,27 @@ const WallView = () => {
     totalCost: null
   });
 
+  const [brickTypeOption, setBrickTypeOption] = useState("singleBrick");
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleBrickTypeChange = (e) => {
+    setBrickTypeOption(e.target.value);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       const response = await axios.post(
         "http://localhost:8080/Models/Process/PartsOfConstructions/wall_process.php",
-        formData,
+        { ...formData, brickTypeOption },
         {
           headers: {
             "Content-Type": "application/json",
@@ -47,9 +61,10 @@ const WallView = () => {
       if (response.data.message === "Data received successfully") {
         setData({
           noOfBricks: parseFloat(response.data.numberOfBricks).toFixed(0),
-          sandQ: parseFloat(response.data.Sand).toFixed(2),
-          cemntQ: parseFloat(response.data.CementKg).toFixed(2),
-          totalCost: parseFloat(response.data.cost).toFixed(2)
+          description: response.data.description,
+          area: parseFloat(response.data.area).toFixed(2),
+          totalCost: parseFloat(response.data.cost).toFixed(2),
+          unitRate: parseFloat(response.data.unitRate).toFixed(2)
         });
         setShowDataSection(true);
       }
@@ -58,57 +73,61 @@ const WallView = () => {
     }
   };
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+  const closePopup = () => {
+
+    // setResetForm(true);
+    setShowDataSection(false);
+
   };
+
 
   return (
     <div>
-      <Navbar />
-      <div className=" min-h-screen flex items-center justify-center" style={{ backgroundImage: `url('${backgroundImageUrl}')` }}>
+      <NavBar />
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundImage: `url('${backgroundImageUrl}')` }}>
         {showDataSection ? (
           <div className="bg-white rounded p-16 shadow-md">
             <h1 className="block text-sm font-medium text-xl text-gray-700 text-center pb-10">Cost and Quantity Estimation of Wall</h1>
             <table className="table-auto">
               <thead>
                 <tr>
-                  <th className="px-4 py-2">Material</th>
+                  <th className="px-4 py-2">Description</th>
                   <th className="px-4 py-2">Unit</th>
                   <th className="px-4 py-2">Quantity</th>
+                  <th className="px-4 py-2">Rate</th>
+                  <th className="px-4 py-2">Amount</th>
+
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className="border px-4 py-2">No of Bricks</td>
-                  <td className="border px-4 py-2">NOS</td>
-                  <td className="border px-4 py-2">{data.noOfBricks}</td>
-                </tr>
-                <tr>
-                  <td className="border px-4 py-2">Sand Quantity</td>
-                  <td className="border px-4 py-2">Cubes</td>
-                  <td className="border px-4 py-2">{data.sandQ}</td>
-                </tr>
-                <tr>
-                  <td className="border px-4 py-2">Cement Quantity</td>
-                  <td className="border px-4 py-2">Kg</td>
-                  <td className="border px-4 py-2">{data.cemntQ}</td>
+                  <td className="border px-4 py-2">{data.description}</td>
+                  <td className="border px-4 py-2">Sq.m</td>
+                  <td className="border px-4 py-2">{data.area}</td>
+                  <td className="border px-4 py-2">{data.unitRate}</td>
+                  <td className="border px-4 py-2">{data.totalCost}</td>
+
                 </tr>
                 <tr>
                   <td className=""></td>
-                </tr>
-                <tr>
                   <td className=""></td>
-                  <td className="border px-4 py-2"><b>Total Cost</b></td>
-                  <td className="border px-4 py-2"><b>{data.totalCost}LKR</b></td>
+                  <td className=""></td>
+                  <td className=""></td>
+                  <td className="">            
+                  <button
+                    onClick={closePopup}
+                    className="bg-red-600 text-white py-1 px-2 rounded-md"
+                  >
+                    Close
+                  </button></td>
+
                 </tr>
               </tbody>
             </table>
-            <div className="float-right mt-2">
-            <SavedItems type={'wall'}/></div>
+
+            {/* <div className="float-right mt-2">
+              <SavedItems type={'wall'}/>
+            </div> */}
           </div>
         ) : (
           <div className="bg-white rounded p-16 shadow-md">
@@ -144,7 +163,6 @@ const WallView = () => {
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                 />
               </div>
-
               <div className="mb-4">
                 <label
                   htmlFor="unit"
@@ -162,7 +180,6 @@ const WallView = () => {
                   <option value="m">m</option>
                 </select>
               </div>
-
               <div className="mb-4">
                 <label
                   htmlFor="brickTypes"
@@ -180,7 +197,48 @@ const WallView = () => {
                   <option value="cementBrick">Cement Brick</option>
                 </select>
               </div>
-
+              {formData.brickTypes === "clayBrick" && (
+                <div className="mb-4">
+                  <label className="block text-sm font-medium text-gray-700">
+                    Brick Type Options
+                  </label>
+                  <div className="mt-1">
+                    <label className="inline-flex items-center">
+                      <input
+                        type="radio"
+                        name="brickTypeOption"
+                        value="singleBrick"
+                        checked={brickTypeOption === "singleBrick"}
+                        onChange={handleBrickTypeChange}
+                        className="form-radio h-5 w-5 text-indigo-600"
+                      />
+                      <span className="ml-2">Single Brick</span>
+                    </label>
+                    <label className="inline-flex items-center ml-6">
+                      <input
+                        type="radio"
+                        name="brickTypeOption"
+                        value="doubleBrick"
+                        checked={brickTypeOption === "doubleBrick"}
+                        onChange={handleBrickTypeChange}
+                        className="form-radio h-5 w-5 text-indigo-600"
+                      />
+                      <span className="ml-2">Double Brick</span>
+                    </label>
+                    <label className="inline-flex items-center ml-6">
+                      <input
+                        type="radio"
+                        name="brickTypeOption"
+                        value="polishedBrick"
+                        checked={brickTypeOption === "polishedBrick"}
+                        onChange={handleBrickTypeChange}
+                        className="form-radio h-5 w-5 text-indigo-600"
+                      />
+                      <span className="ml-2">Polished Brick</span>
+                    </label>
+                  </div>
+                </div>
+              )}
               <button
                 type="submit"
                 className="w-full px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500"
@@ -190,7 +248,6 @@ const WallView = () => {
             </form>
           </div>
         )}
-
       </div>
       <Footer />
     </div>

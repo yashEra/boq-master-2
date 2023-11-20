@@ -46,6 +46,8 @@ import Windows from "./boq_generator/pre-define-designs/Window";
 import BoQFinal from './boq_generator/boq-final/summary';
 import WindowsView from "./boq_generator/window/Windows";
 import DoorView from "./boq_generator/door/Door";
+import BOQMain from "./boq_generator/boq-global";
+import ProjectForm from "./services_platform/portfolioes/portfolio/PortfolioForm";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -63,6 +65,7 @@ root.render(
       <Route path="/myprofile" element={<UserProfile />} />
       <Route path="/boq-home" element={<BoqHome />} />
       <Route path="/start-boq" element={<Work />} />
+      <Route path="/boq-wizard" element={<BOQMain />} />
       <Route path="/boq-walls" element={<WallView />} />
       <Route path="/boq-summary" element={<BoQFinal/>} />
       <Route path="/help-center" element={<Help_center />} />
@@ -93,6 +96,7 @@ root.render(
       <Route path="/window" element={<Windows />} />
       <Route path="/boq-window" element={<WindowsView />} />
       <Route path="/boq-door" element={<DoorView />} />
+      <Route path="/boq-form" element={<ProjectForm/>} />
 
 
     </Routes>

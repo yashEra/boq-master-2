@@ -27,11 +27,39 @@
         "length": "Length",
         "unit": "Unit"
     },
+    "slab1": {
+        "thickness": "Thickness",
+        "width": "Width",
+        "length": "Length",
+        "unit": "Unit"
+    },
+    "slab2": {
+        "thickness": "Thickness",
+        "width": "Width",
+        "length": "Length",
+        "unit": "Unit"
+    },
+    "slab3": {
+        "thickness": "Thickness",
+        "width": "Width",
+        "length": "Length",
+        "unit": "Unit"
+    },
     "column": {
         "height": "Height",
         "width": "Width",
         "length": "Length",
         "unit": "Unit",
         "noOfColumns": "No of Columns"
+    },
+    "window":{
+        "windowType": "Window Type",
+        "quantity":"Quantity",
+        "size":"Size"
+    },
+    "door":{
+        "doorType": "Door Type",
+        "quantity":"Quantity",
+        "size":"Size"
     }
 }
