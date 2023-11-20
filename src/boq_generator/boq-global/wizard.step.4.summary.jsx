@@ -65,7 +65,7 @@ const SummaryComponent = ({ floors, updateState, state }) => {
             window: "http://localhost:8080/Models/Process/PartsOfConstructions/window_process.php",
             stair: "http://localhost:8080/Models/Process/PartsOfConstructions/stairs-process.php",
             foundation: "http://localhost:8080/Models/Process/PartsOfConstructions/foundation_process.php",
-            ColumnFooting: "http://localhost:8080/Models/Process/PartsOfConstructions/slab_process.php",
+            footings: "http://localhost:8080/Models/Process/PartsOfConstructions/columnFootings_process.php",
             slab3: "http://localhost:8080/Models/Process/PartsOfConstructions/slab_process.php",
         };
 

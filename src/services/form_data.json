@@ -186,23 +186,23 @@
       "helperText": "Select the unit of measurement"
     }
   },
-  "ColumnFooting": {
+  "footings": {
     "height": {
-      "label": "height",
+      "label": "Height",
       "type": "number",
-      "helperText": "Enter the thickness of the slab",
+      "helperText": "Enter the thickness of the Column Footings",
       "unit": "inches"
     },
     "width": {
       "label": "Width",
       "type": "number",
-      "helperText": "Enter the width of the slab",
+      "helperText": "Enter the width of the Column Footings",
       "unit": "feet"
     },
     "length": {
       "label": "Length",
       "type": "number",
-      "helperText": "Enter the length of the slab",
+      "helperText": "Enter the length of the Column Footings",
       "unit": "feet"
     },
     "unit": {
@@ -239,13 +239,12 @@
       "type": "select",
       "options": [
         "feet",
-        "inches",
         "meters"
       ],
       "helperText": "Select the unit of measurement"
     },
     "noOfColumns": {
-      "label": "No of Columns",
+      "label": "NoOfColumns",
       "type": "number",
       "helperText": "Enter the quantity of columns"
     }
