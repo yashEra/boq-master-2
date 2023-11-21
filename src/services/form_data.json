@@ -322,34 +322,6 @@
         }
       }
     },
-    "materialDoor1": {
-      "label": "Material",
-      "type": "select",
-      "options": [
-        "tualang",
-        "kempas",
-        "teak",
-        "jack",
-        "mahogany"
-      ],
-      "conditions": {
-        "dependsOn": "doorType",
-        "showIf": "1"
-      },
-      "helperText": "Select the material of the door"
-    },
-    "materialDoor2": {
-      "label": "Material",
-      "type": "select",
-      "options": [
-        "armee_teak"
-      ],
-      "conditions": {
-        "dependsOn": "doorType",
-        "showIf": "2"
-      },
-      "helperText": "Select the material of the door"
-    },
     "quantity": {
       "label": "Quantity",
       "type": "number",
