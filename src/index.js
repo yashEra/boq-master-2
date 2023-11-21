@@ -48,6 +48,8 @@ import WindowsView from "./boq_generator/window/Windows";
 import DoorView from "./boq_generator/door/Door";
 import BOQMain from "./boq_generator/boq-global";
 import ProjectForm from "./services_platform/portfolioes/portfolio/PortfolioForm";
+import { ArchiList } from "./services_platform/professionals/ArchiList";
+import ArchitectProfile from "./services_platform/professionals/ArchitectProfile";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -97,7 +99,8 @@ root.render(
       <Route path="/boq-window" element={<WindowsView />} />
       <Route path="/boq-door" element={<DoorView />} />
       <Route path="/boq-form" element={<ProjectForm/>} />
-
+      <Route path="/archiList" element={<ArchiList/>} />
+      <Route path="/ar-pro/:architectId" element={<ArchitectProfile />} />
 
     </Routes>
   </Router>
