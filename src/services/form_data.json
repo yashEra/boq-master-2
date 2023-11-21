@@ -252,29 +252,94 @@
   "window": {
     "windowType": {
       "label": "Window Type",
-      "type": "select",
-      "options": [
-        "Wooden",
-        "Aluminium",
-        "Steel"
+      "type": "grid",
+      "data": [
+        {
+          "name": "1",
+          "description": "Frame+Glass Sash+Fittings",
+          "price": 4000,
+          "image": "img1"
+        },
+        {
+          "name": "2",
+          "description": "Frame+2Glass Sash+Fittings",
+          "price": 13000,
+          "image": "img2"
+        },
+        {
+          "name": "3",
+          "description": "Frame+3Glass Sash+Fittings",
+          "price": 4000,
+          "image": "img3"
+        },
+        {
+          "name": "4",
+          "description": "Frame+4Glass Sash+Fittings",
+          "price": 13000,
+          "image": "img4"
+        },
+        {
+          "name": "5",
+          "description": "Fan Light Window",
+          "price": 4000,
+          "image": "img5"
+        }
       ],
       "helperText": "Select the type of window"
+    },
+    "size" :{
+      "type":"conditional-select",
+      "dependsOn":"windowType",
+      "selections":{
+        "1":{
+          "label": "Size",
+          "type": "select",
+          "options": [
+            "20″x48″",
+            "20″x60″"
+          ],
+          "helperText": "Select the size of the Frame+Glass Sash+Fittings"
+        },
+        "2":{
+          "label": "Size",
+          "type": "select",
+          "options": [
+            "39″x48″"
+          ],
+          "helperText": "Select the size of the Frame+2Glass Sash+Fittings"
+        },
+        "3": {
+          "label": "Size",
+          "type": "select",
+          "options": [
+            "58″x48″",
+            "58″x60″"
+          ],
+          "helperText": "Select the size of the Frame+3Glass Sash+Fittings"
+        },
+        "4": {
+          "label": "Size",
+          "type": "select",
+          "options": [
+            "77″x48″"
+          ],
+          "helperText": "Select the size of the Frame+4Glass Sash+Fittings"
+        },
+        "5": {
+          "label": "Size",
+          "type": "select",
+          "options": [
+            "22″x18″",
+            "30″x18″"
+          ],
+          "helperText": "Select the size of the Fan Light Window"
+        }
+      }
     },
     "quantity": {
       "label": "Quantity",
       "type": "number",
       "helperText": "Enter the quantity of windows"
-    },
-    "price": {
-      "label": "Price",
-      "type": "number",
-      "helperText": "Enter the price of the window",
-      "unit": "Rs"
-    },
-    "size": {
-      "label": "Size",
-      "type": "number",
-      "helperText": "Enter the size of the window"
     }
   },
   "door": {
