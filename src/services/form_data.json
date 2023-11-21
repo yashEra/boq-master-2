@@ -250,7 +250,7 @@
     }
   },
   "window": {
-    "windowType": {
+    "windowTypeId": {
       "label": "Window Type",
       "type": "grid",
       "data": [
@@ -289,7 +289,7 @@
     },
     "size" :{
       "type":"conditional-select",
-      "dependsOn":"windowType",
+      "dependsOn":"windowTypeId",
       "selections":{
         "1":{
           "label": "Size",
@@ -343,7 +343,7 @@
     }
   },
   "door": {
-    "doorType": {
+    "doorTypeId": {
       "type": "grid",
       "data": [
         {
@@ -362,7 +362,7 @@
     },
     "material": {
       "type": "conditional-select",
-      "dependsOn": "doorType",
+      "dependsOn": "doorTypeId",
     
       "selections": {
         "1": {
