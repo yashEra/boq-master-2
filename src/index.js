@@ -50,6 +50,7 @@ import BOQMain from "./boq_generator/boq-global";
 import ProjectForm from "./services_platform/portfolioes/portfolio/PortfolioForm";
 import { ArchiList } from "./services_platform/professionals/ArchiList";
 import ArchitectProfile from "./services_platform/professionals/ArchitectProfile";
+import AdminHome from "./admin/AdminPanel";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -101,6 +102,7 @@ root.render(
       <Route path="/boq-form" element={<ProjectForm/>} />
       <Route path="/archiList" element={<ArchiList/>} />
       <Route path="/ar-pro/:architectId" element={<ArchitectProfile />} />
+      <Route path="/adminz-boq-mz" element={<AdminHome />} />
 
     </Routes>
   </Router>
