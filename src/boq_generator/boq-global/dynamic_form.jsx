@@ -51,8 +51,6 @@ const DynamicForm = ({ formData, formType, onSubmit, onClose }) => {
               }
             }
 
-            
-
             if (type === 'conditional-select') {
               const conditionalOptions = formData[formType][field].selections[formValues[formData[formType][field]['dependsOn']]];
               console.log(conditionalOptions)
@@ -60,9 +58,12 @@ const DynamicForm = ({ formData, formType, onSubmit, onClose }) => {
                 !conditionalOptions ? <></>: <div key={fieldIndex} className="mb-2">
                   <label className="block text-sm font-medium text-gray-600">{conditionalOptions.label}</label>
                   <select
+                  required
+                    value={formValues[field]}
                     onChange={(e) => handleChange(field, e.target.value)}
                     className="mt-1 p-2 w-full border rounded-md"
                   >
+                    <option value="null">Select</option>
                     {conditionalOptions.options.map((option, optionIndex) => (
                       <option key={optionIndex} value={option}>
                         {convertWordsToTitleCase(option)}
