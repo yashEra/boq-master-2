@@ -9,4 +9,9 @@ export const images = {
     "roof_img8": require("../boq_generator/pre-define-designs/assets/img8.jpg"),
     "door_img1": require("../boq_generator/Assets/door1.jpg"),
     "door_img2": require("../boq_generator/Assets/door2.jpg"),
+    "window_img1": require("../boq_generator/Assets/design1.jpg"),
+    "window_img2": require("../boq_generator/Assets/design2.jpg"),
+    "window_img3": require("../boq_generator/Assets/design3.jpg"),
+    "window_img4": require("../boq_generator/Assets/design4.jpg"),
+    "window_img5": require("../boq_generator/Assets/design5.jpg"),
 };
