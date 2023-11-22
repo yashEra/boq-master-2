@@ -23,22 +23,24 @@ const Login = () => {
       .post("http://localhost:8080/Models/Process/login-process.php", formData)
       .then((res) => {
         console.log(res.data.success);
+        console.log("Form Data:", formData);
         
         //console.log("res.data.success value:", res.data);
         console.log("res.data.success type:", typeof res.data.success);
 
         if (res.data.success === true) {
 
+          if (res.data.type === 'professional') {
           console.log("Redirecting..."); // Log the redirection
 
-          window.location.href = "/";
+          window.location.href = "/myprofile";
           let id=res.data.id;
-          sessionStorage.setItem('userId', id);
-          // set user name and id in local storage
-          // get localstorage
+          sessionStorage.setItem('userId', id);}else{
+            console.log("Redirecting..."); // Log the redirection
 
-          window.localStorage.setItem("userName", formData.get("userName"));
-          window.localStorage.setItem("userId", res.data.id);
+            window.location.href = "/myprofile-c";
+            let id=res.data.id;
+          }
 
 
         } else {

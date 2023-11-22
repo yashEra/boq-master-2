@@ -3,21 +3,16 @@ import axios from 'axios';
 import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid';
 import NavBar from '../Navbar';
 import Footer from '../Footer';
-import { useEffect } from 'react';
-import { useState } from 'react';
 
-export default function UserProfile() {
+export default function ClientProfile() {
   const [profileData, setProfileData] = useState({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Get user ID from session storage
     const userId = sessionStorage.getItem('userId');
 
-    // Make API call to fetch user profile data
-    axios.get(`http://localhost/path/to/professionalProfile.php?id=${userId}`)
+    axios.get(`http://localhost/path/to/clientProfile.php?id=${userId}`)
       .then(response => {
-        // Update state with fetched data
         setProfileData(response.data);
         setLoading(false);
       })
