@@ -34,6 +34,11 @@ const Login = () => {
           window.location.href = "/";
           let id=res.data.id;
           sessionStorage.setItem('userId', id);
+          // set user name and id in local storage
+          // get localstorage
+
+          window.localStorage.setItem("userName", formData.get("userName"));
+          window.localStorage.setItem("userId", res.data.id);
 
 
         } else {

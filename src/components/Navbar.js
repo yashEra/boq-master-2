@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition,  } from '@headlessui/react'
 import {
   ArrowPathIcon,
@@ -62,6 +62,16 @@ function classNames(...classes) {
 
 export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [userName, setUserName] = useState(null);
+
+  useEffect(()=>{
+    getUserName();
+  },[])
+
+  const getUserName = async () => {
+    let userName = await window.localStorage.getItem("userName");
+    setUserName(userName);
+  };
 
   return (
     <header className="bg-white" style={{position:"fixed", width:"100vw",zIndex:"1000"}}>
@@ -145,9 +155,9 @@ export default function NavBar() {
           </a>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="/login" className="text-sm font-semibold leading-6 text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          {userName ? <a href="/myprofile" className="text-sm font-semibold leading-6 text-gray-900">
+            {userName} <span aria-hidden="true">&rarr;</span>
+          </a> : <a href="/login" className="text-sm font-semibold leading-6 text-gray-900">Log In</a>}
         </div>
       </nav>
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>

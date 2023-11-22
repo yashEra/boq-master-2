@@ -28,6 +28,12 @@ const Signup = () => {
 
     const url = "http://localhost:8080/Models/Process/signup-process.php";
     axios.post(url, inputs);
+
+
+    // TODO: Uncomment this and update with correct variable when the backend is ready
+    //  window.localStorage.setItem("userName", inputs.userName);
+    //  window.localStorage.setItem("userId", id);
+
     console.log(inputs);
     
   };
