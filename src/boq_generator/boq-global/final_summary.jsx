@@ -17,7 +17,9 @@ const FinalSummary = ({ props }) => {
     const columnSummary = props.summaries.find((summary) => summary.type === "column");
     const slabSummary = props.summaries.find((summary) => summary.type === "slab");
     const footingsSummary = props.summaries.find((summary) => summary.type === "footings");
-    const fountationSummary = props.summaries.find((summary) => summary.type === "fountation");
+    const foundationSummary = props.summaries.find((summary) => summary.type === "foundation");
+    const windowSummary = props.summaries.find((summary) => summary.type === "window");
+    const doorSummary = props.summaries.find((summary) => summary.type === "door");
 
     //"wall" summary
     const walldes = wallSummary
@@ -63,13 +65,33 @@ const FinalSummary = ({ props }) => {
       : 0;
 
     //"tiebeam" summary
-    const tiebeamCementQuantity = tiebeamSummary
-      ? tiebeamSummary.summary.cement
+    const tiebeamConcrete = tiebeamSummary
+      ? tiebeamSummary.summary.concrete
       : 0;
-    const tiebeamSandQuantity = tiebeamSummary
-      ? tiebeamSummary.summary.sand
+    const tiebeamFormwork = tiebeamSummary
+      ? tiebeamSummary.summary.formworks
       : 0;
-
+    const tiebeamConcreteQT = tiebeamSummary
+      ? tiebeamSummary.summary.concreteQuantity
+      : 0;
+    const tiebeamFormworkQT = tiebeamSummary
+      ? tiebeamSummary.summary.formworksQuantity
+      : 0;
+    const tiebeamConcreteU = tiebeamSummary
+      ? tiebeamSummary.summary.concreteUnitPrice
+      : 0;
+    const tiebeamFormworkU = tiebeamSummary
+      ? tiebeamSummary.summary.formworksUnitPrice
+      : 0;
+      const tiebeamReinforcement = tiebeamSummary
+      ? tiebeamSummary.summary.reinforcement
+      : 0;
+      const tiebeamReinforcementQT = tiebeamSummary
+      ? tiebeamSummary.summary.reinforcementQuantity
+      : 0
+      const tiebeamReinforcementU = tiebeamSummary
+      ? tiebeamSummary.summary.reinforcementUnitPrice
+      : 0;
 
     //"stair" summary
     const stairConcrete = stairSummary
@@ -157,6 +179,54 @@ const FinalSummary = ({ props }) => {
       : 0;
     const columnFormworkU = columnSummary
       ? columnSummary.summary.formworksUnitPrice
+      : 0;
+
+      // "Foundation" summary
+    const foundationConcrete = foundationSummary
+      ? foundationSummary.summary.concreteCost
+      : 0;
+    const foundationFormwork = foundationSummary
+      ? foundationSummary.summary.formworksCost
+      : 0;
+    const foundationConcreteQT = foundationSummary
+      ? foundationSummary.summary.concreteQuantity
+      : 0;
+    const foundationFormworkQT = foundationSummary
+      ? foundationSummary.summary.formworksQuantity
+      : 0;
+    const foundationConcreteU = foundationSummary
+      ? foundationSummary.summary.concreteUnitPrice
+      : 0;
+    const foundationFormworkU = foundationSummary
+      ? foundationSummary.summary.formworksUnitPrice
+      : 0;
+
+      // "Window" summary
+    const windowPrice = windowSummary
+      ? windowSummary.summary.price
+      : 0;
+    const windowSize = windowSummary
+      ? windowSummary.summary.size
+      : 0;
+    const windowArea = windowSummary
+      ? windowSummary.summary.area
+      : 0;
+    const windowQT = windowSummary
+      ? windowSummary.summary.quantity
+      : 0;
+
+      // "Door" summary
+    const doorPrice = doorSummary
+      ? doorSummary.summary.price
+      : 0;
+    const doorSize = doorSummary
+      ? doorSummary.summary.size
+      : 0;
+    const doorArea = doorSummary
+      ? doorSummary.summary.area
+      : 0;
+    const doorQT = doorSummary
+      ? windowSummary.summary.quantity
       : 0;
 
 
@@ -376,11 +446,155 @@ const FinalSummary = ({ props }) => {
                 <td className="border px-4 py-2">{columnFormwork}</td>
               </tr>
               <tr>
-              <th className="border px-4 py-2 px-4 py-2">TOTAL FOR WALL SUMMARY</th>
+              <th className="border px-4 py-2 px-4 py-2">TOTAL FOR COLUMNS SUMMARY</th>
               <th className="border px-4 py-2"></th>
               <th className="border px-4 py-2"></th>
               <th className="border px-4 py-2"></th>
               <th className="border px-4 py-2">{columnConcrete+columnReinforcement+columnFormwork}</th>
+            </tr>
+            <tr>
+              <th className="border px-4 py-2 px-4 py-2">TIEBEAM</th>
+              <th className="border px-4 py-2 "></th>
+              <th className="border px-4 py-2 px-4 py-2"></th>
+              <th className="border px-4 py-2 px-4 py-2"></th>
+              <th className="border px-4 py-2 px-4 py-2"></th>
+            </tr>
+            <tr>
+              <td className="border px-4 py-2"> High yield Tor Steel reinforcement bars & <br />Mild Steel Bars in
+                the following.
+              </td>
+              <td className="border px-4 py-2">Note</td>
+              <td className="border px-4 py-2"></td>
+              <td className="border px-4 py-2"></td>
+              <td className="border px-4 py-2"></td>
+            </tr>
+            <tr>
+              <td className="border px-4 py-2"> Concrete </td>
+              <td className="border px-4 py-2">Cu.m</td>
+              <td className="border px-4 py-2">{tiebeamConcreteQT}</td>
+              <td className="border px-4 py-2">{tiebeamConcreteU}</td>
+              <td className="border px-4 py-2">{tiebeamConcrete}</td>
+            </tr>
+
+              <tr>
+                <td className="border px-4 py-2"> Rainforcement </td>
+                <td className="border px-4 py-2">Sq.m</td>
+                <td className="border px-4 py-2">{tiebeamReinforcementQT}</td>
+                <td className="border px-4 py-2">{tiebeamReinforcementU}</td>
+                <td className="border px-4 py-2">{tiebeamReinforcement}</td>
+              </tr>
+              <tr>
+                <td className="border px-4 py-2"> Form Work</td>
+                <td className="border px-4 py-2">Sq.m</td>
+                <td className="border px-4 py-2">{tiebeamFormworkQT}</td>
+                <td className="border px-4 py-2">{tiebeamFormworkU}</td>
+                <td className="border px-4 py-2">{tiebeamFormwork}</td>
+              </tr>
+              <tr>
+              <th className="border px-4 py-2 px-4 py-2">TOTAL FOR TIEBEAM SUMMARY</th>
+              <th className="border px-4 py-2"></th>
+              <th className="border px-4 py-2"></th>
+              <th className="border px-4 py-2"></th>
+              <th className="border px-4 py-2">{tiebeamConcrete+tiebeamReinforcement+tiebeamFormwork}</th>
+            </tr>
+            <tr>
+              <th className="border px-4 py-2 px-4 py-2">FOUNDATION</th>
+              <th className="border px-4 py-2 "></th>
+              <th className="border px-4 py-2 px-4 py-2"></th>
+              <th className="border px-4 py-2 px-4 py-2"></th>
+              <th className="border px-4 py-2 px-4 py-2"></th>
+            </tr>
+            <tr>
+              <td className="border px-4 py-2"> High yield Tor Steel reinforcement bars & <br />Mild Steel Bars in
+                the following.
+              </td>
+              <td className="border px-4 py-2">Note</td>
+              <td className="border px-4 py-2"></td>
+              <td className="border px-4 py-2"></td>
+              <td className="border px-4 py-2"></td>
+            </tr>
+            <tr>
+              <td className="border px-4 py-2"> Concrete </td>
+              <td className="border px-4 py-2">Cu.m</td>
+              <td className="border px-4 py-2">{foundationConcreteQT}</td>
+              <td className="border px-4 py-2">{foundationConcreteU}</td>
+              <td className="border px-4 py-2">{foundationConcrete}</td>
+            </tr>
+              <tr>
+                <td className="border px-4 py-2"> Form Work</td>
+                <td className="border px-4 py-2">Sq.m</td>
+                <td className="border px-4 py-2">{foundationFormworkQT}</td>
+                <td className="border px-4 py-2">{foundationFormworkU}</td>
+                <td className="border px-4 py-2">{foundationFormwork}</td>
+              </tr>
+              <tr>
+              <th className="border px-4 py-2 px-4 py-2">TOTAL FOR FOUNDATION SUMMARY</th>
+              <th className="border px-4 py-2"></th>
+              <th className="border px-4 py-2"></th>
+              <th className="border px-4 py-2"></th>
+              <th className="border px-4 py-2">{foundationConcrete+foundationFormwork}</th>
+            </tr>
+            <tr>
+              <th className="border px-4 py-2 px-4 py-2">WINDOW</th>
+              <th className="border px-4 py-2 "></th>
+              <th className="border px-4 py-2 px-4 py-2"></th>
+              <th className="border px-4 py-2 px-4 py-2"></th>
+              <th className="border px-4 py-2 px-4 py-2"></th>
+            </tr>
+            <tr>
+              <td className="border px-4 py-2"> Window Frame+Glass Sash+Fittings
+              </td>
+              <td className="border px-4 py-2">Note</td>
+              <td className="border px-4 py-2"></td>
+              <td className="border px-4 py-2"></td>
+              <td className="border px-4 py-2"></td>
+            </tr>
+            <tr>
+              <td className="border px-4 py-2"> Window - {windowSize} </td>
+              <td className="border px-4 py-2">NOS</td>
+              <td className="border px-4 py-2">{windowQT}</td>
+              <td className="border px-4 py-2">{windowPrice/windowQT}</td>
+              <td className="border px-4 py-2">{windowPrice}</td>
+            </tr>
+
+
+              <tr>
+              <th className="border px-4 py-2 px-4 py-2">TOTAL FOR FOUNDATION SUMMARY</th>
+              <th className="border px-4 py-2"></th>
+              <th className="border px-4 py-2"></th>
+              <th className="border px-4 py-2"></th>
+              <th className="border px-4 py-2">{windowPrice}</th>
+            </tr>
+            <tr>
+              <th className="border px-4 py-2 px-4 py-2">Door</th>
+              <th className="border px-4 py-2 "></th>
+              <th className="border px-4 py-2 px-4 py-2"></th>
+              <th className="border px-4 py-2 px-4 py-2"></th>
+              <th className="border px-4 py-2 px-4 py-2"></th>
+            </tr>
+            <tr>
+              <td className="border px-4 py-2"> Door With Frame/Casing
+              </td>
+              <td className="border px-4 py-2">Note</td>
+              <td className="border px-4 py-2"></td>
+              <td className="border px-4 py-2"></td>
+              <td className="border px-4 py-2"></td>
+            </tr>
+            <tr>
+              <td className="border px-4 py-2"> Door - {doorSize} </td>
+              <td className="border px-4 py-2">NOS</td>
+              <td className="border px-4 py-2">{doorQT}</td>
+              <td className="border px-4 py-2">{doorPrice/doorQT}</td>
+              <td className="border px-4 py-2">{doorPrice}</td>
+            </tr>
+
+
+              <tr>
+              <th className="border px-4 py-2 px-4 py-2">TOTAL FOR FOUNDATION SUMMARY</th>
+              <th className="border px-4 py-2"></th>
+              <th className="border px-4 py-2"></th>
+              <th className="border px-4 py-2"></th>
+              <th className="border px-4 py-2">{doorPrice}</th>
             </tr>
           </tbody>
         </table>
