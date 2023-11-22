@@ -52,6 +52,8 @@ const Signup = () => {
       if (res.data.success === true) {
         console.log("Redirecting...");
         window.location.href = "/login";
+        // set the user name in session storage
+        sessionStorage.setItem("userName", inputs.userName);
       } else {
         console.log("Signup failed.");
       }

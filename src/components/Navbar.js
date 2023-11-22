@@ -69,7 +69,7 @@ export default function NavBar() {
   },[])
 
   const getUserName = async () => {
-    let userName = await window.localStorage.getItem("userName");
+    let userName = await sessionStorage.getItem("userName");
     setUserName(userName);
   };
 

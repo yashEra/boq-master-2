@@ -3,8 +3,6 @@ import axios from 'axios';
 import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid';
 import NavBar from '../Navbar';
 import Footer from '../Footer';
-import { useEffect } from 'react';
-import { useState } from 'react';
 
 export default function UserProfile() {
   const [profileData, setProfileData] = useState({});

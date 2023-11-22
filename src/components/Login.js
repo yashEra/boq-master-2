@@ -24,29 +24,32 @@ const Login = () => {
       .then((res) => {
         console.log(res.data.success);
         console.log("Form Data:", formData);
-        
+
         //console.log("res.data.success value:", res.data);
         console.log("res.data.success type:", typeof res.data.success);
 
         if (res.data.success === true) {
 
           if (res.data.type === 'professional') {
-          console.log("Redirecting..."); // Log the redirection
+            console.log("Redirecting..."); // Log the redirection
 
-          window.location.href = "/myprofile";
-          let id=res.data.id;
-          sessionStorage.setItem('userId', id);}else{
+            window.location.href = "/myprofile";
+            let id = res.data.id;
+            sessionStorage.setItem('userId', id);
+            sessionStorage.setItem('userType', 'professional');
+            sessionStorage.setItem('userName', formData.get('userName'));
+          } else {
             console.log("Redirecting..."); // Log the redirection
 
             window.location.href = "/myprofile-c";
-            let id=res.data.id;
+            let id = res.data.id;
           }
 
 
         } else {
 
           console.log("Login failed."); // Log failure
-          
+
         }
       })
       .catch((error) => {
