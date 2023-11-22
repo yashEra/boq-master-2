@@ -38,7 +38,7 @@ const Login = () => {
           sessionStorage.setItem('userId', id);}else{
             console.log("Redirecting..."); // Log the redirection
 
-            window.location.href = "/";
+            window.location.href = "/myprofile-c";
             let id=res.data.id;
           }
 

@@ -54,6 +54,7 @@ import AdminHome from "./admin/AdminPanel";
 import { QsList } from "./services_platform/professionals/QsList";
 import { CeList } from "./services_platform/professionals/CeList";
 import { PortfolioList } from "./services_platform/professionals/Portfolio";
+import ClientProfile from "./components/user_profile/ClientProfile";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -68,6 +69,7 @@ root.render(
       <Route path="/signup" element={<Signup />} />
       <Route path="/sevices" element={<Services />} />
       <Route path="/helpcenter" element={<HelpCenter />} />
+      <Route path="/myprofile-c" element={<ClientProfile />} />
       <Route path="/myprofile" element={<UserProfile />} />
       <Route path="/boq-home" element={<BoqHome />} />
       <Route path="/start-boq" element={<Work />} />

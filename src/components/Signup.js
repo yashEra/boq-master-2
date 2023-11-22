@@ -23,32 +23,46 @@ const Signup = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+  
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!inputs.email || !emailRegex.test(inputs.email)) {
       alert("Please enter a valid email address");
       return;
     }
-
+  
     // Validate password length
     if (!inputs.password || inputs.password.length < 8) {
       alert("Password must be at least 8 characters long");
       return;
     }
-
+  
     // Validate that password and retype password match
     if (inputs.password !== inputs.retypePassword) {
       alert("Password and retype password do not match");
       return;
     }
-
-    // If all validations pass, proceed with the form submission
+  
+    //If all validations pass, proceed with the form submission
     const url = "http://localhost:8080/Models/Process/signup-process.php";
-    axios.post(url, inputs);
-    console.log(inputs);
-    setSubmitted(true);
-  };
+    axios.post(url, inputs)
+    .then((res) => {
+      console.log(res.data); // Log the entire response object to see what it contains
+
+      if (res.data.success === true) {
+        console.log("Redirecting...");
+        window.location.href = "/login";
+      } else {
+        console.log("Signup failed.");
+      }
+    })
+    .catch((error) => {
+      console.error("Error submitting form:", error);
+    });
+
+  setSubmitted(true);
+};
+  
 
   return (
     <div>
