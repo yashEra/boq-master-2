@@ -21,14 +21,14 @@ const callouts = [
     description: "Empowering efficient construction with precise cost management - Your trusted Quantity Surveyors.",
     imageSrc: img3,
     imageAlt: 'Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant.',
-    href: '#',
+    href: '/qsList',
   },
   {
     name: 'Civil Engineers',
     description: '"Building the worlds foundation, one blueprint at a time - Trust our skilled civil engineers to construct your dreams with precision and innovation."',
     imageSrc: img2,
     imageAlt: 'Collection of four insulated travel bottles on wooden shelf.',
-    href: '#',
+    href: 'ceList',
   },
 ]
 

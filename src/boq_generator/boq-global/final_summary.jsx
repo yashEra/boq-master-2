@@ -1,9 +1,33 @@
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
-const FinalSummary = ({ props }) => {
-  useEffect(() => {
-    console.log(props);
-  }, [props]);
+// const FinalSummary = ({ props }) => {
+//   useEffect(() => {
+//     console.log(props);
+//   }, [props]);
+  
+
+  const FinalSummary = ({ props }) => {
+    const tableRef = useRef();
+  
+    useEffect(() => {
+      console.log(props);
+    }, [props]);
+  
+    const exportToPDF = () => {
+      const input = tableRef.current;
+  
+      html2canvas(input).then((canvas) => {
+        const pdf = new jsPDF("p", "mm", "a4");
+        pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, 210, 297);
+        pdf.save("summary.pdf");
+      });
+    };
+
+
+    
 
   const renderTable = () => {
     if (!props || !props.summaries || props.summaries.length === 0) {
@@ -233,6 +257,7 @@ const FinalSummary = ({ props }) => {
     return (
       <div className="w-3/4 md:w-full">
         {/* <pre>{JSON.stringify(props, null, 4)}</pre> */}
+        <div ref={tableRef}>
         <table className="mx-auto min-w-3/4 table-auto">
           <thead>
             <tr>
@@ -559,7 +584,7 @@ const FinalSummary = ({ props }) => {
 
 
               <tr>
-              <th className="border px-4 py-2 px-4 py-2">TOTAL FOR FOUNDATION SUMMARY</th>
+              <th className="border px-4 py-2 px-4 py-2">TOTAL FOR Window SUMMARY</th>
               <th className="border px-4 py-2"></th>
               <th className="border px-4 py-2"></th>
               <th className="border px-4 py-2"></th>
@@ -590,7 +615,7 @@ const FinalSummary = ({ props }) => {
 
 
               <tr>
-              <th className="border px-4 py-2 px-4 py-2">TOTAL FOR FOUNDATION SUMMARY</th>
+              <th className="border px-4 py-2 px-4 py-2">TOTAL FOR DOOR SUMMARY</th>
               <th className="border px-4 py-2"></th>
               <th className="border px-4 py-2"></th>
               <th className="border px-4 py-2"></th>
@@ -598,6 +623,8 @@ const FinalSummary = ({ props }) => {
             </tr>
           </tbody>
         </table>
+        <button onClick={exportToPDF} className="bg-indigo-400 text-white py-1 px-2 rounded-md mt-2">Download Summary as PDF </button>
+</div>
       </div>
     );
   };

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import NavBar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
-export const ArchiList = () => {
+export const CeList = () => {
   const [professionals, setProfessionals] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://localhost:8080/Models/Process/architectList.php')
+    fetch('http://localhost:8080/Models/Process/ceList.php')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -29,7 +29,7 @@ export const ArchiList = () => {
       <div className="">
         <div className="mx-auto max-w-7xl px-4  sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-32">
-            <h1 className="text-2xl font-bold text-gray-900">Architect Professionals</h1>
+            <h1 className="text-2xl font-bold text-gray-900">Civil Engineer Professionals</h1>
             <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0 ">
               {professionals.map((professional) => (
                 <div key={professional.id}  className='flex flex-col items-center justify-center'>

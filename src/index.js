@@ -49,8 +49,11 @@ import DoorView from "./boq_generator/door/Door";
 import BOQMain from "./boq_generator/boq-global";
 import ProjectForm from "./services_platform/portfolioes/portfolio/PortfolioForm";
 import { ArchiList } from "./services_platform/professionals/ArchiList";
-import ArchitectProfile from "./services_platform/professionals/ArchitectProfile";
+import ProfileView from "./services_platform/professionals/ProfileView";
 import AdminHome from "./admin/AdminPanel";
+import { QsList } from "./services_platform/professionals/QsList";
+import { CeList } from "./services_platform/professionals/CeList";
+import { PortfolioList } from "./services_platform/professionals/Portfolio";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -101,7 +104,10 @@ root.render(
       <Route path="/boq-door" element={<DoorView />} />
       <Route path="/boq-form" element={<ProjectForm/>} />
       <Route path="/archiList" element={<ArchiList/>} />
-      <Route path="/ar-pro/:architectId" element={<ArchitectProfile />} />
+      <Route path="/qsList" element={<QsList />} />
+      <Route path="/ceList" element={<CeList />} />
+      <Route path="/portfolio/:id" element={<PortfolioList />} />
+      <Route path="/ar-pro/:architectId" element={<ProfileView />} />
       <Route path="/adminz-boq-mz" element={<AdminHome />} />
 
     </Routes>
