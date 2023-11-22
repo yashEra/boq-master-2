@@ -30,11 +30,17 @@ const Login = () => {
 
         if (res.data.success === true) {
 
+          if (res.data.type === 'professional') {
           console.log("Redirecting..."); // Log the redirection
 
-          window.location.href = "/";
+          window.location.href = "/myprofile";
           let id=res.data.id;
-          sessionStorage.setItem('userId', id);
+          sessionStorage.setItem('userId', id);}else{
+            console.log("Redirecting..."); // Log the redirection
+
+            window.location.href = "/";
+            let id=res.data.id;
+          }
 
 
         } else {
