@@ -27,6 +27,8 @@ const ColumnView = () => {
     unit: "ft",
   });
 
+  let total = 0; // Move the total declaration to a higher scope
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -47,13 +49,18 @@ const ColumnView = () => {
 
       if (response.data.message === "Data received successfully") {
         setData({
-          sandQ: parseFloat(response.data.sand).toFixed(2), // Format to 2 decimal places
-          cemntQ: parseFloat(response.data.cement).toFixed(2), // Format to 2 decimal places
-          metalQ: parseFloat(response.data.matel).toFixed(2), // Format to 2 decimal places
-          reinforcementQ: parseFloat(response.data.rainforcementBars).toFixed(2), // Format to 2 decimal places
-          bindingWiresQ: parseFloat(response.data.bindingWires).toFixed(2), // Format to 2 decimal places
-          totalCost: parseFloat(response.data.cost).toFixed(2), // Format to 2 decimal places
+          concrete: parseFloat(response.data.concrete).toFixed(2),
+          reinforcement: parseFloat(response.data.reinforcement).toFixed(2),
+          formworks: parseFloat(response.data.formworks).toFixed(2),
+          concreteQuantity: parseFloat(response.data.concreteQuantity).toFixed(2),
+          reinforcementQuantity: parseFloat(response.data.reinforcementQuantity).toFixed(2),
+          formworksQuantity: parseFloat(response.data.formworksQuantity).toFixed(2),
+          concreteUnitPrice: parseFloat(response.data.concreteUnitPrice).toFixed(2),
+          reinforcementUnitPrice: parseFloat(response.data.reinforcementUnitPrice).toFixed(2),
+          formworksUnitPrice: parseFloat(response.data.formworksUnitPrice).toFixed(2),
         });
+
+        total = parseFloat(response.data.concrete) + parseFloat(response.data.reinforcement) + parseFloat(response.data.formworks);
         setShowDataSection(true);
       }
     } catch (error) {
@@ -85,36 +92,34 @@ const ColumnView = () => {
             <table className="table-auto">
               <thead>
                 <tr>
-                  <th className="px-4 py-2">Material</th>
+                  <th className="px-4 py-2">Description</th>
                   <th className="px-4 py-2">Unit</th>
                   <th className="px-4 py-2">Quantity</th>
+                  <th className="px-4 py-2">Unit Price</th>
+                  <th className="px-4 py-2">Amount</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className="border px-4 py-2">Sand Quantity</td>
-                  <td className="border px-4 py-2">Cubes</td>
-                  <td className="border px-4 py-2">{data.sandQ}</td>
+                  <td className="border px-4 py-2">Concrete</td>
+                  <td className="border px-4 py-2">Cu.m</td>
+                  <td className="border px-4 py-2">{data.concreteQuantity}</td>
+                  <td className="border px-4 py-2">{data.concreteUnitPrice}</td>
+                  <td className="border px-4 py-2">{data.concrete}</td>
                 </tr>
                 <tr>
-                  <td className="border px-4 py-2">Cement Quantity</td>
+                  <td className="border px-4 py-2">Reinforcement</td>
                   <td className="border px-4 py-2">Kg</td>
-                  <td className="border px-4 py-2">{data.cemntQ}</td>
+                  <td className="border px-4 py-2">{data.reinforcementQuantity}</td>
+                  <td className="border px-4 py-2">{data.reinforcementUnitPrice}</td>
+                  <td className="border px-4 py-2">{data.reinforcement}</td>
                 </tr>
                 <tr>
-                  <td className="border px-4 py-2">Metal Quantity</td>
-                  <td className="border px-4 py-2">Cubes</td>
-                  <td className="border px-4 py-2">{data.metalQ}</td>
-                </tr>
-                <tr>
-                  <td className="border px-4 py-2">Reinforcement Bars Quantity</td>
-                  <td className="border px-4 py-2">Meters</td>
-                  <td className="border px-4 py-2">{data.reinforcementQ}</td>
-                </tr>
-                <tr>
-                  <td className="border px-4 py-2">Binding Wires Quantity</td>
-                  <td className="border px-4 py-2">Meters</td>
-                  <td className="border px-4 py-2">{data.bindingWiresQ}</td>
+                  <td className="border px-4 py-2">Form Works</td>
+                  <td className="border px-4 py-2">Cu.m</td>
+                  <td className="border px-4 py-2">{data.formworksQuantity}</td>
+                  <td className="border px-4 py-2">{data.formworksUnitPrice}</td>
+                  <td className="border px-4 py-2">{data.formworks}</td>
                 </tr>
                 <tr>
                   <td className=""></td>
@@ -125,14 +130,14 @@ const ColumnView = () => {
                     <b>Total Cost</b>
                   </td>
                   <td className="border px-4 py-2">
-                    <b>{data.totalCost}LKR</b>
+                    <b>{total.toFixed(2)} LKR</b>
                   </td>
                 </tr>
               </tbody>
             </table>
             <div className="float-right mt-2">
               <SavedItems type={"column"} />
-              </div>
+            </div>
           </div>
         ) : (
           <div className="bg-white rounded p-16 shadow-md" style={{ marginTop: '120px',marginBottom:'80px' }}>
@@ -181,7 +186,7 @@ const ColumnView = () => {
                 <input
                   type="number"
                   name="height"
-                  value={formData.thickness}
+                  value={formData.height}
                   onChange={handleInputChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                 />
@@ -202,7 +207,6 @@ const ColumnView = () => {
                 />
               </div>
 
-
               <div className="mb-4">
                 <label
                   htmlFor="unit"
@@ -216,8 +220,8 @@ const ColumnView = () => {
                   onChange={handleInputChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                 >
-                  <option value="ft">ft</option>
-                  <option value="m">m</option>
+                  <option value="feet">feet</option>
+                  <option value="meter">meter</option>
                 </select>
               </div>
 

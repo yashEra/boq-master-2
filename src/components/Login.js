@@ -23,6 +23,7 @@ const Login = () => {
       .post("http://localhost:8080/Models/Process/login-process.php", formData)
       .then((res) => {
         console.log(res.data.success);
+        console.log("Form Data:", formData);
         
         //console.log("res.data.success value:", res.data);
         console.log("res.data.success type:", typeof res.data.success);
