@@ -1,19 +1,25 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid';
 import NavBar from '../Navbar';
 import Footer from '../Footer';
 
 export default function UserProfile() {
   const [profileData, setProfileData] = useState({});
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+
+  const handleViewProfile = (architectId) => {
+    navigate(`/portfolio/${architectId}`);
+  };
 
   useEffect(() => {
     // Get user ID from session storage
     const userId = sessionStorage.getItem('userId');
 
     // Make API call to fetch user profile data
-    axios.get(`http://localhost/path/to/professionalProfile.php?id=${userId}`)
+    axios.get(`http://localhost:8080/Models/Process/professionalProfile.php?id=${userId}`)
       .then(response => {
         // Update state with fetched data
         setProfileData(response.data);
@@ -25,138 +31,38 @@ export default function UserProfile() {
       });
   }, []);
 
-  const [about, setAbout] = useState('');
-
   return (
     <div>
       <NavBar />
-      <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8" style={{ width: '50%', paddingTop: '80px' }}>
-        <form>
-          <div className="space-y-12">
-            <div className="border-b border-gray-900/10 pb-12">
-              <h2 className="text-base font-semibold leading-7 text-gray-900">Profile</h2>
-              <p className="mt-1 text-sm leading-6 text-gray-600">
-                This information will be displayed publicly so be careful what you share.
-              </p>
-
-              <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                <div className="sm:col-span-4">
-                  <label htmlFor="username" className="block text-sm font-medium leading-6 text-gray-900">
-                    Username
-                  </label>
-                  <div className="mt-2">
-                    <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                      <span className="flex select-none items-center pl-3 text-gray-500 sm:text-sm">BoQmaster.com/</span>
-                      <input
-                        type="text"
-                        name="username"
-                        id="username"
-                        autoComplete="username"
-                        className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                        placeholder="janesmith"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-span-full">
-                  <label htmlFor="about" className="block text-sm font-medium leading-6 text-gray-900">
-                    Description
-                  </label>
-                  <div className="mt-2">
-                    <textarea
-                      id="about"
-                      name="about"
-                      rows={3}
-                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      defaultValue={''}
-                    />
-                  </div>
-                  <p className="mt-3 text-sm leading-6 text-gray-600">Write a few sentences about yourself.</p>
-                </div>
-
-                <div className="col-span-full">
-                  <label htmlFor="photo" className="block text-sm font-medium leading-6 text-gray-900">
-                    Photo
-                  </label>
-                  <div className="mt-2 flex items-center gap-x-3">
-                    <UserCircleIcon className="h-12 w-12 text-gray-300" aria-hidden="true" />
-                    <button
-                      type="button"
-                      className="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-                    >
-                      Change
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="border-b border-gray-900/10 pb-12">
-              <h2 className="text-base font-semibold leading-7 text-gray-900">Personal Information</h2>
-              <p className="mt-1 text-sm leading-6 text-gray-600">Use a permanent address where you can receive mail.</p>
-
-              <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                <div className="sm:col-span-3">
-                  <label htmlFor="firstname" className="block text-sm font-medium leading-6 text-gray-900">
-                    First name
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      name="firstname"
-                      id="firstname"
-                      autoComplete="given-name"
-                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
-                </div>
-
-                <div className="sm:col-span-3">
-                  <label htmlFor="lastname" className="block text-sm font-medium leading-6 text-gray-900">
-                    Last name
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      type="text"
-                      name="lastname"
-                      id="lastname"
-                      autoComplete="family-name"
-                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
-                </div>
-
-                <div className="sm:col-span-4">
-                  <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                    Email address
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      autoComplete="email"
-                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+      <div style={{paddingTop:'80px'}}>
+      <div className=" bg-[#292240] flex items-center justify-center min-h-screen text-[#9e9cb6]">
+        <section className="w-full max-w-[600px] relative bg-[#231f39]/60 rounded-[6px] shadow-[0px_15px_39px_16px_rgba(52,45,91,0.65)] backdrop-blur-sm mx-2 overflow-hidden">
+          <div className="absolute text-[#231f39] bg-yellow-400 rounded-[4px] top-6 left-6 px-2 py-1 text-sm font-bold roll-in-blurred-right">
+            {profileData.accountType}
           </div>
-
-          <div className="mt-6 flex items-center justify-end gap-x-6">
-            <button type="button" className="text-sm font-semibold leading-6 text-gray-900">
-              Cancel
-            </button>
-            <button
-              type="submit"
-              className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            >
-              Save
-            </button>
+          <img
+            src={"http://localhost:3000/assest/" + profileData.pro_pic}
+            className="rounded-full w-[200px]  h-[200px] mx-auto my-10 p-0 border-[6px] box-content border-[#231f39] shadow-[0px_27px_16px_-11px_rgba(31,27,56,0.25)] transition-all duration-150 ease-in hover:scale-105 cursor-pointer slide-in-elliptic-top-fwd"
+            alt="Profile"
+          />
+          <h1 className="text-xl font-bold text-center">{profileData.firstName} {profileData.lastName}</h1>
+          {/* <small className="block my-1 text-center">NEW YORK</small> */}
+          <p className="mt-5 text-center">{profileData.proType}</p>
+          <div className="flex items-center justify-center gap-2 w-[80%] mx-auto mt-5 mb-10">
+            <button className="flex-1 border border-[#231f39] rounded-[4px] py-3 text-white bg-[#231f39] transition-all duration-150 ease-in hover:bg-[#472e99]" onClick={() => handleViewProfile(profileData.id)}>View Portfolio</button>
+            <button className="flex-1 border border-[#231f39] text-[#ffffff] rounded-[4px] py-3 transition-all duration-150 ease-in hover:bg-[#472e99]  hover:text-white">{profileData.email}</button>
           </div>
-        </form>
+          <div className="bg-[#1e1a36]/70 p-4 text-sm font-semibold backdrop-blur-sm">
+            <p>About Me</p>
+            <ul className="flex mt-4 flex-wrap items-center justify-start gap-2 gap-y-3 [&>li]:border-2 [&>li]:border-[#2f2a47] [&>li]:px-3 [&>li]:py-1 [&>li]:rounded-[4px] [&>li]:transition-all [&>li]:duration-150 [&>li]:ease-in [&>li:hover]:scale-105 [&>li:hover]:cursor-pointer">
+
+              <li><h2>{profileData.userName}'s Profile</h2></li>
+              <li>{profileData.description}</li>
+              <li>Phone Number: {profileData.phoneNumber}</li>
+            </ul>
+          </div>
+        </section>
+      </div>
       </div>
       <Footer />
     </div>

@@ -56,7 +56,7 @@ import jsPDF from "jspdf";
       ? wallSummary.summary.unitRate
       : 0;
     const wallAmount = wallSummary
-      ? wallSummary.summary.cost
+      ? wallSummary.summary.blockworksCost
       : 0;
     const wallfAmount = wallSummary
       ? wallSummary.summary.wallFinishingCost
@@ -64,7 +64,7 @@ import jsPDF from "jspdf";
 
     //"Slabs" summary
     const slabdes = slabSummary
-      ? slabSummary.summary.descriptionC
+      ? slabSummary.summary.descriptionConcrete
       : 0;
     const slabQuantity = slabSummary
       ? slabSummary.summary.volume
@@ -73,10 +73,10 @@ import jsPDF from "jspdf";
       ? slabSummary.summary.unitC
       : 0;
     const slabAmount = slabSummary
-      ? slabSummary.summary.cCost
+      ? slabSummary.summary.concreteCost
       : 0;
     const slabfdes = slabSummary
-      ? slabSummary.summary.descriptionF
+      ? slabSummary.summary.descriptionFormworks
       : 0;
     const slabfQuantity = slabSummary
       ? slabSummary.summary.area
@@ -85,15 +85,15 @@ import jsPDF from "jspdf";
       ? slabSummary.summary.unitF
       : 0;
     const slabfAmount = slabSummary
-      ? slabSummary.summary.fCost
+      ? slabSummary.summary.formworksCost
       : 0;
 
     //"tiebeam" summary
     const tiebeamConcrete = tiebeamSummary
-      ? tiebeamSummary.summary.concrete
+      ? tiebeamSummary.summary.concreteCost
       : 0;
     const tiebeamFormwork = tiebeamSummary
-      ? tiebeamSummary.summary.formworks
+      ? tiebeamSummary.summary.formworksCost
       : 0;
     const tiebeamConcreteQT = tiebeamSummary
       ? tiebeamSummary.summary.concreteQuantity
@@ -108,7 +108,7 @@ import jsPDF from "jspdf";
       ? tiebeamSummary.summary.formworksUnitPrice
       : 0;
       const tiebeamReinforcement = tiebeamSummary
-      ? tiebeamSummary.summary.reinforcement
+      ? tiebeamSummary.summary.reinforcementCost
       : 0;
       const tiebeamReinforcementQT = tiebeamSummary
       ? tiebeamSummary.summary.reinforcementQuantity
@@ -119,13 +119,13 @@ import jsPDF from "jspdf";
 
     //"stair" summary
     const stairConcrete = stairSummary
-      ? stairSummary.summary.concrete
+      ? stairSummary.summary.concreteCost
       : 0;
     const stairReinforcement = stairSummary
-      ? stairSummary.summary.reinforcement
+      ? stairSummary.summary.reinforcementCost
       : 0;
     const stairFormwork = stairSummary
-      ? stairSummary.summary.formworks
+      ? stairSummary.summary.formworksCost
       : 0;
     const stairConcreteQT = stairSummary
       ? stairSummary.summary.concreteQuantity
@@ -207,10 +207,10 @@ import jsPDF from "jspdf";
 
       // "Foundation" summary
     const foundationConcrete = foundationSummary
-      ? foundationSummary.summary.concreteCost
+      ? foundationSummary.summary.concrete
       : 0;
     const foundationFormwork = foundationSummary
-      ? foundationSummary.summary.formworksCost
+      ? foundationSummary.summary.formworks
       : 0;
     const foundationConcreteQT = foundationSummary
       ? foundationSummary.summary.concreteQuantity
@@ -312,7 +312,7 @@ import jsPDF from "jspdf";
               <th className="border px-4 py-2 "></th>
               <th className="border px-4 py-2 px-4 py-2"></th>
               <th className="border px-4 py-2 px-4 py-2"></th>
-              <th className="border px-4 py-2 px-4 py-2">{wallAmount}</th>
+              <th className="border px-4 py-2 px-4 py-2">{wallAmount+wallfAmount}</th>
             </tr>
             <tr className="">
               <th className="border px-4 py-2 px-4 py-2">All Slabs</th>
@@ -329,11 +329,11 @@ import jsPDF from "jspdf";
               <td className="border px-4 py-2">{slabAmount}</td>
             </tr>
             <tr>
-              <td className="border px-4 py-2">{slabfdes}</td>
+              <td className="border px-4 py-2">Reinforcement</td>
               <td className="border px-4 py-2">Sq.m</td>
               <td className="border px-4 py-2">{slabfQuantity}</td>
-              <td className="border px-4 py-2">{slabfRate}</td>
-              <td className="border px-4 py-2">{slabfAmount}</td>
+              <td className="border px-4 py-2">880</td>
+              <td className="border px-4 py-2">{slabfQuantity*880}</td>
             </tr>
             <tr>
               <td className="border px-4 py-2">{slabfdes}</td>
@@ -341,6 +341,13 @@ import jsPDF from "jspdf";
               <td className="border px-4 py-2">{slabfQuantity}</td>
               <td className="border px-4 py-2">{slabfRate}</td>
               <td className="border px-4 py-2">{slabfAmount}</td>
+            </tr>
+            <tr>
+              <td className="border px-4 py-2">TOTAL SUMMERY FOR SLAB</td>
+              <td className="border px-4 py-2"></td>
+              <td className="border px-4 py-2"></td>
+              <td className="border px-4 py-2"></td>
+              <td className="border px-4 py-2">{(slabfQuantity*880)+slabAmount+slabfAmount}</td>
             </tr>
             <tr>
               <th className="border px-4 py-2 px-4 py-2">STAIRS</th>
@@ -620,6 +627,20 @@ import jsPDF from "jspdf";
               <th className="border px-4 py-2"></th>
               <th className="border px-4 py-2"></th>
               <th className="border px-4 py-2">{doorPrice}</th>
+            </tr>
+              <tr>
+              <th className="border px-4 py-2 px-4 py-2"></th>
+              <th className="border px-4 py-2"></th>
+              <th className="border px-4 py-2"></th>
+              <th className="border px-4 py-2"></th>
+              <th className="border px-4 py-2">{doorPrice}</th>
+            </tr>
+              <tr>
+              <th className="border px-4 py-2 px-4 py-2">TOTAL SUMMARY</th>
+              <th className="border px-4 py-2"></th>
+              <th className="border px-4 py-2"></th>
+              <th className="border px-4 py-2"></th>
+              <th className="border px-4 py-2">{(slabfQuantity*950)+slabAmount+slabfAmount+wallfAmount+wallAmount+footingsConcrete+footingsReinforcement+footingsFormwork+columnConcrete+columnReinforcement+columnFormwork+tiebeamConcrete+tiebeamReinforcement+tiebeamFormwork+foundationConcrete+foundationFormwork+windowPrice+doorPrice}</th>
             </tr>
           </tbody>
         </table>

@@ -21,7 +21,7 @@ const ProfileView = () => {
       .catch((error) => console.error('Error fetching architect data:', error));
   }, [architectId]);
 
-    const handleViewProfile = (architectId) => {
+  const handleViewProfile = (architectId) => {
     navigate(`/portfolio/${architectId}`);
   };
 
@@ -33,16 +33,17 @@ const ProfileView = () => {
   return (
     <div>
       <NavBar />
+      <div style={{paddingTop:'80px'}}>
       <div className=" bg-[#292240] flex items-center justify-center min-h-screen text-[#9e9cb6]">
         <section className="w-full max-w-[430px] relative bg-[#231f39]/60 rounded-[6px] shadow-[0px_15px_39px_16px_rgba(52,45,91,0.65)] backdrop-blur-sm mx-2 overflow-hidden">
           <div className="absolute text-[#231f39] bg-yellow-400 rounded-[4px] top-6 left-6 px-2 py-1 text-sm font-bold roll-in-blurred-right">
             {architect.accountType}
           </div>
-<img
-  src={"http://localhost:3000/assest/" + architect.pro_pic}
-  className="rounded-full w-[200px]  h-[200px] mx-auto my-10 p-0 border-[6px] box-content border-[#231f39] shadow-[0px_27px_16px_-11px_rgba(31,27,56,0.25)] transition-all duration-150 ease-in hover:scale-105 cursor-pointer slide-in-elliptic-top-fwd"
-  alt="Profile"
-/>
+          <img
+            src={"http://localhost:3000/assest/" + architect.pro_pic}
+            className="rounded-full w-[200px]  h-[200px] mx-auto my-10 p-0 border-[6px] box-content border-[#231f39] shadow-[0px_27px_16px_-11px_rgba(31,27,56,0.25)] transition-all duration-150 ease-in hover:scale-105 cursor-pointer slide-in-elliptic-top-fwd"
+            alt="Profile"
+          />
           <h1 className="text-xl font-bold text-center">{architect.firstName} {architect.lastName}</h1>
           <small className="block my-1 text-center">NEW YORK</small>
           <p className="mt-5 text-center">{architect.proType}</p>
@@ -55,18 +56,10 @@ const ProfileView = () => {
             <ul className="flex mt-4 flex-wrap items-center justify-start gap-2 gap-y-3 [&>li]:border-2 [&>li]:border-[#2f2a47] [&>li]:px-3 [&>li]:py-1 [&>li]:rounded-[4px] [&>li]:transition-all [&>li]:duration-150 [&>li]:ease-in [&>li:hover]:scale-105 [&>li:hover]:cursor-pointer">
 
               <li>{architect.description}</li>
-              {/* <li>HTML</li>
-              <li>CSS</li>
-              <li>Back End Development</li>
-              <li>TailwindCSS</li>
-              <li>JavaScript</li>
-              <li>jQuery</li>
-              <li>PHP</li>
-              <li>MySQL</li>
-              <li>SEO</li> */}
             </ul>
           </div>
         </section>
+      </div>
       </div>
       <Footer />
 

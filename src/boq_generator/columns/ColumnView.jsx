@@ -27,7 +27,7 @@ const ColumnView = () => {
     unit: "ft",
   });
 
-  let total = 0; // Move the total declaration to a higher scope
+  let total = 0;
 
   const handleSubmit = async (e) => {
     e.preventDefault();

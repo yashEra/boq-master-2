@@ -55,6 +55,9 @@ import { QsList } from "./services_platform/professionals/QsList";
 import { CeList } from "./services_platform/professionals/CeList";
 import { PortfolioList } from "./services_platform/professionals/Portfolio";
 import ClientProfile from "./components/user_profile/ClientProfile";
+import RawMaterialsAdmin from "./boq_generator/RawmaterialsAdmin";
+import RowMaterial from "./admin/RawMaterial";
+import Other from "./admin/Other";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -111,6 +114,8 @@ root.render(
       <Route path="/portfolio/:id" element={<PortfolioList />} />
       <Route path="/ar-pro/:architectId" element={<ProfileView />} />
       <Route path="/adminz-boq-mz" element={<AdminHome />} />
+      <Route path="/adminz-rowz" element={<RowMaterial />} />
+      <Route path="/other" element={<Other />} />
 
     </Routes>
   </Router>
