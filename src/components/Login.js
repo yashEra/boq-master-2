@@ -7,6 +7,7 @@ import Footer from "./Footer";
 const Login = () => {
   const [inputs, setInputs] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -16,6 +17,8 @@ const Login = () => {
 
   const handleSubmit = useCallback((e) => {
     e.preventDefault();
+    setErrorMessage(''); // Reset error message on each submit
+
     const form = document.getElementById("form");
     const formData = new FormData(form);
 
@@ -25,31 +28,22 @@ const Login = () => {
         console.log(res.data.success);
         console.log("Form Data:", formData);
 
-        //console.log("res.data.success value:", res.data);
-        console.log("res.data.success type:", typeof res.data.success);
-
         if (res.data.success === true) {
-
           if (res.data.type === 'professional') {
-            console.log("Redirecting..."); // Log the redirection
-
+            console.log("Redirecting...");
             window.location.href = "/myprofile";
             let id = res.data.id;
             sessionStorage.setItem('userId', id);
             sessionStorage.setItem('userType', 'professional');
             sessionStorage.setItem('userName', formData.get('userName'));
           } else {
-            console.log("Redirecting..."); // Log the redirection
-
+            console.log("Redirecting...");
             window.location.href = "/myprofile-c";
             let id = res.data.id;
           }
-
-
         } else {
-
-          console.log("Login failed."); // Log failure
-
+          console.log("Login failed.");
+          setErrorMessage('Username or password incorrect'); // Set error message
         }
       })
       .catch((error) => {
@@ -59,9 +53,7 @@ const Login = () => {
 
   return (
     <div>
-      <div>
-        <Navbar />
-      </div>
+      <Navbar />
       <div className="box">
         <div className="container">
           <div className="top">
@@ -99,6 +91,7 @@ const Login = () => {
                 value="Submit"
               />
             </div>
+            {errorMessage && <div className="error-message text-red-600 mt-2">{errorMessage}</div>}
             <div className="two-col">
               <div className="one">
                 <label htmlFor="check"> Haven't an Account</label>

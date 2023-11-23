@@ -64,13 +64,30 @@ export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [userName, setUserName] = useState(null);
 
-  useEffect(()=>{
+  // useEffect(()=>{
+  //   getUserName();
+  // },[])
+
+  // const getUserName = async () => {
+  //   let userName = await sessionStorage.getItem("userName");
+  //   setUserName(userName);
+  // };
+
+  useEffect(() => {
     getUserName();
-  },[])
+  }, []);
 
   const getUserName = async () => {
-    let userName = await sessionStorage.getItem("userName");
-    setUserName(userName);
+    let storedUserName = await sessionStorage.getItem("userName");
+    setUserName(storedUserName);
+  };
+
+  const handleLogout = () => {
+    // Clear user data from session storage
+    sessionStorage.removeItem("userName");
+    // Clear user data from state
+    setUserName(null);
+    window.location.href = "/login";
   };
 
   return (
@@ -154,11 +171,40 @@ export default function NavBar() {
             Contct us
           </a>
         </Popover.Group>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        {/* <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           {userName ? <a href="/myprofile" className="text-sm font-semibold leading-6 text-gray-900">
             {userName} <span aria-hidden="true">&rarr;</span>
           </a> : <a href="/login" className="text-sm font-semibold leading-6 text-gray-900">Log In</a>}
+        </div> */}
+        {/* <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+  {userName ? (
+    <div className="flex items-center">
+      <a href="/myprofile" className="text-sm font-semibold leading-6 text-gray-900">
+        {userName} <span aria-hidden="true">&rarr;</span>
+      </a>
+      <a href="/login" className="text-sm font-semibold leading-6 text-gray-900 ml-4">
+        Logout
+      </a>
+    </div>
+  ) : (
+    <a href="/login" className="text-sm font-semibold leading-6 text-gray-900">Log In</a>
+  )}
+</div> */}
+    <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+      {userName ? (
+        <div className="flex items-center">
+          <a href="/myprofile" className="text-sm font-semibold leading-6 text-gray-900">
+            {userName} <span aria-hidden="true">&rarr;</span>
+          </a>
+          <button onClick={handleLogout} className="text-sm font-semibold leading-6 text-gray-900 ml-4">
+            Logout
+          </button>
         </div>
+      ) : (
+        <a href="/login" className="text-sm font-semibold leading-6 text-gray-900">Log In</a>
+      )}
+    </div>
+
       </nav>
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
         <div className="fixed inset-0 z-10" />
