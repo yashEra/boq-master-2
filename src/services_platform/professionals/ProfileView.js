@@ -45,10 +45,10 @@ const ProfileView = () => {
             alt="Profile"
           />
           <h1 className="text-xl font-bold text-center">{architect.firstName} {architect.lastName}</h1>
-          <small className="block my-1 text-center">NEW YORK</small>
+          <small className="block my-1 text-center"></small>
           <p className="mt-5 text-center">{architect.proType}</p>
           <div className="flex items-center justify-center gap-2 w-[80%] mx-auto mt-5 mb-10">
-            <button className="flex-1 border border-[#231f39] rounded-[4px] py-3 text-white bg-[#231f39] transition-all duration-150 ease-in hover:bg-[#472e99]" onClick={() => handleViewProfile(architect.id)}>View Portfolio</button>
+            <button className="flex-1 border border-[#231f39] rounded-[4px] py-3 text-white bg-[#231f39] transition-all duration-150 ease-in hover:bg-[#472e99]" onClick={() => handleViewProfile(architect.id)}>{architect.phoneNumber}</button>
             <button className="flex-1 border border-[#231f39] text-[#ffffff] rounded-[4px] py-3 transition-all duration-150 ease-in hover:bg-[#472e99]  hover:text-white">{architect.email}</button>
           </div>
           <div className="bg-[#1e1a36]/70 p-4 text-sm font-semibold backdrop-blur-sm">

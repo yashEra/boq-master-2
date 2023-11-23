@@ -192,35 +192,6 @@
       "helperText": "Enter the quantity of columns"
     }
   },
-  "footings": {
-    "height": {
-      "label": "Height",
-      "type": "text",
-      "helperText": "Enter the thickness of the Column Footings",
-      "unit": "inches"
-    },
-    "width": {
-      "label": "Width",
-      "type": "text",
-      "helperText": "Enter the width of the Column Footings",
-      "unit": "feet"
-    },
-    "length": {
-      "label": "Length",
-      "type": "text",
-      "helperText": "Enter the length of the Column Footings",
-      "unit": "feet"
-    },
-    "unit": {
-      "label": "Unit",
-      "type": "select",
-      "options": [
-        "feet",
-        "meters"
-      ],
-      "helperText": "Select the unit of measurement"
-    }
-  },
   "column": {
     "unit": {
       "label": "Unit",
