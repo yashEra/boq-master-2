@@ -3,6 +3,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import ProList from './UsersList';
 import RawMaterialsAdmin from '../boq_generator/RawmaterialsAdmin';
+import Window from './Window';
 
 const navigation = [
   { name: 'Dashboard', href: '/adminz-boq-mz', current: false },
@@ -31,13 +32,13 @@ export default function Other() {
                 <div className="flex items-center">
                   <div className="flex-shrink-0">
                     <img
-                      className="h-8 w-8"
-                      src=""
+                      className="h-8"
+                      src="http://localhost:3000/assest/logo/logo.jpg"
                       alt="Your Company"
                     />
                   </div>
                   <div className="ml-3">
-                    <h1 className="text-white text-lg font-semibold">Dashboard</h1>
+                    <h1 className="text-white text-lg font-semibold"></h1>
                   </div>
                 </div>
                 <div className="-mr-2 flex md:hidden">
@@ -100,7 +101,7 @@ export default function Other() {
 
           <main>
             <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-              <RawMaterialsAdmin />
+              <Window />
             </div>
           </main>
         </div>

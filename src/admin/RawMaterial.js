@@ -31,13 +31,13 @@ export default function RowMaterial() {
                 <div className="flex items-center">
                   <div className="flex-shrink-0">
                     <img
-                      className="h-8 w-8"
-                      src=""
+                      className="h-8"
+                      src="http://localhost:3000/assest/logo/logo.jpg"
                       alt="Your Company"
                     />
                   </div>
                   <div className="ml-3">
-                    <h1 className="text-white text-lg font-semibold">Dashboard</h1>
+                    <h1 className="text-white text-lg font-semibold"></h1>
                   </div>
                 </div>
                 <div className="-mr-2 flex md:hidden">
