@@ -19,7 +19,7 @@ export default function ClientProfile() {
     const userId = sessionStorage.getItem('userId');
 
     // Make API call to fetch user profile data
-    axios.get(`http://localhost:8080/Models/Process/professionalProfile.php?id=${userId}`)
+    axios.get(`http://localhost:8080/Models/Process/getClient.php?id=${userId}`)
       .then(response => {
         // Update state with fetched data
         setProfileData(response.data);
