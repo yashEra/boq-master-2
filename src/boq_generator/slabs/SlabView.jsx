@@ -45,15 +45,15 @@ const SlabView = () => {
 
       if (response.data.message === "Data received successfully") {
         setData({
-          descriptionC: response.data.descriptionC,
-          descriptionF: response.data.descriptionF,
+          descriptionC: response.data.descriptionConcrete,
+          descriptionF: response.data.descriptionFormworks,
           volume: parseFloat(response.data.volume).toFixed(2),
           area: parseFloat(response.data.area).toFixed(2),
           // reinforcementQ: parseFloat(response.data.rainforcementBars).toFixed(2),
           unitC: parseFloat(response.data.unitC).toFixed(2),
           unitF: parseFloat(response.data.unitF).toFixed(2),
-          cCost: parseFloat(response.data.cCost).toFixed(2),
-          fCost: parseFloat(response.data.fCost).toFixed(2),
+          cCost: parseFloat(response.data.concreteCost).toFixed(2),
+          fCost: parseFloat(response.data.formworksCost).toFixed(2),
         });
         setShowDataSection(true);
       }
@@ -204,7 +204,7 @@ const SlabView = () => {
                   onChange={handleInputChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                 >
-                  <option value="ft">ft</option>
+                  <option value="feet">ft</option>
                   <option value="m">m</option>
                 </select>
               </div>

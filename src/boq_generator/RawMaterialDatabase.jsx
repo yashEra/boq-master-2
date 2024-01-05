@@ -6,7 +6,6 @@ import Footer from "../components/Footer";
 
 const RawMaterialsTable = () => {
   const backgroundImageUrl = WallsImg;
-  // State to store the raw material data, initialized as an empty array
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -37,27 +36,27 @@ const RawMaterialsTable = () => {
           }}
         >
           <div className="bg-white rounded p-16 shadow-md mt-16">
-            <h1 className="text-2xl font-bold mb-4">Raw Materials Table</h1>
+            <h1 className="text-2xl font-bold mb-4 text-gray-500">Raw Materials Table</h1>
             <table className="min-w-full table-auto">
               <thead>
-                <tr>
-                  <th className="px-4 py-2">Material Name</th>
-                  <th className="px-4 py-2">Unit</th>
-                  <th className="px-4 py-2">Quantity</th>
-                  <th className="px-4 py-2">Material Price</th>
-                  <th className="px-4 py-2">Date</th>
+                <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                  <th class="px-4 py-3">Material Name</th>
+                  <th class="px-4 py-3">Unit</th>
+                  <th class="px-4 py-3">Quantity</th>
+                  <th class="px-4 py-3">Material Price</th>
+                  <th class="px-4 py-3">Date</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
                 {data.map((item) => (
-                  <tr key={item.material_id}>
-                    <td className="border px-4 py-2">
+                  <tr key={item.material_id} className="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
+                    <td  class="px-4 py-3">
                       {item.material_name.replace(/_/g, " ").toUpperCase()}
                     </td>{" "}
-                    <td className="border px-4 py-2">{item.unit}</td>
-                    <td className="border px-4 py-2">{item.quentiti}</td>
-                    <td className="border px-4 py-2">{item.material_price}</td>
-                    <td className="border px-4 py-2">{item.date}</td>
+                    <td class="px-4 py-3 text-sm">{item.unit}</td>
+                    <td class="px-4 py-3 text-sm">{item.quentiti}</td>
+                    <td class="px-4 py-3 text-sm">{item.material_price}</td>
+                    <td class="px-4 py-3 text-sm">{item.date}</td>
                   </tr>
                 ))}
               </tbody>

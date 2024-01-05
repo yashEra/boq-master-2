@@ -48,6 +48,16 @@ import WindowsView from "./boq_generator/window/Windows";
 import DoorView from "./boq_generator/door/Door";
 import BOQMain from "./boq_generator/boq-global";
 import ProjectForm from "./services_platform/portfolioes/portfolio/PortfolioForm";
+import { ArchiList } from "./services_platform/professionals/ArchiList";
+import ProfileView from "./services_platform/professionals/ProfileView";
+import AdminHome from "./admin/AdminPanel";
+import { QsList } from "./services_platform/professionals/QsList";
+import { CeList } from "./services_platform/professionals/CeList";
+import { PortfolioList } from "./services_platform/professionals/Portfolio";
+import ClientProfile from "./components/user_profile/ClientProfile";
+import RawMaterialsAdmin from "./boq_generator/RawmaterialsAdmin";
+import RowMaterial from "./admin/RawMaterial";
+import Other from "./admin/Other";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -62,6 +72,7 @@ root.render(
       <Route path="/signup" element={<Signup />} />
       <Route path="/sevices" element={<Services />} />
       <Route path="/helpcenter" element={<HelpCenter />} />
+      <Route path="/myprofile-c" element={<ClientProfile />} />
       <Route path="/myprofile" element={<UserProfile />} />
       <Route path="/boq-home" element={<BoqHome />} />
       <Route path="/start-boq" element={<Work />} />
@@ -97,7 +108,14 @@ root.render(
       <Route path="/boq-window" element={<WindowsView />} />
       <Route path="/boq-door" element={<DoorView />} />
       <Route path="/boq-form" element={<ProjectForm/>} />
-
+      <Route path="/archiList" element={<ArchiList/>} />
+      <Route path="/qsList" element={<QsList />} />
+      <Route path="/ceList" element={<CeList />} />
+      <Route path="/portfolio/:id" element={<PortfolioList />} />
+      <Route path="/ar-pro/:architectId" element={<ProfileView />} />
+      <Route path="/adminz-boq-mz" element={<AdminHome />} />
+      <Route path="/adminz-rowz" element={<RowMaterial />} />
+      <Route path="/other" element={<Other />} />
 
     </Routes>
   </Router>
