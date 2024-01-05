@@ -2,13 +2,13 @@
   "wall": {
     "height": {
       "label": "Height",
-      "type": "text",
+      "type": "number",
       "helperText": "Enter the height of the wall",
       "unit": "feet"
     },
     "length": {
       "label": "Length",
-      "type": "text",
+      "type": "number",
       "helperText": "Enter the length of the wall",
       "unit": "feet"
     },
@@ -48,19 +48,19 @@
   "tiebeam": {
     "height": {
       "label": "Height",
-      "type": "text",
+      "type": "number",
       "helperText": "Enter the height of the tiebeam",
       "unit": "feet"
     },
     "width": {
       "label": "Width",
-      "type": "text",
+      "type": "number",
       "helperText": "Enter the width of the tiebeam",
       "unit": "feet"
     },
     "length": {
       "label": "Length",
-      "type": "text",
+      "type": "number",
       "helperText": "Enter the length of the tiebeam",
       "unit": "feet"
     },
@@ -81,54 +81,18 @@
     }
   },
   "stair": {
-    "unit": {
-      "label": "Unit",
-      "type": "select",
-      "options": [
-        "feet",
-        "inches",
-        "meters"
-      ],
-      "helperText": "Select the unit of measurement"
-    },
     "length": {
       "label": "Length",
-      "type": "text",
+      "type": "number",
       "helperText": "Enter the length of the stair",
       "unit": "feet"
     },
     "width": {
       "label": "Width",
-      "type": "text",
+      "type": "number",
       "helperText": "Enter the width of the stair",
       "unit": "feet"
     },
-    "noOfSteps": {
-      "label": "No of Steps",
-      "type": "text",
-      "helperText": "Enter the quantity of steps"
-    },
-    "thread": {
-      "label": "Thread",
-      "type": "text",
-      "helperText": "Enter the thread size",
-      "unit": "inches"
-    },
-    "riser": {
-      "label": "Riser",
-      "type": "text",
-      "helperText": "Enter the riser size",
-      "unit": "inches"
-    },
-    "thickness": {
-      "label": "Thickness",
-      "type": "text",
-      "helperText": "Enter the thickness of the stair",
-      "unit": "inches"
-    }
-  },
-  "slab": {
-    
     "unit": {
       "label": "Unit",
       "type": "select",
@@ -139,26 +103,79 @@
       ],
       "helperText": "Select the unit of measurement"
     },
+    "noOfSteps": {
+      "label": "No of Steps",
+      "type": "number",
+      "helperText": "Enter the quantity of steps"
+    },
+    "thread": {
+      "label": "Thread",
+      "type": "number",
+      "helperText": "Enter the thread size",
+      "unit": "inches"
+    },
+    "riser": {
+      "label": "Riser",
+      "type": "number",
+      "helperText": "Enter the riser size",
+      "unit": "inches"
+    },
     "thickness": {
       "label": "Thickness",
-      "type": "text",
+      "type": "number",
+      "helperText": "Enter the thickness of the stair",
+      "unit": "inches"
+    }
+  },
+  "slab": {
+    "thickness": {
+      "label": "Thickness",
+      "type": "number",
       "helperText": "Enter the height of the slab",
       "unit": "inches"
     },
     "width": {
       "label": "Width",
-      "type": "text",
+      "type": "number",
       "helperText": "Enter the width of the slab",
       "unit": "feet"
     },
     "length": {
       "label": "Length",
-      "type": "text",
+      "type": "number",
       "helperText": "Enter the length of the slab",
       "unit": "feet"
+    },
+    "unit": {
+      "label": "Unit",
+      "type": "select",
+      "options": [
+        "feet",
+        "inches",
+        "meters"
+      ],
+      "helperText": "Select the unit of measurement"
     }
   },
-  "foundation": {
+  "fountation": {
+    "height": {
+      "label": "height",
+      "type": "number",
+      "helperText": "Enter the height of the slab",
+      "unit": "inches"
+    },
+    "width": {
+      "label": "Width",
+      "type": "number",
+      "helperText": "Enter the width of the slab",
+      "unit": "feet"
+    },
+    "length": {
+      "label": "Length",
+      "type": "number",
+      "helperText": "Enter the length of the slab",
+      "unit": "feet"
+    },
     "unit": {
       "label": "Unit",
       "type": "select",
@@ -167,47 +184,24 @@
         "meters"
       ],
       "helperText": "Select the unit of measurement"
-    },
-    "height": {
-      "label": "height",
-      "type": "text",
-      "helperText": "Enter the height of the slab",
-      "unit": "inches"
-    },
-    "width": {
-      "label": "Width",
-      "type": "text",
-      "helperText": "Enter the width of the slab",
-      "unit": "feet"
-    },
-    "length": {
-      "label": "Length",
-      "type": "text",
-      "helperText": "Enter the length of the slab",
-      "unit": "feet"
-    },
-    "noOfFoundation": {
-      "label": "NoOfFoundation",
-      "type": "number",
-      "helperText": "Enter the quantity of columns"
     }
   },
   "footings": {
     "height": {
       "label": "Height",
-      "type": "text",
+      "type": "number",
       "helperText": "Enter the thickness of the Column Footings",
       "unit": "inches"
     },
     "width": {
       "label": "Width",
-      "type": "text",
+      "type": "number",
       "helperText": "Enter the width of the Column Footings",
       "unit": "feet"
     },
     "length": {
       "label": "Length",
-      "type": "text",
+      "type": "number",
       "helperText": "Enter the length of the Column Footings",
       "unit": "feet"
     },
@@ -222,6 +216,24 @@
     }
   },
   "column": {
+    "height": {
+      "label": "Height",
+      "type": "number",
+      "helperText": "Enter the height of the column",
+      "unit": "feet"
+    },
+    "width": {
+      "label": "Width",
+      "type": "number",
+      "helperText": "Enter the width of the column",
+      "unit": "feet"
+    },
+    "length": {
+      "label": "Length",
+      "type": "number",
+      "helperText": "Enter the length of the column",
+      "unit": "feet"
+    },
     "unit": {
       "label": "Unit",
       "type": "select",
@@ -231,24 +243,6 @@
       ],
       "helperText": "Select the unit of measurement"
     },
-    "height": {
-      "label": "Height",
-      "type": "text",
-      "helperText": "Enter the height of the column",
-      "unit": "feet"
-    },
-    "width": {
-      "label": "Width",
-      "type": "text",
-      "helperText": "Enter the width of the column",
-      "unit": "feet"
-    },
-    "length": {
-      "label": "Length",
-      "type": "text",
-      "helperText": "Enter the length of the column",
-      "unit": "feet"
-    },
     "noOfColumns": {
       "label": "NoOfColumns",
       "type": "number",
@@ -256,100 +250,35 @@
     }
   },
   "window": {
-    "windowTypeId": {
+    "windowType": {
       "label": "Window Type",
-      "type": "grid",
-      "data": [
-        {
-          "name": "1",
-          "description": "Frame+Glass Sash+Fittings",
-          "price": 4000,
-          "image": "img1"
-        },
-        {
-          "name": "2",
-          "description": "Frame+2Glass Sash+Fittings",
-          "price": 13000,
-          "image": "img2"
-        },
-        {
-          "name": "3",
-          "description": "Frame+3Glass Sash+Fittings",
-          "price": 4000,
-          "image": "img3"
-        },
-        {
-          "name": "4",
-          "description": "Frame+4Glass Sash+Fittings",
-          "price": 13000,
-          "image": "img4"
-        },
-        {
-          "name": "5",
-          "description": "Fan Light Window",
-          "price": 4000,
-          "image": "img5"
-        }
+      "type": "select",
+      "options": [
+        "Wooden",
+        "Aluminium",
+        "Steel"
       ],
       "helperText": "Select the type of window"
-    },
-    "size" :{
-      "type":"conditional-select",
-      "dependsOn":"windowTypeId",
-      "selections":{
-        "1":{
-          "label": "Size",
-          "type": "select",
-          "options": [
-            "20″x48″",
-            "20″x60″"
-          ],
-          "helperText": "Select the size of the Frame+Glass Sash+Fittings"
-        },
-        "2":{
-          "label": "Size",
-          "type": "select",
-          "options": [
-            "39″x48″"
-          ],
-          "helperText": "Select the size of the Frame+2Glass Sash+Fittings"
-        },
-        "3": {
-          "label": "Size",
-          "type": "select",
-          "options": [
-            "58″x48″",
-            "58″x60″"
-          ],
-          "helperText": "Select the size of the Frame+3Glass Sash+Fittings"
-        },
-        "4": {
-          "label": "Size",
-          "type": "select",
-          "options": [
-            "77″x48″"
-          ],
-          "helperText": "Select the size of the Frame+4Glass Sash+Fittings"
-        },
-        "5": {
-          "label": "Size",
-          "type": "select",
-          "options": [
-            "22″x18″",
-            "30″x18″"
-          ],
-          "helperText": "Select the size of the Fan Light Window"
-        }
-      }
     },
     "quantity": {
       "label": "Quantity",
       "type": "number",
       "helperText": "Enter the quantity of windows"
+    },
+    "price": {
+      "label": "Price",
+      "type": "number",
+      "helperText": "Enter the price of the window",
+      "unit": "Rs"
+    },
+    "size": {
+      "label": "Size",
+      "type": "number",
+      "helperText": "Enter the size of the window"
     }
   },
   "door": {
-    "doorTypeId": {
+    "doorType": {
       "type": "grid",
       "data": [
         {
@@ -368,7 +297,7 @@
     },
     "material": {
       "type": "conditional-select",
-      "dependsOn": "doorTypeId",
+      "dependsOn": "doorType",
     
       "selections": {
         "1": {
@@ -392,6 +321,34 @@
           "helperText": "Select the material of the Armee Teak wooden door"
         }
       }
+    },
+    "materialDoor1": {
+      "label": "Material",
+      "type": "select",
+      "options": [
+        "tualang",
+        "kempas",
+        "teak",
+        "jack",
+        "mahogany"
+      ],
+      "conditions": {
+        "dependsOn": "doorType",
+        "showIf": "1"
+      },
+      "helperText": "Select the material of the door"
+    },
+    "materialDoor2": {
+      "label": "Material",
+      "type": "select",
+      "options": [
+        "armee_teak"
+      ],
+      "conditions": {
+        "dependsOn": "doorType",
+        "showIf": "2"
+      },
+      "helperText": "Select the material of the door"
     },
     "quantity": {
       "label": "Quantity",

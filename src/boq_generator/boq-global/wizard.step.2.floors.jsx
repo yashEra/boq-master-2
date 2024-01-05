@@ -48,10 +48,10 @@ function AddFloors({ state, setState }) {
                             <p className="text-sm -mt-2">{floor.name}</p>
                         </div>
                         <div>
-                            <p className="text-sm mb-2"></p>
+                            <p className="text-sm mb-2">Select Roof Type</p>
                             <div className="flex flex-wrap justify-center gap-4">
-                                <button className={`py-1 px-6 border-2 rounded-xl ${floor.isRoof ? "bg-indigo-100 border-indigo-500 text-indigo-800 font-bold" : "border-white bg-gray-100"}`} onClick={() => setRoof(floor.id, true)}></button>
-                                <button className={`py-1 px-6 border-2 rounded-xl ${floor.isRoof ? "bg-gray-100 border-white" : "border-indigo-500 bg-indigo-100 text-indigo-800 font-bold"}`} onClick={() => setRoof(floor.id, false)}></button>
+                                <button className={`py-1 px-6 border-2 rounded-xl ${floor.isRoof ? "bg-indigo-100 border-indigo-500 text-indigo-800 font-bold" : "border-white bg-gray-100"}`} onClick={() => setRoof(floor.id, true)}>Roof</button>
+                                <button className={`py-1 px-6 border-2 rounded-xl ${floor.isRoof ? "bg-gray-100 border-white" : "border-indigo-500 bg-indigo-100 text-indigo-800 font-bold"}`} onClick={() => setRoof(floor.id, false)}>Slab</button>
                             </div>
                         </div>
                         <div>

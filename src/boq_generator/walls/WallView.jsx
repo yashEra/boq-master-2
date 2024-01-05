@@ -12,7 +12,7 @@ const WallView = () => {
   const [formData, setFormData] = useState({
     height: "",
     length: "",
-    unit: "feet",
+    unit: "ft",
     brickTypes: "clayBrick"
   });
 
@@ -63,9 +63,8 @@ const WallView = () => {
           noOfBricks: parseFloat(response.data.numberOfBricks).toFixed(0),
           description: response.data.description,
           area: parseFloat(response.data.area).toFixed(2),
-          totalCost: parseFloat(response.data.blockworksCost).toFixed(2),
-          unitRate: parseFloat(response.data.unitRate).toFixed(2),
-          finishcost: parseFloat(response.data.wallFinishingCost).toFixed(2)
+          totalCost: parseFloat(response.data.cost).toFixed(2),
+          unitRate: parseFloat(response.data.unitRate).toFixed(2)
         });
         setShowDataSection(true);
       }
@@ -107,23 +106,6 @@ const WallView = () => {
                   <td className="border px-4 py-2">{data.area}</td>
                   <td className="border px-4 py-2">{data.unitRate}</td>
                   <td className="border px-4 py-2">{data.totalCost}</td>
-
-                </tr>
-                <tr>
-                  <td className="border px-4 py-2">Wall Finishing</td>
-                  <td className="border px-4 py-2">Sq.m</td>
-                  <td className="border px-4 py-2">{data.area}</td>
-                  <td className="border px-4 py-2">100</td>
-                  <td className="border px-4 py-2">{data.finishcost}</td>
-
-                </tr>
-                <tr>
-                  <td className="border px-4 py-2">Total Cost</td>
-                  <td className="border px-4 py-2"></td>
-                  <td className="border px-4 py-2"></td>
-                  <td className="border px-4 py-2"></td>
-                  <td className="border px-4 py-2">{data.totalCost + data.finishcost}</td>
-
 
                 </tr>
                 <tr>
@@ -194,8 +176,8 @@ const WallView = () => {
                   onChange={handleInputChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                 >
-                  <option value="feet">feet</option>
-                  <option value="m">meter</option>
+                  <option value="ft">ft</option>
+                  <option value="m">m</option>
                 </select>
               </div>
               <div className="mb-4">

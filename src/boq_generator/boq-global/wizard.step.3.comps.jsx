@@ -1,6 +1,6 @@
 import { useState } from "react";
 import formData from "../../services/form_data.json"
-import { AddOutlined } from '@mui/icons-material'
+import {  AddOutlined } from '@mui/icons-material'
 import DynamicForm from "./dynamic_form";
 import SavedItems from "../../components/SavedItems";
 
@@ -36,32 +36,24 @@ function AddComponents({ state, setState }) {
                         </div>
                         <div className="grid md:grid-cols-4 gap-4 mt-4">
 
-                            {Object.keys(formData).map((formType, index) => {
-                                if ((formType === 'footings' || formType === 'foundation') && floor.id !== 1) {
-                                    return null; // Do not render footings or foundation on floors other than the first
-                                } else {
-                                    return (
-                                        <div key={index} className="border-2 border-gray-400 px-8 py-3 text-center rounded-lg mb-2">
-                                            <div>
-                                                <h2 className="font-bold text-xl">{formType.charAt(0).toUpperCase() + formType.slice(1)}s</h2>
-                                                <SavedItems state={state} formType={formType} floor={floor.id} />
-                                                <button
-                                                    onClick={() => {
-                                                        setFormType(formType);
-                                                        setShowModel(true);
-                                                        setFloor(floor.id - 1);
-                                                    }}
-                                                    className="bg-indigo-400 text-white py-1 px-2 rounded-md mt-2"
-                                                >
-                                                    <AddOutlined /> {formType.charAt(0).toUpperCase() + formType.slice(1)}
-                                                </button>
-                                            </div>
-                                        </div>
-                                    );
-                                }
-                            })}
-
-
+                            {Object.keys(formData).map((formType, index) => (
+                                <div key={index} className="border-2 border-gray-400 px-8 py-3 text-center rounded-lg mb-2">
+                                    <div>
+                                        <h2 className="font-bold text-xl">{formType.charAt(0).toUpperCase() + formType.slice(1)}s</h2>
+                                        <SavedItems state={state} formType={formType} floor={floor.id} />
+                                        <button
+                                            onClick={() => {
+                                                setFormType(formType);
+                                                setShowModel(true);
+                                                setFloor(floor.id - 1);
+                                            }}
+                                            className="bg-indigo-400 text-white py-1 px-2 rounded-md mt-2"
+                                        >
+                                            <AddOutlined /> {formType.charAt(0).toUpperCase() + formType.slice(1)}
+                                        </button>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
 
                     </div>
@@ -72,7 +64,7 @@ function AddComponents({ state, setState }) {
                     <DynamicForm formData={formData} onSubmit={handleSubmit} formType={formType} onClose={handleCancel} />
                 </div>}
             <div className="flex justify-center py-12">
-                {/* <WindowView/> */}
+            {/* <WindowView/> */}
                 <button className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full" onClick={() => handleComplete()}>
                     Continue
                 </button>

@@ -10,7 +10,6 @@ import ColumnImg from './Assets/coloumn.jpg'
 import TiebeamImg from './Assets/tie beam.jpeg'
 import RoofImg from './Assets/roof.jpg'
 import WindowsImg from './Assets/window.jpg'
-import DoorImg from './Assets/door1.jpg'
 
 const callouts = [
   {
@@ -50,13 +49,13 @@ const callouts = [
     imageAlt: "",
     href: "boq-tiebeam",
   },
-  // {
-  //   name: "Roofs",
-  //   description: "",
-  //   imageSrc:RoofImg,
-  //   imageAlt: "",
-  //   href: "boq-tiebeam",
-  // },
+  {
+    name: "Roofs",
+    description: "",
+    imageSrc:RoofImg,
+    imageAlt: "",
+    href: "boq-tiebeam",
+  },
   {
     name: "windows",
     description: "",
@@ -67,7 +66,7 @@ const callouts = [
   {
     name: "Door",
     description: "",
-    imageSrc:DoorImg,
+    imageSrc:WindowsImg,
     imageAlt: "",
     href: "boq-door",
   },

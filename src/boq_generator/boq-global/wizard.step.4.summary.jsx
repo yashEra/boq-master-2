@@ -67,7 +67,6 @@ const SummaryComponent = ({ floors, updateState, state }) => {
             foundation: "http://localhost:8080/Models/Process/PartsOfConstructions/foundation_process.php",
             footings: "http://localhost:8080/Models/Process/PartsOfConstructions/columnFootings_process.php",
             slab3: "http://localhost:8080/Models/Process/PartsOfConstructions/slab_process.php",
-            roof: "http://localhost:8080/Models/Process/PartsOfConstructions/roofProcess.php",
         };
 
         return urlMappings[componentType];
